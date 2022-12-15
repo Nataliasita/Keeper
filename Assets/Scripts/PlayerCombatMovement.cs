@@ -48,7 +48,7 @@ public class PlayerCombatMovement : MonoBehaviour
         if (InCombat)
         {
             controller.Move(transform.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed);
-            transform.RotateAround(target.transform.position, Vector3.up, -horizontalInput * rotationSpeed * 8 * Time.deltaTime);
+            transform.RotateAround(target.transform.position, Vector3.up, -horizontalInput * rotationSpeed * 15 * Time.deltaTime);
             transform.LookAt(target.transform.position - offset);
             playerVelocity.y += gravityValue * Time.deltaTime;
         }
