@@ -43,7 +43,6 @@ public class PlayerCombatMovement : MonoBehaviour
         Vector3 movementDirection = movementInput.normalized;
 
         anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
-        Debug.Log(Mathf.Abs(horizontalInput + verticalInput));
 
         // Movement
         if (InCombat)
