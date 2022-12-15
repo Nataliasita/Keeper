@@ -23,21 +23,26 @@ public class FollowPlayer : MonoBehaviour
     public Vector3 CameraOffset;
     public GameObject player;
     public GameObject target;
-
+    private void Start()
+    {
+        transform.position = player.transform.position + CameraOffset - transform.forward * distanceFromTarget;
+    }
     void Update()
     {
-        Iswalking();
         if (player.GetComponent<PlayerCombatMovement>().InCombat)
         {
             IsInCombact();
         }
-
+        if (!player.GetComponent<PlayerCombatMovement>().InCombat)
+        {
+            Iswalking();
+        }
     }
     void IsInCombact()
     {
         transform.position = target.transform.position;
         this.transform.rotation = target.transform.rotation;
-        
+
     }
     void Iswalking()
     {
@@ -47,15 +52,12 @@ public class FollowPlayer : MonoBehaviour
         rotationX += -mouseY;
 
         // Apply clamping for x rotation 
-
         rotationX = Mathf.Clamp(rotationX, rotationXMinMax.x, rotationXMinMax.y);
         Vector3 nextRotation = new Vector3(rotationX, rotationY);
         // Apply damping between rotation changes
-
         currentRotation = Vector3.SmoothDamp(currentRotation, nextRotation, ref smoothVelocity, smoothTime);
+        transform.position = player.transform.position + CameraOffset - transform.forward * distanceFromTarget;
         transform.localEulerAngles = currentRotation;
 
-        // Substract forward vector of the GameObject to point its forward vector to the target
-        transform.position = player.transform.position + CameraOffset - transform.forward * distanceFromTarget;
     }
 }
