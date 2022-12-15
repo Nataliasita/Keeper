@@ -10,6 +10,7 @@ public class CombatSystem : MonoBehaviour
     public float attackRange;
     public Collider[] enemyInRange;
     public bool enemyInAttackRange;
+    public float comboIndex = 0;
     private PlayerCombatMovement PlayerMovement;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,9 @@ public class CombatSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MeeleAttackCombo();
         enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsEnemy);
+
         if (enemyInAttackRange && Input.GetKeyDown(KeyCode.Space))
         {
             PlayerMovement.InCombat = true;
@@ -31,18 +34,27 @@ public class CombatSystem : MonoBehaviour
         {
             PlayerMovement.InCombat = false;
         }
-        MeeleAttack();
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-    private void MeeleAttack()
+    private void MeeleAttackCombo()
     {
-        if  (Input.GetKeyDown(KeyCode.Mouse0))
+        Debug.Log(comboIndex);
+
+        if (comboIndex > 0) comboIndex -= 0.5f * Time.deltaTime;
+
+        if (comboIndex > 4)
         {
-            anim.SetTrigger("Attack");
+            comboIndex = 0;
         }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            comboIndex += 0.7f;
+        }
+
+        anim.SetFloat("Attack", comboIndex);
     }
 }
