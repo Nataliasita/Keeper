@@ -22,6 +22,7 @@ public class PlayerCombatMovement : MonoBehaviour
     public bool InCombat;
     private CombatSystem combatSystem;
     public GameObject target;
+    public int EnemyIndex;
     void Start()
     {
         combatSystem = GetComponent<CombatSystem>();
@@ -29,8 +30,15 @@ public class PlayerCombatMovement : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(EnemyIndex);
+        //Cambio de enemigo seleccionado
+        if (Input.GetKeyDown(KeyCode.E) && EnemyIndex <= combatSystem.enemyInRange.Length)
+        {
+            EnemyIndex += 1;
+            if (EnemyIndex > combatSystem.enemyInRange.Length - 1) EnemyIndex = 0;
+        }
         // animaciones
-        if (InCombat) target = combatSystem.enemyInRange[0].gameObject;
+        if (InCombat) target = combatSystem.enemyInRange[EnemyIndex].gameObject;
         Movement();
     }
     void Movement()
@@ -43,13 +51,12 @@ public class PlayerCombatMovement : MonoBehaviour
         Vector3 movementDirection = movementInput.normalized;
 
         anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
-        Debug.Log(Mathf.Abs(horizontalInput + verticalInput));
 
         // Movement
         if (InCombat)
         {
             controller.Move(transform.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed);
-            transform.RotateAround(target.transform.position, Vector3.up, -horizontalInput * rotationSpeed * 8 * Time.deltaTime);
+            transform.RotateAround(target.transform.position, Vector3.up, -horizontalInput * rotationSpeed * 15 * Time.deltaTime);
             transform.LookAt(target.transform.position - offset);
             playerVelocity.y += gravityValue * Time.deltaTime;
         }
