@@ -25,7 +25,6 @@ public class FollowPlayer : MonoBehaviour
     private Vector2 rotationYMinMax;
     public Vector3 CameraOffset;
     public GameObject player;
-    public GameObject target;
     public bool IsAiming;
 
     [Header("memory")]
@@ -33,16 +32,30 @@ public class FollowPlayer : MonoBehaviour
     public Vector3 CameraOffsetMemory;
     private Vector2 rotationXMinMaxMemory;
     private Vector2 rotationYMinMaxMemory;
+    private bool CameraCanMove;
+    private Vector3 MovementPosition;
+    public GameObject target;
+    public GameObject targetEnemy;
+
     private void Start()
     {
         rotationYMinMaxMemory = rotationYMinMax;
         rotationXMinMaxMemory = rotationXMinMax;
         distanceFromTargetMemory = distanceFromTarget;
         CameraOffsetMemory = CameraOffset;
+        StartCoroutine(LerpPosition(player.transform.position + CameraOffset - transform.forward * distanceFromTarget, 0.5f, player.transform.rotation));
     }
 
     void Update()
     {
+        //targetEnemy = player.GetComponent<PlayerCombatMovement>().target;
+        Quaternion CamDesiredRotation = Quaternion.Euler(this.transform.rotation.eulerAngles.x,
+        player.transform.rotation.eulerAngles.y, this.transform.rotation.eulerAngles.z);
+        MovementPosition = player.transform.position + CameraOffset - transform.forward * distanceFromTarget;
+
+        if (Input.GetKeyDown(KeyCode.Space) && !player.GetComponent<PlayerCombatMovement>().InCombat) StartCoroutine(LerpPosition(target.transform.position, 0.5f, target.transform.rotation));
+        if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<PlayerCombatMovement>().InCombat) StartCoroutine(LerpPosition(target.transform.position, 0.5f, target.transform.rotation));
+        if (Input.GetKeyDown(KeyCode.Q) && player.GetComponent<PlayerCombatMovement>().InCombat) StartCoroutine(LerpPosition(MovementPosition, 0.5f, CamDesiredRotation));
         if (player.GetComponent<PlayerCombatMovement>().InCombat) IsInCombact();
         if (!player.GetComponent<PlayerCombatMovement>().InCombat) Iswalking();
         if (IsAiming && !player.GetComponent<PlayerCombatMovement>().InCombat) IsAimingTo();
@@ -50,22 +63,20 @@ public class FollowPlayer : MonoBehaviour
     }
     void IsInCombact()
     {
-        transform.position = target.transform.position;
-        this.transform.rotation = target.transform.rotation;
+        if (CameraCanMove)
+        {
+            transform.position = target.transform.position;
+            this.transform.rotation = target.transform.rotation;
+        }
 
     }
     void Iswalking()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-        rotationY += mouseX;
-        rotationX += -mouseY;
-        rotationX = Mathf.Clamp(rotationX, rotationXMinMax.x, rotationXMinMax.y);
-        rotationY = Mathf.Clamp(rotationY, rotationYMinMax.x, rotationYMinMax.y);
-        Vector3 nextRotation = new Vector3(rotationX, rotationY);
-        currentRotation = Vector3.SmoothDamp(currentRotation, nextRotation, ref smoothVelocity, smoothTime);
-        transform.position = player.transform.position + CameraOffset - transform.forward * distanceFromTarget;
-        transform.localEulerAngles = currentRotation;
+        if (CameraCanMove)
+        {
+            InputRotation();
+            transform.position = MovementPosition;
+        }
 
     }
     void IsAimingTo()
@@ -80,11 +91,38 @@ public class FollowPlayer : MonoBehaviour
         this.transform.rotation.eulerAngles.y, player.transform.rotation.eulerAngles.z);
         player.transform.rotation = DesiredRotation;
     }
+    void InputRotation()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        rotationY += mouseX;
+        rotationX += -mouseY;
+        rotationX = Mathf.Clamp(rotationX, rotationXMinMax.x, rotationXMinMax.y);
+        rotationY = Mathf.Clamp(rotationY, rotationYMinMax.x, rotationYMinMax.y);
+        Vector3 nextRotation = new Vector3(rotationX, rotationY);
+        currentRotation = Vector3.SmoothDamp(currentRotation, nextRotation, ref smoothVelocity, smoothTime);
+        transform.localEulerAngles = currentRotation;
+    }
     void MemoryValues()
     {
         distanceFromTarget = distanceFromTargetMemory;
         CameraOffset = CameraOffsetMemory;
         rotationXMinMax = rotationXMinMaxMemory;
         rotationYMinMax = rotationYMinMaxMemory;
+    }
+    IEnumerator LerpPosition(Vector3 desiredPosition, float duration, Quaternion LerpRotation)
+    {
+        float time = 0;
+        Vector3 startPosition = transform.position;
+        while (time < duration)
+        {
+            CameraCanMove = false;
+            transform.position = Vector3.Lerp(startPosition, desiredPosition, time / duration);
+            transform.rotation = Quaternion.Lerp(transform.rotation, LerpRotation, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = desiredPosition;
+        CameraCanMove = true;
     }
 }

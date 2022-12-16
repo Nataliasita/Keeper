@@ -34,33 +34,33 @@ public class CombatSystem : MonoBehaviour
     {
         MeeleAttackCombo();
         enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsEnemy);
-
         if (enemyInAttackRange && Input.GetKeyDown(KeyCode.Space))
         {
+            PlayerMovement.EnemyIndex = 0;
             PlayerMovement.InCombat = true;
             Sword.SetActive(true);
             Anmo.SetActive(false);
-            anim.SetBool("Aiming",false);
+            anim.SetBool("Aiming", false);
             enemyInRange = Physics.OverlapSphere(transform.position, attackRange, whatIsEnemy);
         }
         if (PlayerMovement.InCombat == true && Input.GetKeyDown(KeyCode.Q))
         {
             PlayerMovement.InCombat = false;
-            anim.SetBool("Aiming",false);
+            anim.SetBool("Aiming", false);
             Anmo.SetActive(false);
         }
         if (Input.GetKey(KeyCode.Mouse1))
         {
             Sword.SetActive(false);
             CameraController.IsAiming = true;
-            anim.SetBool("Aiming",true);
+            anim.SetBool("Aiming", true);
             DistanceAttack();
             Anmo.SetActive(true);
         }
         else
         {
             CameraController.IsAiming = false;
-            anim.SetBool("Aiming",false);
+            anim.SetBool("Aiming", false);
             Anmo.SetActive(false);
         }
     }
@@ -87,7 +87,7 @@ public class CombatSystem : MonoBehaviour
     }
     private void DistanceAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !PlayerMovement.InCombat)
         {
             Anmo.SetActive(true);
             Sword.SetActive(false);
