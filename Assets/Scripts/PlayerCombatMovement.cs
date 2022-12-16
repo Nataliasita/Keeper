@@ -30,15 +30,29 @@ public class PlayerCombatMovement : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(EnemyIndex);
         //Cambio de enemigo seleccionado
         if (Input.GetKeyDown(KeyCode.E) && EnemyIndex <= combatSystem.enemyInRange.Length)
         {
+            int MemoryIndex;
+            MemoryIndex = EnemyIndex;
             EnemyIndex += 1;
             if (EnemyIndex > combatSystem.enemyInRange.Length - 1) EnemyIndex = 0;
+            target = combatSystem.enemyInRange[MemoryIndex].gameObject;
+            target.GetComponent<UIEnemyelements>().DisableOutline();
         }
         // animaciones
-        if (InCombat) target = combatSystem.enemyInRange[EnemyIndex].gameObject;
+        if (InCombat) 
+        {
+            target = combatSystem.enemyInRange[EnemyIndex].gameObject;
+            target.GetComponent<UIEnemyelements>().EnableOutline();
+        }
+        if (!InCombat)
+        {
+            for (int i = 0; i < combatSystem.enemyInRange.Length; i++)
+            {
+                combatSystem.enemyInRange[i].GetComponent<UIEnemyelements>().DisableOutline();
+            }
+        }
         Movement();
     }
     void Movement()

@@ -49,7 +49,7 @@ public class CombatSystem : MonoBehaviour
             anim.SetBool("Aiming", false);
             Anmo.SetActive(false);
         }
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse1) && !PlayerMovement.InCombat)
         {
             Sword.SetActive(false);
             CameraController.IsAiming = true;
