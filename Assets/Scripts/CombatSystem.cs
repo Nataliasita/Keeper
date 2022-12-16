@@ -12,9 +12,19 @@ public class CombatSystem : MonoBehaviour
     public bool enemyInAttackRange;
     public float comboIndex = 0;
     private PlayerCombatMovement PlayerMovement;
+    public GameObject Sword;
+    public GameObject Anmo;
+
+    [Header("Shotting")]
+    public GameObject Camera;
+    private FollowPlayer CameraController;
+    public GameObject prefab;
+    public GameObject Canon;
+    public Vector3 offset;
     // Start is called before the first frame update
     void Start()
     {
+        CameraController = Camera.GetComponent<FollowPlayer>();
         PlayerMovement = GetComponent<PlayerCombatMovement>();
         anim = GetComponent<Animator>();
     }
@@ -28,11 +38,30 @@ public class CombatSystem : MonoBehaviour
         if (enemyInAttackRange && Input.GetKeyDown(KeyCode.Space))
         {
             PlayerMovement.InCombat = true;
+            Sword.SetActive(true);
+            Anmo.SetActive(false);
+            anim.SetBool("Aiming",false);
             enemyInRange = Physics.OverlapSphere(transform.position, attackRange, whatIsEnemy);
         }
         if (PlayerMovement.InCombat == true && Input.GetKeyDown(KeyCode.Q))
         {
             PlayerMovement.InCombat = false;
+            anim.SetBool("Aiming",false);
+            Anmo.SetActive(false);
+        }
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            Sword.SetActive(false);
+            CameraController.IsAiming = true;
+            anim.SetBool("Aiming",true);
+            DistanceAttack();
+            Anmo.SetActive(true);
+        }
+        else
+        {
+            CameraController.IsAiming = false;
+            anim.SetBool("Aiming",false);
+            Anmo.SetActive(false);
         }
     }
     private void OnDrawGizmosSelected()
@@ -42,8 +71,6 @@ public class CombatSystem : MonoBehaviour
     }
     private void MeeleAttackCombo()
     {
-        Debug.Log(comboIndex);
-
         if (comboIndex > 0) comboIndex -= 0.5f * Time.deltaTime;
 
         if (comboIndex > 4)
@@ -52,9 +79,23 @@ public class CombatSystem : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            Sword.SetActive(true);
             comboIndex += 0.7f;
         }
 
         anim.SetFloat("Attack", comboIndex);
+    }
+    private void DistanceAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0)) 
+        {
+            Anmo.SetActive(true);
+            Sword.SetActive(false);
+            Invoke("Shoot", 0.6f);
+        }
+    }
+    private void Shoot()
+    {
+        Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
     }
 }
