@@ -23,6 +23,7 @@ public class PlayerCombatMovement : MonoBehaviour
     private CombatSystem combatSystem;
     public GameObject target;
     public int EnemyIndex;
+    public Collider[] enemiesList;
     void Start()
     {
         combatSystem = GetComponent<CombatSystem>();
@@ -30,27 +31,33 @@ public class PlayerCombatMovement : MonoBehaviour
     }
     void Update()
     {
+        enemiesList = combatSystem.enemyInRange;
         //Cambio de enemigo seleccionado
-        if (Input.GetKeyDown(KeyCode.E) && EnemyIndex <= combatSystem.enemyInRange.Length)
+        if (Input.GetKeyDown(KeyCode.E) && EnemyIndex <= enemiesList.Length)
         {
             int MemoryIndex;
             MemoryIndex = EnemyIndex;
             EnemyIndex += 1;
-            if (EnemyIndex > combatSystem.enemyInRange.Length - 1) EnemyIndex = 0;
-            target = combatSystem.enemyInRange[MemoryIndex].gameObject;
+            if (EnemyIndex > enemiesList.Length - 1) EnemyIndex = 0;
+            target = enemiesList[MemoryIndex].gameObject;
             target.GetComponent<UIEnemyelements>().DisableOutline();
         }
         // animaciones
-        if (InCombat) 
+        if (InCombat &&  enemiesList[EnemyIndex] != null)
         {
-            target = combatSystem.enemyInRange[EnemyIndex].gameObject;
+            
+            target =  enemiesList[EnemyIndex].gameObject;
+            if (target.GetComponent<EnemyStats>().health <= 0)
+            {
+                combatSystem.CheckForEnemies();
+            }
             target.GetComponent<UIEnemyelements>().EnableOutline();
         }
         if (!InCombat)
         {
-            for (int i = 0; i < combatSystem.enemyInRange.Length; i++)
+            for (int i = 0; i < enemiesList.Length; i++)
             {
-                combatSystem.enemyInRange[i].GetComponent<UIEnemyelements>().DisableOutline();
+                enemiesList[i].GetComponent<UIEnemyelements>().DisableOutline();
             }
         }
         Movement();

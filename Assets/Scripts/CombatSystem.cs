@@ -41,7 +41,7 @@ public class CombatSystem : MonoBehaviour
             Sword.SetActive(true);
             Anmo.SetActive(false);
             anim.SetBool("Aiming", false);
-            enemyInRange = Physics.OverlapSphere(transform.position, attackRange, whatIsEnemy);
+            CheckForEnemies();
         }
         if (PlayerMovement.InCombat == true && Input.GetKeyDown(KeyCode.Q))
         {
@@ -98,4 +98,10 @@ public class CombatSystem : MonoBehaviour
     {
         Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
     }
+    public void CheckForEnemies()
+    {
+        enemyInRange = Physics.OverlapSphere(transform.position, attackRange, whatIsEnemy);
+
+    }
+
 }
