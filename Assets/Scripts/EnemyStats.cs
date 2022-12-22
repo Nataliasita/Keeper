@@ -7,10 +7,12 @@ public class EnemyStats : MonoBehaviour
     [Header("Enemy Stats")]
     [Range(0.0f, 100)]
     public float health;
+    public bool IsAlive;
     public float trhust = 50;
     public Rigidbody rb;
     public GameObject Player;
     public bool RangeEnemy;
+
 
     [Header("Attacking")]
     public float timeBetweenAttacks;
@@ -35,9 +37,11 @@ public class EnemyStats : MonoBehaviour
     {
         rb.AddRelativeForce(Vector3.back * trhust, ForceMode.Impulse);
         health -= damage;
-        if (health < 0)
+        
+        if (health <= 0)
         {
-            DestroyEnemy();
+            IsAlive = false;
+            this.gameObject.SetActive(false);
         }
     }
     public void Attack()
@@ -65,10 +69,6 @@ public class EnemyStats : MonoBehaviour
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
         }
-    }
-    public void DestroyEnemy()
-    {
-        Destroy(gameObject);
     }
     public void Shoot()
     {

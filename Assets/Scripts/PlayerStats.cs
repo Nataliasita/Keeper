@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (Health <= 0)
         {
-            Debug.Log("You are Dead");
+            //Debug.Log("You are Dead");
         }
     }
     public void TakeDamage(float damage)

@@ -21,43 +21,52 @@ public class PlayerCombatMovement : MonoBehaviour
     [Header("player State")]
     public bool InCombat;
     private CombatSystem combatSystem;
+    private DetectorSensor Sensor;
+    public GameObject sensorDetector;
     public GameObject target;
     public int EnemyIndex;
-    public Collider[] enemiesList;
     void Start()
     {
+        Sensor = sensorDetector.GetComponent<DetectorSensor>();
         combatSystem = GetComponent<CombatSystem>();
         anim = GetComponent<Animator>();
     }
     void Update()
     {
-        enemiesList = combatSystem.enemyInRange;
         //Cambio de enemigo seleccionado
-        if (Input.GetKeyDown(KeyCode.E) && EnemyIndex <= enemiesList.Length)
+        if (Input.GetKeyDown(KeyCode.E) && Sensor.enemyInRange.Count > 1)
         {
             int MemoryIndex;
             MemoryIndex = EnemyIndex;
-            EnemyIndex += 1;
-            if (EnemyIndex > enemiesList.Length - 1) EnemyIndex = 0;
-            target = enemiesList[MemoryIndex].gameObject;
+            if (EnemyIndex >= Sensor.enemyInRange.Count - 1) EnemyIndex = 0;
+            if (EnemyIndex < Sensor.enemyInRange.Count - 1) EnemyIndex += 1;
+            target = Sensor.enemyInRange[MemoryIndex].gameObject;
             target.GetComponent<UIEnemyelements>().DisableOutline();
         }
-        // animaciones
-        if (InCombat &&  enemiesList[EnemyIndex] != null)
+        if (Sensor.enemyInRange.Count == 0)
         {
-            
-            target =  enemiesList[EnemyIndex].gameObject;
+            InCombat = false;
+        }
+        // animaciones
+        if (InCombat)
+        {
+            target = Sensor.enemyInRange[EnemyIndex].gameObject;
+            target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
             {
-                combatSystem.CheckForEnemies();
+                Sensor.RemoveEnemies(target);
+                EnemyIndex = 0;
             }
-            target.GetComponent<UIEnemyelements>().EnableOutline();
         }
         if (!InCombat)
         {
-            for (int i = 0; i < enemiesList.Length; i++)
+            for (int i = 0; i < Sensor.enemyInRange.Count; i++)
             {
-                enemiesList[i].GetComponent<UIEnemyelements>().DisableOutline();
+                Sensor.enemyInRange[i].GetComponent<UIEnemyelements>().DisableOutline();
+                if (!Sensor.enemyInRange[i].GetComponent<EnemyStats>().IsAlive)
+                {
+                    Sensor.RemoveEnemies(target);
+                }
             }
         }
         Movement();
@@ -74,7 +83,7 @@ public class PlayerCombatMovement : MonoBehaviour
         anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
 
         // Movement
-        if (InCombat)
+        if (InCombat && target != null)
         {
             controller.Move(transform.forward * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed);
             transform.RotateAround(target.transform.position, Vector3.up, -horizontalInput * rotationSpeed * 15 * Time.deltaTime);
