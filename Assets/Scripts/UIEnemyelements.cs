@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class UIEnemyelements : MonoBehaviour
 {
-     public EnemyStats enemyStats;
+    public EnemyStats enemyStats;
     public Camera my_camera;
     SpriteRenderer Spritecolor;
     public GameObject healthBar;
+    public GameObject Outline;
     void Start()
     {
         my_camera = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -17,7 +18,6 @@ public class UIEnemyelements : MonoBehaviour
     }
     void FixedUpdate()
     {
-
         if (enemyStats.health <= 50) Spritecolor.color = Color.yellow;
         if (enemyStats.health <= 25) Spritecolor.color = Color.red;
     }
@@ -35,5 +35,13 @@ public class UIEnemyelements : MonoBehaviour
     {
         healthBar.transform.LookAt(healthBar.transform.position + my_camera.transform.rotation * Vector3.back,
         my_camera.transform.rotation * Vector3.up);
+    }
+    public void EnableOutline()
+    {
+        Outline.SetActive(true);
+    }
+    public void DisableOutline()
+    {
+        Outline.SetActive(false);
     }
 }

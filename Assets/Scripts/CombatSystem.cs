@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CombatSystem : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class CombatSystem : MonoBehaviour
     public Animator anim;
     public LayerMask whatIsEnemy;
     public float attackRange;
-    public Collider[] enemyInRange;
     public bool enemyInAttackRange;
     public float comboIndex = 0;
     private PlayerCombatMovement PlayerMovement;
@@ -41,7 +41,6 @@ public class CombatSystem : MonoBehaviour
             Sword.SetActive(true);
             Anmo.SetActive(false);
             anim.SetBool("Aiming", false);
-            enemyInRange = Physics.OverlapSphere(transform.position, attackRange, whatIsEnemy);
         }
         if (PlayerMovement.InCombat == true && Input.GetKeyDown(KeyCode.Q))
         {
@@ -49,7 +48,7 @@ public class CombatSystem : MonoBehaviour
             anim.SetBool("Aiming", false);
             Anmo.SetActive(false);
         }
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse1) && !PlayerMovement.InCombat)
         {
             Sword.SetActive(false);
             CameraController.IsAiming = true;
@@ -98,4 +97,5 @@ public class CombatSystem : MonoBehaviour
     {
         Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
     }
+
 }
