@@ -9,17 +9,6 @@ public class NewCycle : MonoBehaviour
     public Material skyThree;
     public Material skyFour;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // RenderSettings.skybox = skyOne;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    
-    }
 
     public void ChangeSkyBox(float valueGrade)
     {

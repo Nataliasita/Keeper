@@ -14,7 +14,11 @@ public class DayNight : MonoBehaviour
 
     public Light auxLune;
 
-   public NewCycle skySceneChange;
+    public NewCycle skySceneChange;
+
+    public SeaCycle seaChange;
+
+    public SeaCycle seaChange2;
 
     void Update()
     {
@@ -27,7 +31,11 @@ public class DayNight : MonoBehaviour
         grade = min / 4 ;
         this.transform.localEulerAngles = new Vector3(grade , -90f , 0f);
 
-        skySceneChange.ChangeSkyBox(grade);  
+        skySceneChange.ChangeSkyBox(grade);
+
+        seaChange.ChangeOcean(grade); 
+        seaChange2.ChangeOcean(grade); 
+
         if(grade >= 180)
         {
             this.GetComponent<Light>().enabled=false;
