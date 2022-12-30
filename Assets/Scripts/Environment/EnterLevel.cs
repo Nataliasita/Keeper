@@ -28,20 +28,20 @@ public class EnterLevel : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player") && lv1 == true)
         {
-            
             Manager.Level1();
-            
         }
-        // if (other.gameObject.CompareTag("Player") && lv2 == true)
-        // {
+
+        if (other.gameObject.CompareTag("Player") && lv2 == true)
+        {
             
-        //     Manager.Level2();
-        // }
-        // if (other.gameObject.CompareTag("Player") && lv3 == true)
-        // {
+            Manager.Level2();
+        }
+        
+        if (other.gameObject.CompareTag("Player") && lv3 == true)
+        {
             
-        //     Manager.Level3();
-        // }
+            Manager.Level3();
+        }
 
     }
 }

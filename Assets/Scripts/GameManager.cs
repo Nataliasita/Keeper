@@ -9,11 +9,8 @@ public enum GameState
 {
     PrincipalMenu,
     Game,
-
     Level1,
-
     Level2,
-
     Level3,
     Controsl,
     Credits,
