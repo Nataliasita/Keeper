@@ -56,11 +56,13 @@ public class PlayerCombatMovement : MonoBehaviour
             {
                 Sensor.RemoveEnemies(target);
                 EnemyIndex = 0;
+                followCamera.GetComponent<FollowPlayer>().LerpCamera();
             }
             if (target.GetComponent<EnemyStats>().weakpoints >= 3)
             {
                 Sensor.RemoveEnemies(target);
                 EnemyIndex = 0;
+                followCamera.GetComponent<FollowPlayer>().LerpCamera();
             }
         }
         if (!InCombat)
