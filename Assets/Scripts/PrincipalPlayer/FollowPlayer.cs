@@ -83,9 +83,9 @@ public class FollowPlayer : MonoBehaviour
     {
         //Stablisch the new camera position
         distanceFromTarget = 1.2f;
-        CameraOffset = new Vector3(0.35f, 1.4f, 0.5f);
+        CameraOffset = new Vector3(0.5f, 1.4f, 0.25f);
         rotationXMinMax = new Vector2(-20f, 20f);
-        rotationYMinMax = new Vector2(-20f, 30f);
+        rotationYMinMax = new Vector2(-180f, 180f);
         // Emulates camera rotation in Y axis
         Quaternion DesiredRotation = Quaternion.Euler(player.transform.rotation.eulerAngles.x,
         this.transform.rotation.eulerAngles.y, player.transform.rotation.eulerAngles.z);

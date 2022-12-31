@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    [Header("Enemy Mode")]
+    public bool CanbeHurt;
+    public GameObject EnemyPrefab;
+
     [Header("Enemy Stats")]
     [Range(0.0f, 100)]
     public float health;
@@ -12,6 +16,8 @@ public class EnemyStats : MonoBehaviour
     public Rigidbody rb;
     public GameObject Player;
     public bool RangeEnemy;
+    public float weakpoints;
+    public bool IsHurt;
 
 
     [Header("Attacking")]
@@ -28,26 +34,35 @@ public class EnemyStats : MonoBehaviour
     }
     private void Update()
     {
+        if (weakpoints >= 3 && !CanbeHurt)
+        {
+            this.gameObject.SetActive(false);
+            Instantiate(EnemyPrefab, this.transform.position, this.transform.rotation);
+        }
     }
     private void ResetAttack()
     {
         alreadyAttacked = false;
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, float trhustPotenciator)
     {
-        rb.AddRelativeForce(Vector3.back * trhust, ForceMode.Impulse);
-        health -= damage;
-        
-        if (health <= 0)
+        IsHurt = true;
+        rb.AddRelativeForce(Vector3.back * trhust * trhustPotenciator, ForceMode.Impulse);
+        Invoke("IsNotHurt", 3.0f);
+        if (CanbeHurt)
         {
-            IsAlive = false;
-            this.gameObject.SetActive(false);
+            health -= damage;
+            if (health <= 0)
+            {
+                IsAlive = false;
+                this.gameObject.SetActive(false);
+            }
         }
     }
     public void Attack()
 
     {
-        if (RangeEnemy)
+        if (RangeEnemy && !IsHurt)
         {
             if (!alreadyAttacked)
             {
@@ -58,7 +73,7 @@ public class EnemyStats : MonoBehaviour
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
             }
         }
-        else if (!RangeEnemy)
+        else if (!RangeEnemy && !IsHurt)
         {
             if (!alreadyAttacked)
             {
@@ -72,17 +87,31 @@ public class EnemyStats : MonoBehaviour
     }
     public void Shoot()
     {
-        Instantiate(projectile, this.transform.position, this.transform.rotation);
+        transform.LookAt(Player.transform.position, Vector3.up);
+        Quaternion projectileRot = Quaternion.identity;
+        projectileRot.eulerAngles = new Vector3(0, transform.rotation.eulerAngles.y, 0);
+        Instantiate(projectile, this.transform.position, projectileRot);
     }
     public void MeeleEnemyAttack()
     {
         hitBox.SetActive(true);
         Invoke("DeactivateHitBox", 1.0f);
+        if (Player.GetComponent<CombatSystem>().PlayerisParry == true)
+        {
+            TakeDamage(0, 1.5f);
+            Player.GetComponent<CombatSystem>().blockingParry();
+        }
+        else
+        {
+            Player.GetComponent<PlayerStats>().TakeDamage(damagePlayer, true);
+        }
     }
     public void DeactivateHitBox()
     {
         hitBox.SetActive(false);
-        Player.GetComponent<PlayerStats>().TakeDamage(damagePlayer);
     }
-
+    public void IsNotHurt()
+    {
+        IsHurt = false;
+    }
 }

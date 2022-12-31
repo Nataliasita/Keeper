@@ -19,7 +19,7 @@ public class DetectorSensor : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy") && PlayerMovement.InCombat == false)
+        if (other.gameObject.CompareTag("Enemy"))
             enemyInRange.Add(other.gameObject);
     }
 
@@ -28,6 +28,7 @@ public class DetectorSensor : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy") && PlayerMovement.InCombat == false)
             enemyInRange.Remove(other.gameObject);
     }
+   
     public void RemoveEnemies(GameObject EnemiesToRemove)
     {
         enemyInRange.Remove(EnemiesToRemove);
