@@ -54,13 +54,13 @@ public class PlayerCombatMovement : MonoBehaviour
             target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
             {
-                Sensor.RemoveEnemies(target);
+                Sensor.enemyInRange.Remove(target);
                 EnemyIndex = 0;
                 followCamera.GetComponent<FollowPlayer>().LerpCamera();
             }
             if (target.GetComponent<EnemyStats>().weakpoints >= 3)
             {
-                Sensor.RemoveEnemies(target);
+                Sensor.enemyInRange.Remove(target);
                 EnemyIndex = 0;
                 followCamera.GetComponent<FollowPlayer>().LerpCamera();
             }
