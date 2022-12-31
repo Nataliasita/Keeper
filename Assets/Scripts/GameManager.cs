@@ -9,9 +9,6 @@ public enum GameState
 {
     PrincipalMenu,
     Game,
-    Level1,
-    Level2,
-    Level3,
     Controsl,
     Credits,
     GameOver
@@ -46,19 +43,6 @@ public class GameManager : MonoBehaviour
     {
         SetGameState(GameState.Game);
     }
-
-    public void Level1()
-    {
-        SetGameState(GameState.Level1);
-    }
-    public void Level2()
-    {
-        SetGameState(GameState.Level2);
-    }
-    public void Level3()
-    {
-        SetGameState(GameState.Level2);
-    }
     // Función encargado de iniciar la scena créditos
     public void Controls()
     {
@@ -89,25 +73,10 @@ public class GameManager : MonoBehaviour
             //TODO: colocar la logica del level game
             isPlaying = true;
             Time.timeScale = 1f;
-            SceneManager.LoadScene("PlayerMovement");
+            //SceneManager.LoadScene("PlayerMovement");
+            SceneManager.LoadScene("PlayerCombact");
             SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
-            SceneManager.LoadScene("PlayerCombact", LoadSceneMode.Additive);
-            SceneManager.LoadScene("Enemies&Map", LoadSceneMode.Additive);
-        }
-        else if (newGameState == GameState.Level1)
-        {
-            //TODO: colocar la logica del menu
-            SceneManager.LoadScene("Level1");
-        }
-        else if (newGameState == GameState.Level2)
-        {
-            //TODO: colocar la logica del menu
-            SceneManager.LoadScene("Level2");
-        }
-        else if (newGameState == GameState.Level3)
-        {
-            //TODO: colocar la logica del menu
-            SceneManager.LoadScene("Level3");
+            //SceneManager.LoadScene("Enemies&Map", LoadSceneMode.Additive);
         }
         else if (newGameState == GameState.Controsl)
         {

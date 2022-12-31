@@ -21,6 +21,7 @@ public class CombatSystem : MonoBehaviour
     public GameObject prefab;
     public GameObject Canon;
     public Vector3 offset;
+    public bool PlayerisParry;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,17 @@ public class CombatSystem : MonoBehaviour
             anim.SetBool("Aiming", false);
             Anmo.SetActive(false);
         }
+        if (Input.GetKey(KeyCode.Mouse1) && PlayerMovement.InCombat)
+        {
+            Sword.SetActive(true);
+            anim.SetBool("Parry", true);
+            PlayerisParry = true;
+        }
+        else
+        {
+            anim.SetBool("Parry", false);
+            PlayerisParry = false;
+        }
         if (Input.GetKey(KeyCode.Mouse1) && !PlayerMovement.InCombat)
         {
             Sword.SetActive(false);
@@ -70,7 +82,7 @@ public class CombatSystem : MonoBehaviour
     }
     private void MeeleAttackCombo()
     {
-        if (comboIndex > 0) comboIndex -= 0.5f * Time.deltaTime;
+        if (comboIndex > 0) comboIndex -= 0.58f * Time.deltaTime;
 
         if (comboIndex > 4)
         {
@@ -96,6 +108,10 @@ public class CombatSystem : MonoBehaviour
     private void Shoot()
     {
         Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
+    }
+      public void blockingParry()
+    {
+        anim.SetTrigger("BlockingParry");
     }
 
 }

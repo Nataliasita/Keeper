@@ -9,7 +9,7 @@ public class swordScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyStats>().TakeDamage(weaponDamage);
+            other.gameObject.GetComponent<EnemyStats>().TakeDamage(weaponDamage,1.1f);
         }
     }
 }

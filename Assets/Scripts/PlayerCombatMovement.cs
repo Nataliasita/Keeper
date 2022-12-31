@@ -38,8 +38,8 @@ public class PlayerCombatMovement : MonoBehaviour
         {
             int MemoryIndex;
             MemoryIndex = EnemyIndex;
-            if (EnemyIndex >= Sensor.enemyInRange.Count - 1) EnemyIndex = 0;
-            if (EnemyIndex < Sensor.enemyInRange.Count - 1) EnemyIndex += 1;
+            if (EnemyIndex < Sensor.enemyInRange.Count) EnemyIndex += 1;
+            if (EnemyIndex >= Sensor.enemyInRange.Count) EnemyIndex = 0;
             target = Sensor.enemyInRange[MemoryIndex].gameObject;
             target.GetComponent<UIEnemyelements>().DisableOutline();
         }
@@ -53,6 +53,11 @@ public class PlayerCombatMovement : MonoBehaviour
             target = Sensor.enemyInRange[EnemyIndex].gameObject;
             target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
+            {
+                Sensor.RemoveEnemies(target);
+                EnemyIndex = 0;
+            }
+            if (target.GetComponent<EnemyStats>().weakpoints >= 3)
             {
                 Sensor.RemoveEnemies(target);
                 EnemyIndex = 0;
