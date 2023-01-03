@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerCombatMovement : MonoBehaviour
 {
+    [Header("Movement")]
+    public float jumpForce;
+    public float jumpCount;
+    public float sprintSpeed;
+    private float memorySpeed;
+    public bool IsSprinting;
+    public bool IsCrouching;
+
     [Header("Camera")]
     [SerializeField] Camera followCamera;
 
@@ -27,6 +35,7 @@ public class PlayerCombatMovement : MonoBehaviour
     public int EnemyIndex;
     void Start()
     {
+        memorySpeed = playerSpeed;
         Sensor = sensorDetector.GetComponent<DetectorSensor>();
         combatSystem = GetComponent<CombatSystem>();
         anim = GetComponent<Animator>();
@@ -89,6 +98,8 @@ public class PlayerCombatMovement : MonoBehaviour
 
         anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
 
+        // imitates normal physics force if the player is grounded
+
         // Movement
         if (InCombat && target != null)
         {
@@ -96,12 +107,46 @@ public class PlayerCombatMovement : MonoBehaviour
             transform.RotateAround(target.transform.position, Vector3.up, -horizontalInput * rotationSpeed * 15 * Time.deltaTime);
             transform.LookAt(target.transform.position - offset);
             playerVelocity.y += gravityValue * Time.deltaTime;
+            if (controller.isGrounded && playerVelocity.y < 0)
+            {
+                playerVelocity.y = gravityValue;
+            }
         }
         else
         {
             controller.Move(movementDirection * playerSpeed * Time.deltaTime);
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
+            if (controller.isGrounded && playerVelocity.y < 0)
+            {
+                playerVelocity.y = gravityValue;
+            }
+            if (Input.GetKeyDown(KeyCode.J) && jumpCount > 0)
+            {
+                anim.SetTrigger("Jump");
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
+                jumpCount--;
+            }
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.J))
+            {
+                anim.SetTrigger("Jump");
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
+                jumpCount = 1;
+            }
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.K))
+            {
+                Debug.Log("IsCrounching");
+            }
+            if (controller.isGrounded && Input.GetKey(KeyCode.L))
+            {
+                anim.SetFloat("Walk",3);
+                playerSpeed = sprintSpeed;
+            }
+            else
+            {
+                anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
+                playerSpeed = memorySpeed;
+            }
         }
         // Stay Camera move
 
@@ -110,5 +155,7 @@ public class PlayerCombatMovement : MonoBehaviour
             Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
         }
+
+
     }
 }
