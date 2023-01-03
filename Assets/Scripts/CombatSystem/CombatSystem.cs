@@ -35,7 +35,7 @@ public class CombatSystem : MonoBehaviour
     {
         MeeleAttackCombo();
         enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsEnemy);
-        if (enemyInAttackRange && Input.GetKeyDown(KeyCode.Space))
+        if (enemyInAttackRange && Input.GetKeyDown(KeyCode.R))
         {
             PlayerMovement.EnemyIndex = 0;
             PlayerMovement.InCombat = true;

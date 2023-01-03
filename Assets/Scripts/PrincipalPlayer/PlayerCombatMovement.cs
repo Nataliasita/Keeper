@@ -117,34 +117,53 @@ public class PlayerCombatMovement : MonoBehaviour
             controller.Move(movementDirection * playerSpeed * Time.deltaTime);
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
+            if (controller.isGrounded)anim.SetBool("Grounded", true);
             if (controller.isGrounded && playerVelocity.y < 0)
             {
                 playerVelocity.y = gravityValue;
             }
-            if (Input.GetKeyDown(KeyCode.J) && jumpCount > 0)
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded)
             {
-                anim.SetTrigger("Jump");
+                anim.SetBool("Grounded", false);
+                anim.SetTrigger("DoubleJump");
                 playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
                 jumpCount--;
+                anim.SetBool("Crouching", false);
+                IsCrouching = false;
             }
-            if (controller.isGrounded && Input.GetKeyDown(KeyCode.J))
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
+                anim.SetBool("Grounded", false);
                 anim.SetTrigger("Jump");
                 playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
                 jumpCount = 1;
+                anim.SetBool("Crouching", false);
+
             }
-            if (controller.isGrounded && Input.GetKeyDown(KeyCode.K))
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.LeftControl))
             {
                 Debug.Log("IsCrounching");
+                anim.SetBool("Crouching", true);
+                IsCrouching = true;
             }
-            if (controller.isGrounded && Input.GetKey(KeyCode.L))
+            if (controller.isGrounded && Input.GetKey(KeyCode.LeftShift))
             {
-                anim.SetFloat("Walk",3);
+                anim.SetFloat("Walk", 3);
                 playerSpeed = sprintSpeed;
+                anim.SetBool("Crouching", false);
+                IsCrouching = false;
             }
             else
             {
                 anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
+                playerSpeed = memorySpeed;
+            }
+            if (IsCrouching)
+            {
+                playerSpeed = playerSpeed / 2;
+            }
+            else if (!IsCrouching)
+            {
                 playerSpeed = memorySpeed;
             }
         }
