@@ -110,6 +110,10 @@ public class FollowPlayer : MonoBehaviour
         rotationXMinMax = rotationXMinMaxMemory;
         rotationYMinMax = rotationYMinMaxMemory;
     }
+    public void LerpCamera()
+    {
+        StartCoroutine(LerpPosition(transform.position, 0.5f,  this.transform.rotation));
+    }
     IEnumerator LerpPosition(Vector3 desiredPosition, float duration, Quaternion LerpRotation)
     {
         float time = 0;
