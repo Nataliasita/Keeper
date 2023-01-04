@@ -92,12 +92,11 @@ public class PlayerCombatMovement : MonoBehaviour
         //Input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
         Vector3 movementInput = Quaternion.Euler(0, followCamera.transform.eulerAngles.y, 0) * new Vector3(horizontalInput, 0, verticalInput);
         Vector3 movementDirection = movementInput.normalized;
-
-        anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
-
+        float walkInput = Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput);
+        anim.SetFloat("Walk", walkInput);
+        Debug.Log(walkInput);
         // imitates normal physics force if the player is grounded
 
         // Movement
@@ -117,7 +116,7 @@ public class PlayerCombatMovement : MonoBehaviour
             controller.Move(movementDirection * playerSpeed * Time.deltaTime);
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
-            if (controller.isGrounded)anim.SetBool("Grounded", true);
+            if (controller.isGrounded) anim.SetBool("Grounded", true);
             if (controller.isGrounded && playerVelocity.y < 0)
             {
                 playerVelocity.y = gravityValue;
@@ -155,7 +154,7 @@ public class PlayerCombatMovement : MonoBehaviour
             }
             else
             {
-                anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
+                anim.SetFloat("Walk", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
                 playerSpeed = memorySpeed;
             }
             if (IsCrouching)
@@ -174,7 +173,5 @@ public class PlayerCombatMovement : MonoBehaviour
             Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
         }
-
-
     }
 }
