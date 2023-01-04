@@ -92,12 +92,11 @@ public class PlayerCombatMovement : MonoBehaviour
         //Input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
         Vector3 movementInput = Quaternion.Euler(0, followCamera.transform.eulerAngles.y, 0) * new Vector3(horizontalInput, 0, verticalInput);
         Vector3 movementDirection = movementInput.normalized;
-
-        anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
-
+        float walkInput = Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput);
+        anim.SetFloat("Walk", walkInput);
+        Debug.Log(walkInput);
         // imitates normal physics force if the player is grounded
 
         // Movement
@@ -117,34 +116,53 @@ public class PlayerCombatMovement : MonoBehaviour
             controller.Move(movementDirection * playerSpeed * Time.deltaTime);
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
+            if (controller.isGrounded) anim.SetBool("Grounded", true);
             if (controller.isGrounded && playerVelocity.y < 0)
             {
                 playerVelocity.y = gravityValue;
             }
-            if (Input.GetKeyDown(KeyCode.J) && jumpCount > 0)
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded)
             {
-                anim.SetTrigger("Jump");
+                anim.SetBool("Grounded", false);
+                anim.SetTrigger("DoubleJump");
                 playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
                 jumpCount--;
+                anim.SetBool("Crouching", false);
+                IsCrouching = false;
             }
-            if (controller.isGrounded && Input.GetKeyDown(KeyCode.J))
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
+                anim.SetBool("Grounded", false);
                 anim.SetTrigger("Jump");
                 playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
                 jumpCount = 1;
+                anim.SetBool("Crouching", false);
+
             }
-            if (controller.isGrounded && Input.GetKeyDown(KeyCode.K))
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.LeftControl))
             {
                 Debug.Log("IsCrounching");
+                anim.SetBool("Crouching", true);
+                IsCrouching = true;
             }
-            if (controller.isGrounded && Input.GetKey(KeyCode.L))
+            if (controller.isGrounded && Input.GetKey(KeyCode.LeftShift))
             {
-                anim.SetFloat("Walk",3);
+                anim.SetFloat("Walk", 3);
                 playerSpeed = sprintSpeed;
+                anim.SetBool("Crouching", false);
+                IsCrouching = false;
             }
             else
             {
-                anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
+                anim.SetFloat("Walk", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
+                playerSpeed = memorySpeed;
+            }
+            if (IsCrouching)
+            {
+                playerSpeed = playerSpeed / 2;
+            }
+            else if (!IsCrouching)
+            {
                 playerSpeed = memorySpeed;
             }
         }
@@ -155,7 +173,5 @@ public class PlayerCombatMovement : MonoBehaviour
             Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
         }
-
-
     }
 }
