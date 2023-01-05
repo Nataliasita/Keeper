@@ -89,10 +89,9 @@ public class GameManager : MonoBehaviour
             //TODO: colocar la logica del level game
             isPlaying = true;
             Time.timeScale = 1f;
-            SceneManager.LoadScene("PlayerMovement");
+            //SceneManager.LoadScene("PlayerMovement");
+            SceneManager.LoadScene("PlayerCombact");
             SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
-            SceneManager.LoadScene("PlayerCombact", LoadSceneMode.Additive);
-            SceneManager.LoadScene("Enemies&Map", LoadSceneMode.Additive);
         }
         else if (newGameState == GameState.Level1)
         {

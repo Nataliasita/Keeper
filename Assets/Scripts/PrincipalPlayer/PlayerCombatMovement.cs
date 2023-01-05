@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerCombatMovement : MonoBehaviour
 {
+    [Header("Movement")]
+    public float jumpForce;
+    public float jumpCount;
+    public float sprintSpeed;
+    private float memorySpeed;
+    public bool IsSprinting;
+    public bool IsCrouching;
+
     [Header("Camera")]
     [SerializeField] Camera followCamera;
 
@@ -27,6 +35,7 @@ public class PlayerCombatMovement : MonoBehaviour
     public int EnemyIndex;
     void Start()
     {
+        memorySpeed = playerSpeed;
         Sensor = sensorDetector.GetComponent<DetectorSensor>();
         combatSystem = GetComponent<CombatSystem>();
         anim = GetComponent<Animator>();
@@ -54,13 +63,15 @@ public class PlayerCombatMovement : MonoBehaviour
             target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
             {
-                Sensor.RemoveEnemies(target);
+                Sensor.enemyInRange.Remove(target);
                 EnemyIndex = 0;
+                followCamera.GetComponent<FollowPlayer>().LerpCamera();
             }
             if (target.GetComponent<EnemyStats>().weakpoints >= 3)
             {
-                Sensor.RemoveEnemies(target);
+                Sensor.enemyInRange.Remove(target);
                 EnemyIndex = 0;
+                followCamera.GetComponent<FollowPlayer>().LerpCamera();
             }
         }
         if (!InCombat)
@@ -81,11 +92,12 @@ public class PlayerCombatMovement : MonoBehaviour
         //Input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
         Vector3 movementInput = Quaternion.Euler(0, followCamera.transform.eulerAngles.y, 0) * new Vector3(horizontalInput, 0, verticalInput);
         Vector3 movementDirection = movementInput.normalized;
-
-        anim.SetFloat("Walk", Mathf.Abs(horizontalInput + verticalInput));
+        float walkInput = Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput);
+        anim.SetFloat("Walk", walkInput);
+        Debug.Log(walkInput);
+        // imitates normal physics force if the player is grounded
 
         // Movement
         if (InCombat && target != null)
@@ -94,12 +106,65 @@ public class PlayerCombatMovement : MonoBehaviour
             transform.RotateAround(target.transform.position, Vector3.up, -horizontalInput * rotationSpeed * 15 * Time.deltaTime);
             transform.LookAt(target.transform.position - offset);
             playerVelocity.y += gravityValue * Time.deltaTime;
+            if (controller.isGrounded && playerVelocity.y < 0)
+            {
+                playerVelocity.y = gravityValue;
+            }
         }
         else
         {
             controller.Move(movementDirection * playerSpeed * Time.deltaTime);
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
+            if (controller.isGrounded) anim.SetBool("Grounded", true);
+            if (controller.isGrounded && playerVelocity.y < 0)
+            {
+                playerVelocity.y = gravityValue;
+            }
+            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded)
+            {
+                anim.SetBool("Grounded", false);
+                anim.SetTrigger("DoubleJump");
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
+                jumpCount--;
+                anim.SetBool("Crouching", false);
+                IsCrouching = false;
+            }
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetBool("Grounded", false);
+                anim.SetTrigger("Jump");
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
+                jumpCount = 1;
+                anim.SetBool("Crouching", false);
+
+            }
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                Debug.Log("IsCrounching");
+                anim.SetBool("Crouching", true);
+                IsCrouching = true;
+            }
+            if (controller.isGrounded && Input.GetKey(KeyCode.LeftShift))
+            {
+                anim.SetFloat("Walk", 3);
+                playerSpeed = sprintSpeed;
+                anim.SetBool("Crouching", false);
+                IsCrouching = false;
+            }
+            else
+            {
+                anim.SetFloat("Walk", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
+                playerSpeed = memorySpeed;
+            }
+            if (IsCrouching)
+            {
+                playerSpeed = playerSpeed / 2;
+            }
+            else if (!IsCrouching)
+            {
+                playerSpeed = memorySpeed;
+            }
         }
         // Stay Camera move
 

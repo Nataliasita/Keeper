@@ -53,7 +53,7 @@ public class FollowPlayer : MonoBehaviour
         player.transform.rotation.eulerAngles.y, this.transform.rotation.eulerAngles.z);
         MovementPosition = player.transform.position + CameraOffset - transform.forward * distanceFromTarget;
 
-        if (Input.GetKeyDown(KeyCode.Space) && !player.GetComponent<PlayerCombatMovement>().InCombat) StartCoroutine(LerpPosition(target.transform.position, 1f, target.transform.rotation));
+        if (Input.GetKeyDown(KeyCode.R) && !player.GetComponent<PlayerCombatMovement>().InCombat) StartCoroutine(LerpPosition(target.transform.position, 1f, target.transform.rotation));
         if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<PlayerCombatMovement>().InCombat) StartCoroutine(LerpPosition(target.transform.position, 0.5f, target.transform.rotation));
         if (Input.GetKeyDown(KeyCode.Q) && player.GetComponent<PlayerCombatMovement>().InCombat) StartCoroutine(LerpPosition(MovementPosition, 0.5f, CamDesiredRotation));
         if (player.GetComponent<PlayerCombatMovement>().InCombat) IsInCombact();
@@ -109,6 +109,10 @@ public class FollowPlayer : MonoBehaviour
         CameraOffset = CameraOffsetMemory;
         rotationXMinMax = rotationXMinMaxMemory;
         rotationYMinMax = rotationYMinMaxMemory;
+    }
+    public void LerpCamera()
+    {
+        StartCoroutine(LerpPosition(transform.position, 0.5f,  this.transform.rotation));
     }
     IEnumerator LerpPosition(Vector3 desiredPosition, float duration, Quaternion LerpRotation)
     {

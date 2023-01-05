@@ -17,19 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIElements.unity
     guid: 03728e664eda8f444afa86f269faf431
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlayerMovement.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/Enemies&Map.unity
-    guid: db4cb5151d733e5419b7658ef8a96603
   - enabled: 1
     path: Assets/Scenes/PlayerCombact.unity
     guid: 6d11445c6359f044cb70e40ffac54430
   - enabled: 1
     path: Assets/Scenes/UI Scenes/GameOver.unity
     guid: 69f4daa069e525347b451bdf03451b36
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneStart.unity
     guid: faa298b0d069cee409e221632d4611fd
   - enabled: 1
