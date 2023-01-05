@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4136760577685382447}
   - component: {fileID: 2201220741676274149}
   - component: {fileID: 5016101956659924718}
+  - component: {fileID: 8474604021766111456}
   m_Layer: 0
   m_Name: plant1
   m_TagString: Untagged
@@ -99,6 +100,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4781277628412113339, guid: a318ed492de1a894f8dd25e1fea89c85, type: 3}
+--- !u!114 &8474604021766111456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399891185784172592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250bc373229738c4d9455aa12e6b1a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9091368717114072711
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +123,8 @@ GameObject:
   - component: {fileID: 1533676161901963641}
   - component: {fileID: 5509259904428140607}
   - component: {fileID: 2116553905839049982}
+  - component: {fileID: 2857684253388348074}
+  - component: {fileID: 2680904055484211925}
   m_Layer: 0
   m_Name: leaves
   m_TagString: Untagged
@@ -182,3 +197,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2857684253388348074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091368717114072711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250bc373229738c4d9455aa12e6b1a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &2680904055484211925
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091368717114072711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.03292722
+  m_Center: {x: 0.004575992, y: 0.0006921551, z: 0.037373304}
