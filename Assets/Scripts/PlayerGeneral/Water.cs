@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-    public GameObject VolumenWater;
-
-
     private void OnTriggerEnter(Collider collider) {
         
         if(collider.CompareTag("Player"))
         {
-            
-            VolumenWater.SetActive(true);
-        }
+            // Time.timeScale - 0.3f;
             
         }
+            
+        }
+
 
 }
 
