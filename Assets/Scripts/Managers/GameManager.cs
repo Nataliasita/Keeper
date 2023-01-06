@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
             isPlaying = true;
             Time.timeScale = 1f;
             //SceneManager.LoadScene("PlayerMovement");
-            SceneManager.LoadScene("PlayerCombact");
+            SceneManager.LoadScene("SceneStart");
             SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
         }
         else if (newGameState == GameState.Level1)

@@ -96,7 +96,6 @@ public class PlayerCombatMovement : MonoBehaviour
         Vector3 movementDirection = movementInput.normalized;
         float walkInput = Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput);
         anim.SetFloat("Walk", walkInput);
-        Debug.Log(walkInput);
         // imitates normal physics force if the player is grounded
 
         // Movement
