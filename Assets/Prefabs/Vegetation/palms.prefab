@@ -39,6 +39,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4217146120051376797}
     m_Modifications:
+    - target: {fileID: 4704008472032963976, guid: 71482b65d13ea95459115ae1847e9702,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170393806585169715, guid: 71482b65d13ea95459115ae1847e9702,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8162240606491763055, guid: 71482b65d13ea95459115ae1847e9702,
         type: 3}
       propertyPath: m_RootOrder
@@ -108,6 +118,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560397222373198218, guid: 71482b65d13ea95459115ae1847e9702,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8794908000122158037, guid: 71482b65d13ea95459115ae1847e9702,
         type: 3}
