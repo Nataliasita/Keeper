@@ -4,31 +4,38 @@ using UnityEngine;
 
 public class InCameraDetector : MonoBehaviour
 {
-    Camera camera;
-    MeshRenderer renderer;
+    Camera PrincipalCamera;
+    Camera miniMapCamera;
+    MeshRenderer objectRenderer;
     Plane[] cameraFrustum;
-    Collider collider;
+    Plane[] cameraMinimapFrustum;
+    Collider colliderDetector;
     void Start()
     {
-        camera = Camera.main;
-        renderer = GetComponent<MeshRenderer>();
-        collider = GetComponent<Collider>();
-
+        PrincipalCamera = Camera.main;
+        miniMapCamera = GameObject.Find("CameraMiniMap").GetComponent<Camera>();
+        objectRenderer = GetComponent<MeshRenderer>();
+        colliderDetector = GetComponent<Collider>();
     }
 
-    
+
     void Update()
     {
-        var bounds = collider.bounds;
-        cameraFrustum = GeometryUtility.CalculateFrustumPlanes(camera);
+        var bounds = colliderDetector.bounds;
+        cameraFrustum = GeometryUtility.CalculateFrustumPlanes(PrincipalCamera);
+        cameraMinimapFrustum = GeometryUtility.CalculateFrustumPlanes(miniMapCamera);
 
-        if( GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
+        if (GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
         {
-            renderer.enabled=true;
-        }else
+            objectRenderer.enabled = true;
+        }
+        else
         {
-            renderer.enabled=false;
-            
+            objectRenderer.enabled = false;
+        }
+        if (GeometryUtility.TestPlanesAABB(cameraMinimapFrustum, bounds))
+        {
+            objectRenderer.enabled = true;
         }
     }
 }
