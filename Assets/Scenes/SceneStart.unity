@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.145
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 931368849}
-  m_IndirectSpecularColor: {r: 0.016325144, g: 0.060521796, b: 0.10484681, a: 0.145}
+  m_IndirectSpecularColor: {r: 0.016325451, g: 0.06057105, b: 0.10485989, a: 0.145}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6426,6 +6426,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 219275409}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &221293477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3992725198048743844, guid: 4c709c145a380314c85eb16db05226d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 486398153}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &221293482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221293477}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 1.0000002, z: 6.123235e-17}
+  m_Center: {x: 0.0000009536743, y: -0.00000047683716, z: 0.00000047683716}
 --- !u!1001 &221785865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16667,7 +16686,7 @@ PrefabInstance:
     - target: {fileID: 9043812222665089149, guid: 4c709c145a380314c85eb16db05226d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.86
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9043812222665089149, guid: 4c709c145a380314c85eb16db05226d1,
         type: 3}
@@ -16677,7 +16696,7 @@ PrefabInstance:
     - target: {fileID: 9043812222665089149, guid: 4c709c145a380314c85eb16db05226d1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9043812222665089149, guid: 4c709c145a380314c85eb16db05226d1,
         type: 3}
@@ -16714,7 +16733,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9128282162768403444, guid: 4c709c145a380314c85eb16db05226d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c709c145a380314c85eb16db05226d1, type: 3}
 --- !u!1001 &494121665
 PrefabInstance:
@@ -30198,7 +30218,7 @@ LightingSettings:
   m_BounceScale: 1
   m_AlbedoBoost: 1
   m_IndirectOutputScale: 1
-  m_UsingShadowmask: 1
+  m_UsingShadowmask: 0
   m_BakeBackend: 1
   m_LightmapMaxSize: 1024
   m_BakeResolution: 40
@@ -30209,7 +30229,7 @@ LightingSettings:
   m_CompAOExponent: 1
   m_CompAOExponentDirect: 0
   m_ExtractAO: 0
-  m_MixedBakeMode: 2
+  m_MixedBakeMode: 0
   m_LightmapsBakeMode: 1
   m_FilterMode: 1
   m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
@@ -34635,7 +34655,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 2.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -34644,7 +34664,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 0.4
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -63520,7 +63540,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6329270
+  m_Name: pb_Mesh-3546000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

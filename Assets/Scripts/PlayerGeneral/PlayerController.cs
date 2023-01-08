@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     public float _gravityValue = -9.81f;
     public Transform waterCheck;
 
-    float _upInmersive = 2.0f;
+   //float _upInmersive = 2.0f;
 
     private void Start()
     {
