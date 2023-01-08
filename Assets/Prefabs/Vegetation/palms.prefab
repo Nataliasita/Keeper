@@ -129,6 +129,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8183156427591495160, guid: 71482b65d13ea95459115ae1847e9702,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8560397222373198218, guid: 71482b65d13ea95459115ae1847e9702,
         type: 3}
       propertyPath: m_Convex
@@ -139,8 +144,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: palmNew
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8560397222373198218, guid: 71482b65d13ea95459115ae1847e9702, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71482b65d13ea95459115ae1847e9702, type: 3}
+--- !u!1 &6825075769345208820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6492780949718236578, guid: 71482b65d13ea95459115ae1847e9702,
+    type: 3}
+  m_PrefabInstance: {fileID: 337057076143623254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &239831246799951858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825075769345208820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.031126307, y: 0.030520033, z: 0.018588921}
+  m_Center: {x: 0.004283274, y: -0.0019411071, z: 0.00020170466}
+--- !u!65 &8572717908955913463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825075769345208820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.040996216, y: 0.030520033, z: 0.018588921}
+  m_Center: {x: -0.09273099, y: -0.0019411071, z: 0.00020170466}
 --- !u!4 &8497005011373878585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8162240606491763055, guid: 71482b65d13ea95459115ae1847e9702,
