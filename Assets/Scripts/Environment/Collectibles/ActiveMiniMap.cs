@@ -7,18 +7,33 @@ public class ActiveMiniMap : MonoBehaviour
     public GameObject Minimap;
 
     private bool active;
+    public float duration;
+    public FollowPlayer camerafollow;
 
-    void Start() {
-        
-    }
-    void Update() 
+    void Start()
     {
-        if(Input.GetKeyUp(KeyCode.M))
-        {   
-            active =! active;
+         StartCoroutine(CameraFix(duration));
+         camerafollow = GetComponent<FollowPlayer>();
+    }
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.M))
+        {
+            active = !active;
             Minimap.SetActive(active);
         }
-        
+
         Minimap.SetActive(active);
+    }
+    IEnumerator CameraFix(float duration)
+    {
+        float time = 0;
+        while (time < duration)
+        {
+         camerafollow.enabled = false; 
+         time += Time.deltaTime; 
+            yield return null;
+        }
+        camerafollow.enabled = true;
     }
 }

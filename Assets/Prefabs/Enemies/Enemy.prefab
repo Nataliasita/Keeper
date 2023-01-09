@@ -990,14 +990,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanbeHurt: 1
+  RangeShootEnemy: 0
   EnemyPrefab: {fileID: 0}
   health: 100
   IsAlive: 0
-  trhust: 350
+  trhust: 80
   rb: {fileID: 2986089137831835301}
   Player: {fileID: 0}
   RangeEnemy: 0
   weakpoints: 0
+  IsHurt: 0
   timeBetweenAttacks: 2
   alreadyAttacked: 0
   hitBox: {fileID: 2986089137289071810}

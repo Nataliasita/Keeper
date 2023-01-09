@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6527430000330521187}
   - component: {fileID: 4011009223732074377}
   - component: {fileID: 2961581801793601303}
-  - component: {fileID: 6721553170088719616}
   m_Layer: 3
   m_Name: WeakSpot (6)
   m_TagString: WeakPoint
@@ -98,18 +97,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6721553170088719616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033215670127316551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4418813316650883832
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +109,6 @@ GameObject:
   - component: {fileID: 3412168851485167732}
   - component: {fileID: 2718742236798531208}
   - component: {fileID: 1204510517348207421}
-  - component: {fileID: 8702736121726350210}
   m_Layer: 3
   m_Name: WeakSpot (5)
   m_TagString: WeakPoint
@@ -208,18 +194,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8702736121726350210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4418813316650883832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5178694170504535692
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +206,6 @@ GameObject:
   - component: {fileID: 5178694170504535687}
   - component: {fileID: 5178694170504535680}
   - component: {fileID: 5178694170504535681}
-  - component: {fileID: 5178694170504535682}
   m_Layer: 3
   m_Name: WeakSpot (1)
   m_TagString: Untagged
@@ -318,18 +291,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5178694170504535682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178694170504535692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5178694170748313043
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +303,6 @@ GameObject:
   - component: {fileID: 5178694170748313046}
   - component: {fileID: 5178694170748313047}
   - component: {fileID: 5178694170748313040}
-  - component: {fileID: 5178694170748313041}
   m_Layer: 3
   m_Name: WeakSpot
   m_TagString: WeakPoint
@@ -428,18 +388,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5178694170748313041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178694170748313043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5178694171301123181
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +400,6 @@ GameObject:
   - component: {fileID: 5178694171301123168}
   - component: {fileID: 5178694171301123169}
   - component: {fileID: 5178694171301123170}
-  - component: {fileID: 5178694171301123171}
   m_Layer: 3
   m_Name: WeakSpot
   m_TagString: WeakPoint
@@ -538,18 +485,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5178694171301123171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178694171301123181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5178694171597546238
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +497,6 @@ GameObject:
   - component: {fileID: 5178694171597546225}
   - component: {fileID: 5178694171597546226}
   - component: {fileID: 5178694171597546227}
-  - component: {fileID: 5178694171597546236}
   m_Layer: 3
   m_Name: WeakSpot (3)
   m_TagString: WeakPoint
@@ -648,18 +582,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5178694171597546236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178694171597546238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5178694171779083716
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanbeHurt: 0
+  RangeShootEnemy: 0
   EnemyPrefab: {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9,
     type: 3}
   health: 100
@@ -981,7 +904,6 @@ GameObject:
   - component: {fileID: 5178694172100923344}
   - component: {fileID: 5178694172100923345}
   - component: {fileID: 5178694172100923346}
-  - component: {fileID: 5178694172100923347}
   m_Layer: 3
   m_Name: WeakSpot (4)
   m_TagString: Untagged
@@ -1067,18 +989,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5178694172100923347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178694172100923357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5178694172265526356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1085,6 @@ GameObject:
   - component: {fileID: 5178694172331805770}
   - component: {fileID: 5178694172331805771}
   - component: {fileID: 5178694172331805780}
-  - component: {fileID: 5178694172331805781}
   m_Layer: 3
   m_Name: WeakSpot (5)
   m_TagString: Untagged
@@ -1261,18 +1170,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5178694172331805781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178694172331805783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5178694172483420927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,7 +1279,6 @@ GameObject:
   - component: {fileID: 5178694172494405279}
   - component: {fileID: 5178694172494405272}
   - component: {fileID: 5178694172494405273}
-  - component: {fileID: 5178694172494405274}
   m_Layer: 3
   m_Name: WeakSpot (4)
   m_TagString: WeakPoint
@@ -1468,18 +1364,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5178694172494405274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5178694172494405348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6737359314996420704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1376,6 @@ GameObject:
   - component: {fileID: 6485722085387437599}
   - component: {fileID: 4662583551982071087}
   - component: {fileID: 3054069532397738787}
-  - component: {fileID: 1955603530141054034}
   m_Layer: 3
   m_Name: WeakSpot (7)
   m_TagString: Untagged
@@ -1578,15 +1461,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1955603530141054034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737359314996420704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf2b3a2a0554b44b8d95f726eef1e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

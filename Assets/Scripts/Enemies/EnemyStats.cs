@@ -6,6 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     [Header("Enemy Mode")]
     public bool CanbeHurt;
+    public bool RangeShootEnemy;
     public GameObject EnemyPrefab;
 
     [Header("Enemy Stats")]
@@ -26,18 +27,24 @@ public class EnemyStats : MonoBehaviour
     public GameObject hitBox;
     public float damagePlayer;
     public GameObject projectile;
+    //private DetectorSensor Sensor;
 
     private void Start()
     {
+        //Sensor = GameObject.Find("Sensor").GetComponent<DetectorSensor>();
         Player = GameObject.Find("PlayerComponents");
         rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
-        if (weakpoints >= 3 && !CanbeHurt)
+        if (!RangeShootEnemy)
         {
-            this.gameObject.SetActive(false);
-            Instantiate(EnemyPrefab, this.transform.position, this.transform.rotation);
+            if (weakpoints >= 3)
+            {
+                Instantiate(EnemyPrefab, this.transform.position, this.transform.rotation);
+                //Sensor.RemoveEnemies(this.gameObject);
+                this.gameObject.SetActive(false);
+            }
         }
     }
     private void ResetAttack()
@@ -87,10 +94,18 @@ public class EnemyStats : MonoBehaviour
     }
     public void Shoot()
     {
-        transform.LookAt(Player.transform.position, Vector3.up);
-        Quaternion projectileRot = Quaternion.identity;
-        projectileRot.eulerAngles = new Vector3(0, transform.rotation.eulerAngles.y, 0);
-        Instantiate(projectile, this.transform.position, projectileRot);
+        if (RangeShootEnemy)
+        {
+            transform.LookAt(Player.transform.position);
+            Instantiate(projectile, this.transform.position, this.transform.rotation);
+        }
+        else
+        {
+            transform.LookAt(Player.transform.position, Vector3.up);
+            Quaternion projectileRot = Quaternion.identity;
+            projectileRot.eulerAngles = new Vector3(0, transform.rotation.eulerAngles.y, 0);
+            Instantiate(projectile, this.transform.position, projectileRot);
+        }
     }
     public void MeeleEnemyAttack()
     {
@@ -98,7 +113,7 @@ public class EnemyStats : MonoBehaviour
         Invoke("DeactivateHitBox", 1.0f);
         if (Player.GetComponent<CombatSystem>().PlayerisParry == true)
         {
-            TakeDamage(0, 1.5f);
+            TakeDamage(0, 1f);
             Player.GetComponent<CombatSystem>().blockingParry();
         }
         else

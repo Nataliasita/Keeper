@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 2763019195858617067}
   - component: {fileID: 8703800432505516530}
   - component: {fileID: 604803895078305869}
+  - component: {fileID: 284892917680269482}
   m_Layer: 0
   m_Name: leaves.003
   m_TagString: Untagged
@@ -207,6 +208,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.051462833, y: 0.051569447, z: 0.03330436}
   m_Center: {x: 0.0011181188, y: -0.0005639057, z: 0.04171832}
+--- !u!114 &284892917680269482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682844173138216527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250bc373229738c4d9455aa12e6b1a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4820490345703781861
 GameObject:
   m_ObjectHideFlags: 0
