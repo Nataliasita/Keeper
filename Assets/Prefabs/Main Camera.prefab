@@ -168,7 +168,7 @@ MonoBehaviour:
   smoothTime: 1
   rotationXMinMax: {x: -10, y: 30}
   rotationYMinMax: {x: -360, y: 360}
-  CameraOffset: {x: 0.3, y: 1, z: 0.43}
+  CameraOffset: {x: 0.54, y: 1.27, z: 0.01}
   player: {fileID: 0}
   IsAiming: 0
   CameraOffsetMemory: {x: 0, y: 0, z: 0}

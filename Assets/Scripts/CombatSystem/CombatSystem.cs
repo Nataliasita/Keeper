@@ -5,6 +5,15 @@ using System;
 
 public class CombatSystem : MonoBehaviour
 {
+    [Header("CombatProgression")]
+    [SerializeField] bool PowerAttack;
+    [SerializeField] bool PowerAttack2;
+    [SerializeField] bool PowerAttack3;
+    [SerializeField] bool PowerAttack4;
+    [SerializeField] bool MiniMap;
+    [SerializeField] bool NigthVision;
+    public bool AreaDamageProjectile;
+    public bool freeezingProjectile;
     [Header("Attacking")]
     public Animator anim;
     public LayerMask whatIsEnemy;
@@ -19,6 +28,8 @@ public class CombatSystem : MonoBehaviour
     public GameObject Camera;
     private FollowPlayer CameraController;
     public GameObject prefab;
+    public GameObject Areaprefab;
+    public GameObject Freezeprefab;
     public GameObject Canon;
     public Vector3 offset;
     public bool PlayerisParry;
@@ -49,7 +60,7 @@ public class CombatSystem : MonoBehaviour
             anim.SetBool("Aiming", false);
             Anmo.SetActive(false);
         }
-        if (Input.GetKey(KeyCode.Mouse1) && PlayerMovement.InCombat)
+        if (Input.GetKey(KeyCode.Mouse1) && PlayerMovement.InCombat && PowerAttack2)
         {
             Sword.SetActive(true);
             anim.SetBool("Parry", true);
@@ -74,6 +85,21 @@ public class CombatSystem : MonoBehaviour
             anim.SetBool("Aiming", false);
             Anmo.SetActive(false);
         }
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            AreaDamageProjectile = false;
+            freeezingProjectile = false;
+        }
+        if (Input.GetKey(KeyCode.Alpha2) && PowerAttack3)
+        {
+            AreaDamageProjectile = true;
+            freeezingProjectile = false;
+        }
+        if (Input.GetKey(KeyCode.Alpha3) && PowerAttack4)
+        {
+            AreaDamageProjectile = false;
+            freeezingProjectile = true;
+        }
     }
     private void OnDrawGizmosSelected()
     {
@@ -82,19 +108,29 @@ public class CombatSystem : MonoBehaviour
     }
     private void MeeleAttackCombo()
     {
-        if (comboIndex > 0) comboIndex -= 0.58f * Time.deltaTime;
+        if (PowerAttack)
+        {
+            if (comboIndex > 0) comboIndex -= 0.58f * Time.deltaTime;
 
-        if (comboIndex > 4)
+            if (comboIndex > 4)
+            {
+                comboIndex = 0;
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Sword.SetActive(true);
+                comboIndex += 0.7f;
+            }
+
+            anim.SetFloat("Attack", comboIndex);
+        }
+        else
         {
             comboIndex = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Sword.SetActive(true);
-            comboIndex += 0.7f;
+            Sword.SetActive(false);
         }
 
-        anim.SetFloat("Attack", comboIndex);
+
     }
     private void DistanceAttack()
     {
@@ -102,14 +138,26 @@ public class CombatSystem : MonoBehaviour
         {
             Anmo.SetActive(true);
             Sword.SetActive(false);
+            anim.SetTrigger("Shoot");
             Invoke("Shoot", 0.6f);
         }
     }
     private void Shoot()
     {
-        Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
+        if (AreaDamageProjectile)
+        {
+            Instantiate(Areaprefab, Canon.transform.position + offset, Canon.transform.rotation);
+        }
+        else if (freeezingProjectile)
+        {
+            Instantiate(Freezeprefab, Canon.transform.position + offset, Canon.transform.rotation);
+        }
+        else
+        {
+            Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
+        }
     }
-      public void blockingParry()
+    public void blockingParry()
     {
         anim.SetTrigger("BlockingParry");
     }

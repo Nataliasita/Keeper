@@ -8,15 +8,38 @@ public class DetectorSensor : MonoBehaviour
     private PlayerCombatMovement PlayerMovement;
     // Start is called before the first frame update
     public int Count;
+    private SphereCollider myCollider;
+    public float RadiusSensor;
+    public float MinRadiusSensor;
+    public float Deployspeed;
+    private bool Deploycollider;
+    void Start()
+    {
+        myCollider = GetComponent<SphereCollider>();
+        PlayerMovement = GameObject.Find("PlayerComponents").GetComponent<PlayerCombatMovement>();
+    }
     void Update()
     {
         Count = enemyInRange.Count;
+        if (Input.GetKeyDown(KeyCode.R) && enemyInRange.Count != 0)
+            Deploycollider = true;
+        if (Input.GetKeyDown(KeyCode.Q))
+            Deploycollider = false;
+        if (Deploycollider)
+        {
+            if (myCollider.radius < RadiusSensor)
+            {
+                myCollider.radius += Deployspeed * Time.deltaTime;
+            }
+        }
+        if (!Deploycollider)
+        {
+            if (myCollider.radius > MinRadiusSensor)
+            {
+                myCollider.radius -= Deployspeed * Time.deltaTime;
+            }
+        }
     }
-    void Start()
-    {
-        PlayerMovement = GameObject.Find("PlayerComponents").GetComponent<PlayerCombatMovement>();
-    }
-
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {

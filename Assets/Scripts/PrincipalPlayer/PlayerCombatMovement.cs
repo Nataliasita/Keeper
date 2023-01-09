@@ -29,7 +29,7 @@ public class PlayerCombatMovement : MonoBehaviour
     [Header("player State")]
     public bool InCombat;
     private CombatSystem combatSystem;
-    private DetectorSensor Sensor;
+    public DetectorSensor Sensor;
     public GameObject sensorDetector;
     public GameObject target;
     public int EnemyIndex;
@@ -65,13 +65,13 @@ public class PlayerCombatMovement : MonoBehaviour
             {
                 Sensor.enemyInRange.Remove(target);
                 EnemyIndex = 0;
-                followCamera.GetComponent<FollowPlayer>().LerpCamera();
+                //followCamera.GetComponent<FollowPlayer>().LerpCamera();
             }
-            if (target.GetComponent<EnemyStats>().weakpoints >= 3)
+            if (target.GetComponent<EnemyStats>().weakpoints >= 3 && !target.GetComponent<EnemyStats>().CanbeHurt)
             {
                 Sensor.enemyInRange.Remove(target);
                 EnemyIndex = 0;
-                followCamera.GetComponent<FollowPlayer>().LerpCamera();
+                //followCamera.GetComponent<FollowPlayer>().LerpCamera();
             }
         }
         if (!InCombat)
@@ -79,10 +79,6 @@ public class PlayerCombatMovement : MonoBehaviour
             for (int i = 0; i < Sensor.enemyInRange.Count; i++)
             {
                 Sensor.enemyInRange[i].GetComponent<UIEnemyelements>().DisableOutline();
-                if (!Sensor.enemyInRange[i].GetComponent<EnemyStats>().IsAlive)
-                {
-                    Sensor.RemoveEnemies(target);
-                }
             }
         }
         Movement();
