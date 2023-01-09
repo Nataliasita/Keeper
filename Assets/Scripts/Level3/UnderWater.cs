@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnderWater : MonoBehaviour
 {
-    public GameObject sistPartBurbujas, vidrioVFX;
+    public GameObject volumeOne, volumeTwo, particleBubbles;
 
     public bool underWater;
 
@@ -12,16 +12,18 @@ public class UnderWater : MonoBehaviour
     {
         if (underWater)
         {
-            sistPartBurbujas.SetActive(true);
+            volumeOne.SetActive(true);
+            particleBubbles.SetActive(true);
             RenderSettings.fog = true;
-            RenderSettings.fogDensity = 0.01f;
-            vidrioVFX.SetActive(true);
+            RenderSettings.fogDensity = 0.003f;
+            volumeTwo.SetActive(true);
         }
         else
         {
-            sistPartBurbujas.SetActive(false);
+            volumeOne.SetActive(false);
             RenderSettings.fog = false;
-            vidrioVFX.SetActive(false);
+            volumeTwo.SetActive(false);
+            particleBubbles.SetActive(false);
         }
     }
 }
