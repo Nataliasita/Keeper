@@ -55,14 +55,17 @@ public class PlayerCombatMovement : MonoBehaviour
         if (Sensor.enemyInRange.Count == 0)
         {
             InCombat = false;
+            
         }
         // animaciones
         if (InCombat)
         {
+            anim.SetBool("InCombat",true);
             target = Sensor.enemyInRange[EnemyIndex].gameObject;
             target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
             {
+                target.GetComponent<UIEnemyelements>().DisableOutline();
                 Sensor.enemyInRange.Remove(target);
                 EnemyIndex = 0;
                 //followCamera.GetComponent<FollowPlayer>().LerpCamera();
@@ -76,6 +79,7 @@ public class PlayerCombatMovement : MonoBehaviour
         }
         if (!InCombat)
         {
+            anim.SetBool("InCombat",false);
             for (int i = 0; i < Sensor.enemyInRange.Count; i++)
             {
                 Sensor.enemyInRange[i].GetComponent<UIEnemyelements>().DisableOutline();

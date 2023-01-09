@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5178694171779083716, guid: 791c6b56809b3894793cbe284164ef67,
         type: 3}
       propertyPath: m_Name
-      value: EnemyInvoker
+      value: DistanceEnemyVariant
       objectReference: {fileID: 0}
     - target: {fileID: 5178694171779083716, guid: 791c6b56809b3894793cbe284164ef67,
         type: 3}
@@ -84,6 +84,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5178694171779083768, guid: 791c6b56809b3894793cbe284164ef67,
         type: 3}
+      propertyPath: prefabLife
+      value: 
+      objectReference: {fileID: 2883028275037452728, guid: 9b7bfb186b0af6046a82570a690befa1,
+        type: 3}
+    - target: {fileID: 5178694171779083768, guid: 791c6b56809b3894793cbe284164ef67,
+        type: 3}
+      propertyPath: prefabReward
+      value: 
+      objectReference: {fileID: 9015915351480044101, guid: 9790066b38fa32e47a94e4d04b5a1b2a,
+        type: 3}
+    - target: {fileID: 5178694171779083768, guid: 791c6b56809b3894793cbe284164ef67,
+        type: 3}
+      propertyPath: rewardCuantity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178694171779083768, guid: 791c6b56809b3894793cbe284164ef67,
+        type: 3}
       propertyPath: RangeShootEnemy
       value: 1
       objectReference: {fileID: 0}
@@ -106,6 +123,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178694172265526356, guid: 791c6b56809b3894793cbe284164ef67,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178694172483420927, guid: 791c6b56809b3894793cbe284164ef67,
+        type: 3}
+      propertyPath: m_TagString
+      value: HitBox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 791c6b56809b3894793cbe284164ef67, type: 3}
