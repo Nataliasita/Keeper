@@ -165,7 +165,7 @@ public class PlayerCombatMovement : MonoBehaviour
             }
             if (controller.isGrounded && Input.GetKey(KeyCode.LeftShift))
             {
-                anim.SetFloat("Walk", 3);
+                anim.SetFloat("Walk", walkInput * 3);
                 playerSpeed = sprintSpeed;
                 anim.SetBool("Crouching", false);
                 IsCrouching = false;
