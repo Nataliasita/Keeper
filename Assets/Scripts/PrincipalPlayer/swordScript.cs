@@ -9,12 +9,15 @@ public class swordScript : MonoBehaviour
     public GameObject ParticleEffect;
     private GameObject player;
     public GameObject trialEffect;
+    private StatsManager statsManager;
     private void Start()
     {
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         player = GameObject.Find("PlayerComponents");
     }
     private void Update()
     {
+        weaponDamage = statsManager.MaxDamage;
 
         if (player.GetComponent<CombatSystem>().comboIndex > 0)
         {

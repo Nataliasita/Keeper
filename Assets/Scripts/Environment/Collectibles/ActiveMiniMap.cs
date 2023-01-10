@@ -12,8 +12,10 @@ public class ActiveMiniMap : MonoBehaviour
 
     void Start()
     {
-         StartCoroutine(CameraFix(duration));
-         camerafollow = GetComponent<FollowPlayer>();
+        Minimap = GameObject.Find("PanelMinimap");
+        StartCoroutine(CameraFix(duration));
+        camerafollow = GetComponent<FollowPlayer>();
+        Minimap.SetActive(false);
     }
     void Update()
     {
@@ -30,8 +32,8 @@ public class ActiveMiniMap : MonoBehaviour
         float time = 0;
         while (time < duration)
         {
-         camerafollow.enabled = false; 
-         time += Time.deltaTime; 
+            camerafollow.enabled = false;
+            time += Time.deltaTime;
             yield return null;
         }
         camerafollow.enabled = true;

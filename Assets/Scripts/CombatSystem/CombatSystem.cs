@@ -33,9 +33,11 @@ public class CombatSystem : MonoBehaviour
     public GameObject Canon;
     public Vector3 offset;
     public bool PlayerisParry;
+    private StatsManager statsManager;
     // Start is called before the first frame update
     void Start()
     {
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         CameraController = Camera.GetComponent<FollowPlayer>();
         PlayerMovement = GetComponent<PlayerCombatMovement>();
         anim = GetComponent<Animator>();
@@ -146,11 +148,21 @@ public class CombatSystem : MonoBehaviour
     {
         if (AreaDamageProjectile)
         {
-            Instantiate(Areaprefab, Canon.transform.position + offset, Canon.transform.rotation);
+            if (statsManager.especialShot1 > 0)
+            {
+                Instantiate(Areaprefab, Canon.transform.position + offset, Canon.transform.rotation);
+                statsManager.especialShot1--;
+            }
+            else Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
         }
-        else if (freeezingProjectile)
+        else if (freeezingProjectile && statsManager.especialShot2 > 0)
         {
-            Instantiate(Freezeprefab, Canon.transform.position + offset, Canon.transform.rotation);
+            if (statsManager.especialShot2 > 0)
+            {
+                Instantiate(Freezeprefab, Canon.transform.position + offset, Canon.transform.rotation);
+                statsManager.especialShot2--;
+            }
+            else Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
         }
         else
         {

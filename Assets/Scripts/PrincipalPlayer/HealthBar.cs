@@ -6,15 +6,15 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     private Image healthBar;
-
-    [Range(0.0f, 200.0f)]
+    public float MaxHealt;
     public float CurrentHealth;
-    public float MaxHealt = 200f;
     public PlayerStats Player;
+    private StatsManager statsManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         healthBar = GetComponent<Image>();
         Player = GameObject.Find("PlayerComponents").GetComponent<PlayerStats>();
     }
@@ -22,6 +22,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MaxHealt = statsManager.MaxHealt;
         CurrentHealth = Player.Health;
         healthBar.fillAmount = CurrentHealth / MaxHealt;
     }

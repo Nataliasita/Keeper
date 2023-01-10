@@ -7,6 +7,7 @@ public class EnterLevel : MonoBehaviour
     // Start is called before the first frame update
 
     public GameManager Manager;
+    public InventaryManager Inventary;
 
     [SerializeField] bool lv1;
     [SerializeField] bool lv2;
@@ -14,6 +15,7 @@ public class EnterLevel : MonoBehaviour
 
     void Start()
     {
+        Inventary =  GameObject.Find("InventoryManager").GetComponent<InventaryManager>();
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 

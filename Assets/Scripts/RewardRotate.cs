@@ -6,10 +6,11 @@ public class RewardRotate : MonoBehaviour
 {
     public float rotationSpeed = 5;
     public bool life;
-    //public coinsUI UI;
+    private StatsManager statsManager;
+    
     void Start()
     {
-        //UI = GameObject.Find("CoinsUI").GetComponent<coinsUI>();
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
     }
     void Update()
     {
@@ -20,11 +21,12 @@ public class RewardRotate : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !life)
         {
             Destroy(gameObject);
+            statsManager.AddPoints(1);
            // UI.CoinsCount += 1;
         }
-        if (other.gameObject.CompareTag("Player") && life && other.gameObject.GetComponent<PlayerStats>().Health < 200)
+        if (other.gameObject.CompareTag("Player") && life && other.gameObject.GetComponent<PlayerStats>().Health < statsManager.MaxHealt)
         {
-            other.gameObject.GetComponent<PlayerStats>().Addlife(50);
+            other.gameObject.GetComponent<PlayerStats>().Addlife(statsManager.MaxHealt/4);
             Destroy(gameObject);
         }
     }

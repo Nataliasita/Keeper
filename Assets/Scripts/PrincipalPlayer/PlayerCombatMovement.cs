@@ -33,8 +33,10 @@ public class PlayerCombatMovement : MonoBehaviour
     public GameObject sensorDetector;
     public GameObject target;
     public int EnemyIndex;
+    private StatsManager statsManager;
     void Start()
     {
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         memorySpeed = playerSpeed;
         Sensor = sensorDetector.GetComponent<DetectorSensor>();
         combatSystem = GetComponent<CombatSystem>();
@@ -42,6 +44,7 @@ public class PlayerCombatMovement : MonoBehaviour
     }
     void Update()
     {
+        playerSpeed = statsManager.MaxSpeed;
         //Cambio de enemigo seleccionado
         if (Input.GetKeyDown(KeyCode.E) && Sensor.enemyInRange.Count > 1)
         {
@@ -55,12 +58,12 @@ public class PlayerCombatMovement : MonoBehaviour
         if (Sensor.enemyInRange.Count == 0)
         {
             InCombat = false;
-            
+
         }
         // animaciones
         if (InCombat)
         {
-            anim.SetBool("InCombat",true);
+            anim.SetBool("InCombat", true);
             target = Sensor.enemyInRange[EnemyIndex].gameObject;
             target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
@@ -79,7 +82,7 @@ public class PlayerCombatMovement : MonoBehaviour
         }
         if (!InCombat)
         {
-            anim.SetBool("InCombat",false);
+            anim.SetBool("InCombat", false);
             for (int i = 0; i < Sensor.enemyInRange.Count; i++)
             {
                 Sensor.enemyInRange[i].GetComponent<UIEnemyelements>().DisableOutline();
@@ -124,7 +127,7 @@ public class PlayerCombatMovement : MonoBehaviour
             {
                 anim.SetBool("Grounded", false);
                 anim.SetTrigger("DoubleJump");
-                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -3 * gravityValue);
                 jumpCount--;
                 anim.SetBool("Crouching", false);
                 IsCrouching = false;
