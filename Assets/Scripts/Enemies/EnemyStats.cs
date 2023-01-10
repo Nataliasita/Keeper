@@ -117,7 +117,7 @@ public class EnemyStats : MonoBehaviour
         Invoke("DeactivateHitBox", 1.0f);
         if (Player.GetComponent<CombatSystem>().PlayerisParry == true)
         {
-            TakeDamage(0, 1f);
+            TakeDamage(0, 1.7f);
             Player.GetComponent<CombatSystem>().blockingParry();
         }
         else

@@ -40,7 +40,7 @@ public class swordScript : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy") && player.GetComponent<CombatSystem>().comboIndex > 0)
         {
             Instantiate(ParticleEffect, SpawnHere, other.transform.rotation);
-            other.gameObject.GetComponent<EnemyStats>().TakeDamage(weaponDamage, 1f);
+            other.gameObject.GetComponent<EnemyStats>().TakeDamage(weaponDamage, 1.2f);
         }
     }
 }

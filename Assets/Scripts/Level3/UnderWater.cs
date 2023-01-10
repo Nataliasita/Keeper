@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class UnderWater : MonoBehaviour
 {
+    public PlayerCombatMovement PlayerCombat;
     public GameObject volumeOne, volumeTwo, particleBubbles;
-
     public bool underWater;
 
+    private void Start()
+    {
+        PlayerCombat = GameObject.Find("PlayerComponents").GetComponent<PlayerCombatMovement>();
+    }
     void Update()
     {
         if (underWater)
@@ -24,6 +28,14 @@ public class UnderWater : MonoBehaviour
             RenderSettings.fog = false;
             volumeTwo.SetActive(false);
             particleBubbles.SetActive(false);
+        }
+    }
+     private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            underWater = true;
+            PlayerCombat.PlayerIsSwimming = true;
         }
     }
 }
