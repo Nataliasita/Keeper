@@ -9,6 +9,7 @@ TagManager:
   - Sensor
   - WeakPoint
   - Ground
+  - HitBox
   layers:
   - Default
   - TransparentFX

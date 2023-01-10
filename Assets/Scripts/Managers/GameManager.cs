@@ -97,16 +97,19 @@ public class GameManager : MonoBehaviour
         {
             //TODO: colocar la logica del menu
             SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
         }
         else if (newGameState == GameState.Level2)
         {
             //TODO: colocar la logica del menu
             SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
         }
         else if (newGameState == GameState.Level3)
         {
             //TODO: colocar la logica del menu
             SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
         }
         else if (newGameState == GameState.Controsl)
         {

@@ -742,6 +742,11 @@ MonoBehaviour:
   damagePlayer: 10
   projectile: {fileID: 6695591510691289892, guid: bc7b512005eeb4b43ae4ef8a3981b442,
     type: 3}
+  prefabReward: {fileID: 9015915351480044101, guid: 9790066b38fa32e47a94e4d04b5a1b2a,
+    type: 3}
+  prefabLife: {fileID: 2883028275037452728, guid: 9b7bfb186b0af6046a82570a690befa1,
+    type: 3}
+  rewardCuantity: 0
 --- !u!65 &5178694171779083769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1184,7 +1189,7 @@ GameObject:
   - component: {fileID: 5178694172483420926}
   m_Layer: 3
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

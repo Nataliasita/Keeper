@@ -27,6 +27,11 @@ public class EnemyStats : MonoBehaviour
     public GameObject hitBox;
     public float damagePlayer;
     public GameObject projectile;
+
+    [Header("Rewards")]
+    public GameObject prefabReward;
+    public GameObject prefabLife;
+    public float rewardCuantity;
     //private DetectorSensor Sensor;
 
     private void Start()
@@ -61,8 +66,7 @@ public class EnemyStats : MonoBehaviour
             health -= damage;
             if (health <= 0)
             {
-                IsAlive = false;
-                this.gameObject.SetActive(false);
+                DeadEnemy();
             }
         }
     }
@@ -128,5 +132,22 @@ public class EnemyStats : MonoBehaviour
     public void IsNotHurt()
     {
         IsHurt = false;
+    }
+    public void DeadEnemy()
+    {
+        IsAlive = false;
+        this.gameObject.SetActive(false);
+        int index;
+        index = Random.Range(1, 5);
+        if (index == 3)
+        {
+            Instantiate(prefabLife, this.transform.position, Quaternion.identity);
+        }
+        for (int i = 0; i < rewardCuantity; i++)
+        {
+            Vector3 posInicial = new Vector3(transform.position.x + Random.Range(-2f, 2f), transform.position.y + Random.Range(0f, 2f), transform.position.z + Random.Range(-2f, 2f));
+            Instantiate(prefabReward, posInicial, Quaternion.identity);
+            prefabReward.GetComponent<Rigidbody>().AddForce(Random.Range(-4f, 4f), Random.Range(-4f, 4f), Random.Range(-4f, 4f), ForceMode.Impulse);
+        }
     }
 }

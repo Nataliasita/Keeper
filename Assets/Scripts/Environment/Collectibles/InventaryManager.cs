@@ -6,15 +6,28 @@ using TMPro;
 
 public class InventaryManager : MonoBehaviour
 {
-    public static InventaryManager Instance;
+    public static InventaryManager sharedInstance;
     public List<Item> Items = new List<Item>();
 
     public Transform ItemContent;
     public GameObject InventoryItem;
 
+    public GameObject Inventory;
+
     private void Awake() {
 
-        Instance = this;
+        if (sharedInstance == null)
+        {
+            sharedInstance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+    private void Start() 
+    {
+        ItemContent = GameObject.Find("ContentElement").GetComponent<Transform>();
+        Inventory = GameObject.Find("Inventory");
+        Inventory.SetActive(false);
+
     }
    
     public void Add(Item item){

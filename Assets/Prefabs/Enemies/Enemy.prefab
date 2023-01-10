@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 2986089137289071813}
   m_Layer: 3
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -883,7 +883,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.00004786253, y: 0.9344351, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2986089137289071814}
   - {fileID: 2986089137560118014}
@@ -994,7 +994,7 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 0}
   health: 100
   IsAlive: 0
-  trhust: 80
+  trhust: 150
   rb: {fileID: 2986089137831835301}
   Player: {fileID: 0}
   RangeEnemy: 0
@@ -1006,6 +1006,11 @@ MonoBehaviour:
   damagePlayer: 10
   projectile: {fileID: 6695591510691289892, guid: bc7b512005eeb4b43ae4ef8a3981b442,
     type: 3}
+  prefabReward: {fileID: 9015915351480044101, guid: 9790066b38fa32e47a94e4d04b5a1b2a,
+    type: 3}
+  prefabLife: {fileID: 2883028275037452728, guid: 9b7bfb186b0af6046a82570a690befa1,
+    type: 3}
+  rewardCuantity: 5
 --- !u!65 &2986089137831835302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1065,8 +1070,8 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 0
   timeBetweenAttacks: 2
-  sightRange: 4.17
-  attackRange: 0.97
+  sightRange: 2.88
+  attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!1 &2986089137869720617
