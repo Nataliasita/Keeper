@@ -138,6 +138,7 @@ public class EnemyStats : MonoBehaviour
         IsAlive = false;
         this.gameObject.SetActive(false);
         int index;
+        Player.GetComponent<CombatSystem>().comboIndex = 0;
         index = Random.Range(1, 5);
         if (index == 3)
         {

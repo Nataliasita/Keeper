@@ -52,9 +52,10 @@ public class FollowPlayer : MonoBehaviour
         Quaternion CamDesiredRotation = Quaternion.Euler(this.transform.rotation.eulerAngles.x,
         player.transform.rotation.eulerAngles.y, this.transform.rotation.eulerAngles.z);
         MovementPosition = player.transform.position + CameraOffset - transform.forward * distanceFromTarget;
-
-        if (Input.GetKeyDown(KeyCode.R) && !player.GetComponent<PlayerCombatMovement>().InCombat && player.GetComponent<PlayerCombatMovement>().Sensor.enemyInRange.Count != 0)
-            LerpCamera(transform.position,target.transform.position, 1f, target.transform.rotation);
+        if (player.GetComponent<PlayerCombatMovement>().InCombat && player.GetComponent<PlayerCombatMovement>().Sensor.enemyInRange.Count <= 0)
+            LerpCamera(transform.position,MovementPosition, 0.5f, target.transform.rotation);
+        if (Input.GetKeyDown(KeyCode.R) && !player.GetComponent<PlayerCombatMovement>().InCombat && player.GetComponent<PlayerCombatMovement>().Sensor.enemyInRange.Count > 0)
+            LerpCamera(MovementPosition,target.transform.position, 1f, target.transform.rotation);
         if (Input.GetKeyDown(KeyCode.E) && player.GetComponent<PlayerCombatMovement>().InCombat)
             LerpCamera(transform.position,target.transform.position, 1f, target.transform.rotation);
         if (Input.GetKeyDown(KeyCode.Q) && player.GetComponent<PlayerCombatMovement>().InCombat)
@@ -77,8 +78,8 @@ public class FollowPlayer : MonoBehaviour
     {
         if (CameraCanMove)
         {
-            InputRotation();
             transform.position = MovementPosition;
+            InputRotation();
         }
 
     }
