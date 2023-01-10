@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerCombatMovement : MonoBehaviour
 {
+    public float turnSmoothTime = 0.1f;
+    private float turnSmoothVelocity = 0.1f;
+    public float waterDistance = 0.4f;
+    public LayerMask waterMask;
+    public Transform waterCheck;
+    private bool isWater;
+    public bool PlayerIsSwimming;
+    //private Storm stormScript; 
+
     [Header("Movement")]
     public float jumpForce;
     public float jumpCount;
@@ -88,10 +97,13 @@ public class PlayerCombatMovement : MonoBehaviour
                 Sensor.enemyInRange[i].GetComponent<UIEnemyelements>().DisableOutline();
             }
         }
-        Movement();
+        if (PlayerIsSwimming) WaterMovement();
+        else Movement();
+
     }
     void Movement()
     {
+        anim.SetBool("InWater", false);
         //Input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -100,7 +112,11 @@ public class PlayerCombatMovement : MonoBehaviour
         float walkInput = Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput);
         anim.SetFloat("Walk", walkInput);
         // imitates normal physics force if the player is grounded
-
+        if (movementDirection != Vector3.zero && !InCombat)
+        {
+            Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+        }
         // Movement
         if (InCombat && target != null)
         {
@@ -168,12 +184,45 @@ public class PlayerCombatMovement : MonoBehaviour
                 playerSpeed = memorySpeed;
             }
         }
-        // Stay Camera move
 
-        if (movementDirection != Vector3.zero && !InCombat)
+        // Stay Camera move
+    }
+    void WaterMovement()
+    {
+        playerSpeed = 25;
+        jumpForce = 15;
+        gravityValue = -5;
+        anim.SetBool("InWater", true);
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        anim.SetFloat("Swimming", (Mathf.Abs(vertical) + Mathf.Abs(horizontal)));
+
+        isWater = Physics.CheckSphere(waterCheck.position, waterDistance, waterMask);
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
+
+        if (isWater && playerVelocity.y < 0)
         {
-            Quaternion desiredRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+            playerVelocity.y = gravityValue;
+        }
+
+        if (direction.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + followCamera.transform.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            controller.Move(moveDirection.normalized * playerSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetButtonDown("Jump") && isWater)
+        {
+            playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
+
         }
     }
 }
