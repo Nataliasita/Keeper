@@ -9,7 +9,6 @@ public class SpawnerScript : MonoBehaviour
     public float MaxEnemiesTrigger;
     private float spawnIntervalMemory;
     private float lifeTimeMemory;
-    private SpawnManager spawnManager;
     [SerializeField] float spawnInterval;
     [SerializeField] float lifeTime = 20;
 
@@ -17,7 +16,6 @@ public class SpawnerScript : MonoBehaviour
     {
         lifeTimeMemory = lifeTime;
         spawnIntervalMemory = spawnInterval;
-        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
     private void Update()
     {
@@ -28,11 +26,6 @@ public class SpawnerScript : MonoBehaviour
         {
             Invoke("SpawningEnemies", 1);
             spawnInterval = spawnIntervalMemory;
-            MaxEnemies--;
-        }
-        if (MaxEnemies == 0)
-        {
-            spawnManager.Deathcount += MaxEnemiesTrigger;
             MaxEnemies--;
         }
 

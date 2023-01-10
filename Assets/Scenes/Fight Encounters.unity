@@ -253,8 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesPrefabs:
-  - {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9, type: 3}
-  - {fileID: 5178694171779083716, guid: 791c6b56809b3894793cbe284164ef67, type: 3}
+  - {fileID: 2986089137831835358, guid: beb80501b41771349a6fa6ec16a1b492, type: 3}
   MaxEnemies: 4
   MaxEnemiesTrigger: 4
   spawnInterval: 4
@@ -496,6 +495,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerComponents
       objectReference: {fileID: 0}
+    - target: {fileID: 4793934663337380452, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 197e5b8924cf1524c8e014f568dd8980, type: 3}
 --- !u!1 &265531685 stripped
@@ -707,8 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesPrefabs:
-  - {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9, type: 3}
-  - {fileID: 5178694171779083716, guid: 791c6b56809b3894793cbe284164ef67, type: 3}
+  - {fileID: 2986089137831835358, guid: beb80501b41771349a6fa6ec16a1b492, type: 3}
   MaxEnemies: 3
   MaxEnemiesTrigger: 3
   spawnInterval: 4
@@ -6282,7 +6285,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-57792
+  m_Name: pb_Mesh28636
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6473,8 +6476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesPrefabs:
-  - {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9, type: 3}
-  - {fileID: 5178694171779083716, guid: 791c6b56809b3894793cbe284164ef67, type: 3}
+  - {fileID: 2986089137831835358, guid: beb80501b41771349a6fa6ec16a1b492, type: 3}
   MaxEnemies: 3
   MaxEnemiesTrigger: 3
   spawnInterval: 4

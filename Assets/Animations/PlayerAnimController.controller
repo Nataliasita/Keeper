@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Standing React Large From Right
-  m_Speed: 2
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1133921769862044631}
@@ -275,16 +275,16 @@ AnimatorStateMachine:
     m_Position: {x: -70, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3524555521869892755}
-    m_Position: {x: -300, y: 530, z: 0}
+    m_Position: {x: -330, y: 530, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3396586017445370494}
-    m_Position: {x: -300, y: 610, z: 0}
+    m_Position: {x: -340, y: 610, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2711049837345172808}
     m_Position: {x: -330, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6325095787923032902}
-    m_Position: {x: -290, y: 460, z: 0}
+    m_Position: {x: -300, y: 450, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2912844883541556951}
     m_Position: {x: -420, y: 150, z: 0}
@@ -299,7 +299,7 @@ AnimatorStateMachine:
     m_Position: {x: -510, y: 460, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9162009649776714430}
-    m_Position: {x: -370, y: 740, z: 0}
+    m_Position: {x: -40, y: 680, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -839970365910533968}
     m_Position: {x: 490, y: 350, z: 0}
