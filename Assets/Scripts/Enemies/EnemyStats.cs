@@ -10,7 +10,7 @@ public class EnemyStats : MonoBehaviour
     public GameObject EnemyPrefab;
 
     [Header("Enemy Stats")]
-    [Range(0.0f, 100)]
+    public float MaxHealth;
     public float health;
     public bool IsAlive;
     public float trhust = 50;
@@ -27,18 +27,23 @@ public class EnemyStats : MonoBehaviour
     public GameObject hitBox;
     public float damagePlayer;
     public GameObject projectile;
+    public float ShootOfset;
 
     [Header("Rewards")]
     public GameObject prefabReward;
     public GameObject prefabLife;
     public float rewardCuantity;
+    public Animator anim;
+    public Animator Outline;
     //private DetectorSensor Sensor;
 
     private void Start()
     {
+        MaxHealth = health;
         //Sensor = GameObject.Find("Sensor").GetComponent<DetectorSensor>();
         Player = GameObject.Find("PlayerComponents");
         rb = GetComponent<Rigidbody>();
+        if (RangeShootEnemy) anim = GetComponent<Animator>();     
     }
     private void Update()
     {
@@ -100,8 +105,12 @@ public class EnemyStats : MonoBehaviour
     {
         if (RangeShootEnemy)
         {
-            transform.LookAt(Player.transform.position);
-            Instantiate(projectile, this.transform.position, this.transform.rotation);
+            transform.LookAt(Player.transform.position, Vector3.up);
+            Quaternion projectileRot = Quaternion.identity;
+            projectileRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x - ShootOfset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+            Instantiate(projectile, this.transform.position, projectileRot);
+            anim.SetTrigger("Attack");
+            Outline.SetTrigger("Attack");
         }
         else
         {

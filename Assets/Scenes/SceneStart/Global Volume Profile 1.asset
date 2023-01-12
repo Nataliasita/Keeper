@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,32 +48,32 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 3.46
   intensity:
     m_OverrideState: 1
-    m_Value: 0.75
+    m_Value: 66.22
   scatter:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.6
   clamp:
     m_OverrideState: 1
-    m_Value: 65472
+    m_Value: 9.04
   tint:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   skipIterations:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 4
   dirtTexture:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {fileID: 0}
     dimension: 1
   dirtIntensity:
-    m_OverrideState: 1
-    m_Value: 0
+    m_OverrideState: 0
+    m_Value: 58.15
 --- !u!114 &4420937473674128016
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -95,10 +95,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.272
+    m_Value: 0.388
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.255
+    m_Value: 0.128
   rounded:
     m_OverrideState: 1
     m_Value: 0
@@ -117,22 +117,22 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.8101005, y: 0.8092898, z: 1, w: 0}
+    m_Value: {x: 1, y: 0.88004714, z: 0.8929127, w: -0.013568523}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 0.9342101, y: 1, z: 0.99999964, w: -0.0976624}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.84896433, z: 0.7561735, w: 0}
+    m_Value: {x: 0.97374725, y: 0.87046254, z: 1, w: 0.10042252}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
   shadowsEnd:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.49
   highlightsStart:
     m_OverrideState: 1
-    m_Value: 0.55
+    m_Value: 0.51
   highlightsEnd:
     m_OverrideState: 1
     m_Value: 1

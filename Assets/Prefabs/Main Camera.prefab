@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931819712726882308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
+  m_RequiresDepthTextureOption: 0
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
@@ -142,11 +142,11 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
-  m_Dithering: 0
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a480a74bc31b37542a98079d6951fe24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aimingDistance: 1.8
   mouseSensitivity: 3
   distanceFromTarget: 3
   smoothTime: 1
@@ -174,7 +175,8 @@ MonoBehaviour:
   IsAiming: 0
   CameraOffsetMemory: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  targetEnemy: {fileID: 0}
+  Mesh: {fileID: 0}
+  PlayerOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &299904905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,5 +190,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Minimap: {fileID: 0}
-  duration: 2
+  duration: 0.5
   camerafollow: {fileID: 1931819713404615162}

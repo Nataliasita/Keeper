@@ -73,6 +73,7 @@ public class PlayerCombatMovement : MonoBehaviour
         if (InCombat)
         {
             anim.SetBool("InCombat", true);
+            if (EnemyIndex<=0)EnemyIndex = 0;
             target = Sensor.enemyInRange[EnemyIndex].gameObject;
             target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
