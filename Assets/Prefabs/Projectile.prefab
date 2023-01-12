@@ -117,7 +117,7 @@ MonoBehaviour:
   Lifetime: 8
   coutdown: 5
   speed: 10
-  damage: 5
+  damage: 15
   gravity: 0.5
   ally: 1
 --- !u!54 &4491213232042139757
