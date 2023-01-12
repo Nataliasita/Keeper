@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DayNight : MonoBehaviour
 {
-    private float min;
+    public float min;
 
     public float grade;
 
@@ -36,6 +36,7 @@ public class DayNight : MonoBehaviour
         seaChange.ChangeOcean(grade); 
         seaChange2.ChangeOcean(grade); 
 
+    //Mejorar para no dejar el escenario sin luz
         if(grade >= 180)
         {
             this.GetComponent<Light>().enabled=false;

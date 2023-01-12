@@ -62,9 +62,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FireDetail: 10
-    - _FirePower: 0.7
-    - _FireThreshold: -0.5
+    - _FireDetail: 2.5
+    - _FirePower: 1
+    - _FireThreshold: -0.837
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

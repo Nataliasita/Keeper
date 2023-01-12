@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-
+    public float aimingDistance;
     [SerializeField]
     private float mouseSensitivity = 3.0f;
     private float rotationY;
@@ -35,7 +35,8 @@ public class FollowPlayer : MonoBehaviour
     private bool CameraCanMove;
     private Vector3 MovementPosition;
     public GameObject target;
-    public GameObject targetEnemy;
+    public GameObject Mesh;
+    public Vector3 PlayerOffset;
 
     private void Awake()
     {
@@ -86,8 +87,9 @@ public class FollowPlayer : MonoBehaviour
     void IsAimingTo()
     {
         //Stablisch the new camera position
-        distanceFromTarget = 1.2f;
-        CameraOffset = new Vector3(0.5f, 1.4f, 0.25f);
+        distanceFromTarget = aimingDistance;
+        mouseSensitivity = 7f;
+        CameraOffset = new Vector3(0.5f, 1.9f, 0.25f);
         rotationXMinMax = new Vector2(-20f, 20f);
         rotationYMinMax = new Vector2(-180f, 180f);
         // Emulates camera rotation in Y axis
@@ -113,6 +115,7 @@ public class FollowPlayer : MonoBehaviour
         CameraOffset = CameraOffsetMemory;
         rotationXMinMax = rotationXMinMaxMemory;
         rotationYMinMax = rotationYMinMaxMemory;
+        mouseSensitivity = 3f;
     }
     public void LerpCamera(Vector3 startingPosition,Vector3 finalPosition, float duration, Quaternion finalRotation)
     {
