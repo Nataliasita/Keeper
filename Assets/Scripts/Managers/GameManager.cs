@@ -12,6 +12,9 @@ public enum GameState
     Level1,
     Level2,
     Level3,
+    FightLevel1,
+    FightLevel2,
+    FightLevel3,
     Controsl,
     Credits,
     GameOver
@@ -58,6 +61,18 @@ public class GameManager : MonoBehaviour
     public void Level3()
     {
         SetGameState(GameState.Level2);
+    }
+    public void FightLevel1()
+    {
+        SetGameState(GameState.FightLevel1);
+    }
+    public void FightLevel2()
+    {
+        SetGameState(GameState.FightLevel2);
+    }
+    public void FightLevel3()
+    {
+        SetGameState(GameState.FightLevel3);
     }
     // Función encargado de iniciar la scena créditos
     public void Controls()
@@ -109,6 +124,24 @@ public class GameManager : MonoBehaviour
         {
             //TODO: colocar la logica del menu
             SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
+        }
+        else if (newGameState == GameState.FightLevel1)
+        {
+            //TODO: colocar la logica del menu
+            SceneManager.LoadScene("FightLevel1");
+            SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
+        }
+        else if (newGameState == GameState.FightLevel2)
+        {
+            //TODO: colocar la logica del menu
+            SceneManager.LoadScene("FightLevel2");
+            SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
+        }
+        else if (newGameState == GameState.FightLevel3)
+        {
+            //TODO: colocar la logica del menu
+            SceneManager.LoadScene("FightLevel3");
             SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
         }
         else if (newGameState == GameState.Controsl)

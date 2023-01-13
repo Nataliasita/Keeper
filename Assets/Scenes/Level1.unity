@@ -7876,7 +7876,7 @@ PrefabInstance:
     - target: {fileID: 1931819713404615160, guid: cce12e06343bf8344a9b55a8c089d2d5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1931819713404615160, guid: cce12e06343bf8344a9b55a8c089d2d5,
         type: 3}
@@ -10789,7 +10789,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3954520a23892de4195c715e13f57770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionNight: {fileID: 1559865409}
+  Manager: {fileID: 1054189751}
+  battle1: 1
+  battle2: 0
+  battle3: 0
 --- !u!1001 &1928510813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11545,6 +11548,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1373063340, guid: 197e5b8924cf1524c8e014f568dd8980, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436067208618375871, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1436067209757914145, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: followCamera
@@ -11573,7 +11585,7 @@ PrefabInstance:
     - target: {fileID: 1470239434192834591, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1470239434192834591, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
@@ -11629,6 +11641,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerComponents
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378221217309595759, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577667159958438827, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043812222230753833, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 197e5b8924cf1524c8e014f568dd8980, type: 3}
