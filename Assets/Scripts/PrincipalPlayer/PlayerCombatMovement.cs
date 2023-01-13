@@ -160,7 +160,6 @@ public class PlayerCombatMovement : MonoBehaviour
             }
             if (controller.isGrounded && Input.GetKeyDown(KeyCode.LeftControl))
             {
-                Debug.Log("IsCrounching");
                 anim.SetBool("Crouching", true);
                 IsCrouching = true;
             }

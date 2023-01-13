@@ -41,6 +41,7 @@ public class CombatSystem : MonoBehaviour
         CameraController = Camera.GetComponent<FollowPlayer>();
         PlayerMovement = GetComponent<PlayerCombatMovement>();
         anim = GetComponent<Animator>();
+        Sword.SetActive(false);
     }
 
     // Update is called once per frame
