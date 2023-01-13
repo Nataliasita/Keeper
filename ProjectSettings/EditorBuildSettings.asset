@@ -33,9 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level3.unity
     guid: c74462ee4ba5e184ca21ceef59004ef8
   - enabled: 1
-    path: Assets/Scenes/FightLevel1.unity
+    path: Assets/Scenes/Fight Encounters/FightLevel1.unity
     guid: f053ece179efa844bbba1b0d9f18031c
   - enabled: 1
-    path: Assets/Scenes/FightLevel2.unity
+    path: Assets/Scenes/Fight Encounters/FightLevel2.unity
     guid: b3f4d2445bf41034aa3674ca01146c13
+  - enabled: 1
+    path: Assets/Scenes/Fight Encounters/FightLevel3.unity
+    guid: b649aef8bd3713d4f8685e9d7d1f684b
   m_configObjects: {}

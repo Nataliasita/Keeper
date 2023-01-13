@@ -2190,10 +2190,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a1cbdde545d12148b344c36d459f3a9, type: 2}
+  - {fileID: 2100000, guid: 416b4b14829e94a49ad1b69273dc1734, type: 2}
   - {fileID: 2100000, guid: 37679a5a041ecb54e907f6974a74c8fe, type: 2}
-  - {fileID: 2100000, guid: 416b4b14829e94a49ad1b69273dc1734, type: 2}
-  - {fileID: 2100000, guid: 416b4b14829e94a49ad1b69273dc1734, type: 2}
+  - {fileID: 2100000, guid: 9a1cbdde545d12148b344c36d459f3a9, type: 2}
+  - {fileID: 2100000, guid: 9a1cbdde545d12148b344c36d459f3a9, type: 2}
   - {fileID: 2100000, guid: 37679a5a041ecb54e907f6974a74c8fe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4098,7 +4098,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7883d0f32a32ec049816fdbd94abd82d, type: 2}
-  - {fileID: 9185737683893222716, guid: e6fa4b91232d034409bfa7abc5312b18, type: 3}
+  - {fileID: 2100000, guid: 502c32be7ea30af4bbb396960e53b2cd, type: 2}
   - {fileID: -6478536213147159724, guid: e6fa4b91232d034409bfa7abc5312b18, type: 3}
   - {fileID: -3591834706284480510, guid: e6fa4b91232d034409bfa7abc5312b18, type: 3}
   - {fileID: 2686608193222370414, guid: e6fa4b91232d034409bfa7abc5312b18, type: 3}
@@ -4366,27 +4366,27 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: acff73364bdf55b419cdb0a5a041dfe8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9963771
+      value: 0.9987863
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acff73364bdf55b419cdb0a5a041dfe8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.08504549
+      value: -0.04925408
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acff73364bdf55b419cdb0a5a041dfe8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000022351742
+      value: -0.00000005960463
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acff73364bdf55b419cdb0a5a041dfe8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000017136335
+      value: -0.00000015646215
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acff73364bdf55b419cdb0a5a041dfe8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -9.757
+      value: -5.646
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acff73364bdf55b419cdb0a5a041dfe8,
         type: 3}

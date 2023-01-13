@@ -14,6 +14,8 @@ public class DayNight : MonoBehaviour
 
     public Light auxLune;
 
+    public Light auxSun;
+
     public NewCycle skySceneChange;
 
     public SeaCycle seaChange;
@@ -42,10 +44,12 @@ public class DayNight : MonoBehaviour
             this.GetComponent<Light>().enabled=false;
             lune.enabled=true;
             auxLune.enabled=true;
+            auxSun.enabled=false;
         }else{
             this.GetComponent<Light>().enabled=true;
             lune.enabled=false;
             auxLune.enabled=false;
+            auxSun.enabled=true;
         }
     }
 }
