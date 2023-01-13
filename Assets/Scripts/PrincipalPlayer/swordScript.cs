@@ -32,7 +32,7 @@ public class swordScript : MonoBehaviour
     {
         SpawnHere = other.ClosestPoint(transform.position);
 
-        if (other.gameObject.CompareTag("HitBox"))
+        if (other.gameObject.CompareTag("HitBox")&& player.GetComponent<CombatSystem>().comboIndex > 0)
         {
             Instantiate(ParticleEffect, SpawnHere, other.transform.rotation);
         }
