@@ -10,32 +10,63 @@ public class InCameraDetector : MonoBehaviour
     Plane[] cameraFrustum;
     Plane[] cameraMinimapFrustum;
     Collider colliderDetector;
+    MeshCollider colliderMeshDetector;
+    public bool isMesh;
     void Start()
     {
         PrincipalCamera = Camera.main;
         miniMapCamera = GameObject.Find("CameraMiniMap").GetComponent<Camera>();
         objectRenderer = GetComponent<MeshRenderer>();
-        colliderDetector = GetComponent<Collider>();
+        if (isMesh)
+        {
+            colliderMeshDetector = GetComponent<MeshCollider>();
+        }
+        if (!isMesh)
+        {
+            colliderDetector = GetComponent<Collider>();
+        }
     }
 
 
     void Update()
     {
-        var bounds = colliderDetector.bounds;
-        cameraFrustum = GeometryUtility.CalculateFrustumPlanes(PrincipalCamera);
-        cameraMinimapFrustum = GeometryUtility.CalculateFrustumPlanes(miniMapCamera);
+        if (isMesh)
+        {
+            var bounds = colliderMeshDetector.bounds;
+            cameraFrustum = GeometryUtility.CalculateFrustumPlanes(PrincipalCamera);
+            cameraMinimapFrustum = GeometryUtility.CalculateFrustumPlanes(miniMapCamera);
 
-        if (GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
-        {
-            objectRenderer.enabled = true;
+            if (GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
+            {
+                objectRenderer.enabled = true;
+            }
+            else
+            {
+                objectRenderer.enabled = false;
+            }
+            if (GeometryUtility.TestPlanesAABB(cameraMinimapFrustum, bounds))
+            {
+                objectRenderer.enabled = true;
+            }
         }
-        else
+        if (!isMesh)
         {
-            objectRenderer.enabled = false;
-        }
-        if (GeometryUtility.TestPlanesAABB(cameraMinimapFrustum, bounds))
-        {
-            objectRenderer.enabled = true;
+            var bounds = colliderDetector.bounds;
+            cameraFrustum = GeometryUtility.CalculateFrustumPlanes(PrincipalCamera);
+            cameraMinimapFrustum = GeometryUtility.CalculateFrustumPlanes(miniMapCamera);
+
+            if (GeometryUtility.TestPlanesAABB(cameraFrustum, bounds))
+            {
+                objectRenderer.enabled = true;
+            }
+            else
+            {
+                objectRenderer.enabled = false;
+            }
+            if (GeometryUtility.TestPlanesAABB(cameraMinimapFrustum, bounds))
+            {
+                objectRenderer.enabled = true;
+            }
         }
     }
 }
