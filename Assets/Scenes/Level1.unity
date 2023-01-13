@@ -4459,6 +4459,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock1
       objectReference: {fileID: 0}
+    - target: {fileID: 2988158472416488238, guid: 68c70483de3398a48af40d4194da6027,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3636918641881697019, guid: 68c70483de3398a48af40d4194da6027,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
