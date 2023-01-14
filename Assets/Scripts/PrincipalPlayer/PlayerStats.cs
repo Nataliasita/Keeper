@@ -17,13 +17,14 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.Log("You are Dead");
         }
+   
     }
     public void TakeDamage(float damage, bool Candamage)
     {
         if (Candamage)
         {
-        anim.SetTrigger("Hit");
-        Health -= damage;  
+            anim.SetTrigger("Hit");
+            Health -= damage;
         }
     }
     public void Addlife(float life)

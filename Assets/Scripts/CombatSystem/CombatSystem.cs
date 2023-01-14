@@ -6,12 +6,10 @@ using System;
 public class CombatSystem : MonoBehaviour
 {
     [Header("CombatProgression")]
-    [SerializeField] bool PowerAttack;
-    [SerializeField] bool PowerAttack2;
-    [SerializeField] bool PowerAttack3;
-    [SerializeField] bool PowerAttack4;
-    [SerializeField] bool MiniMap;
-    [SerializeField] bool NigthVision;
+    public bool PowerAttack;
+    public bool PowerAttack2;
+    public bool PowerAttack3;
+    public bool PowerAttack4;
     public bool AreaDamageProjectile;
     public bool freeezingProjectile;
     [Header("Attacking")]

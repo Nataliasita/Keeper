@@ -40072,6 +40072,36 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 299904899}
+    - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: MiniMap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: NigthVision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: PowerAttack
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: PowerAttack2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: PowerAttack3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: PowerAttack4
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1470239434192834591, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: m_RootOrder

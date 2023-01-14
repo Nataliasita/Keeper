@@ -127,6 +127,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: aeb47fb3f222ac347bddee720fd74918, type: 2}
+  PowerAttack: 0
+  PowerAttack2: 0
+  PowerAttack3: 0
+  PowerAttack4: 0
+  MiniMap: 0
+  NigthVision: 1
 --- !u!1 &7023817675368149948
 GameObject:
   m_ObjectHideFlags: 0

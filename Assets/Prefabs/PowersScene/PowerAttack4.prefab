@@ -80,6 +80,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 5e2fded4a048c7e4e9a81935077e8f31, type: 2}
+  PowerAttack: 0
+  PowerAttack2: 0
+  PowerAttack3: 0
+  PowerAttack4: 1
+  MiniMap: 0
+  NigthVision: 0
 --- !u!1001 &1081764129904807510
 PrefabInstance:
   m_ObjectHideFlags: 0
