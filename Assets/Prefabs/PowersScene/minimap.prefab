@@ -241,3 +241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: c8350cc703eb5cb44bc1070b6a95f2fb, type: 2}
+  PowerAttack: 0
+  PowerAttack2: 0
+  PowerAttack3: 0
+  PowerAttack4: 0
+  MiniMap: 1
+  NigthVision: 0

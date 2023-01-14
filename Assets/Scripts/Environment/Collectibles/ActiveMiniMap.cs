@@ -5,13 +5,14 @@ using UnityEngine;
 public class ActiveMiniMap : MonoBehaviour
 {
     public GameObject Minimap;
-
+    StatsManager statsManager;
     private bool active;
     public float duration;
     public FollowPlayer camerafollow;
 
     void Start()
     {
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         Minimap = GameObject.Find("PanelMinimap");
         StartCoroutine(CameraFix(duration));
         camerafollow = GetComponent<FollowPlayer>();
@@ -19,7 +20,7 @@ public class ActiveMiniMap : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.M))
+        if (Input.GetKeyUp(KeyCode.M) && statsManager.MiniMap == true)
         {
             active = !active;
             Minimap.SetActive(active);
