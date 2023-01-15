@@ -29,7 +29,7 @@ public class PlayerCombatMovement : MonoBehaviour
     private Animator anim;
 
     [Header("player")]
-    [SerializeField] float playerSpeed;
+    public float playerSpeed;
     [SerializeField] float rotationSpeed;
     [SerializeField] Vector3 playerVelocity;
     public float gravityValue = -9.81f;
@@ -50,10 +50,10 @@ public class PlayerCombatMovement : MonoBehaviour
         Sensor = sensorDetector.GetComponent<DetectorSensor>();
         combatSystem = GetComponent<CombatSystem>();
         anim = GetComponent<Animator>();
+        playerSpeed = statsManager.MaxSpeed;
     }
     void Update()
     {
-        playerSpeed = statsManager.MaxSpeed;
         //Cambio de enemigo seleccionado
         if (Input.GetKeyDown(KeyCode.E) && Sensor.enemyInRange.Count > 1)
         {
@@ -73,7 +73,11 @@ public class PlayerCombatMovement : MonoBehaviour
         if (InCombat)
         {
             anim.SetBool("InCombat", true);
-            if (EnemyIndex<=0)EnemyIndex = 0;
+            if (Sensor.enemyInRange[EnemyIndex].gameObject == null)
+            {
+                InCombat = false;
+            }
+            if (EnemyIndex <= 0) EnemyIndex = 0;
             target = Sensor.enemyInRange[EnemyIndex].gameObject;
             target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
@@ -179,7 +183,7 @@ public class PlayerCombatMovement : MonoBehaviour
             {
                 playerSpeed = playerSpeed / 2;
             }
-            else if (!IsCrouching)
+            else if (!IsCrouching && !Input.GetKey(KeyCode.LeftShift))
             {
                 playerSpeed = memorySpeed;
             }

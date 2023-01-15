@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public void Game()
     {
         SetGameState(GameState.Game);
+
     }
 
     public void Level1()
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviour
             isPlaying = true;
             Time.timeScale = 1f;
             //SceneManager.LoadScene("PlayerMovement");
-            SceneManager.LoadScene("SceneStart");
+            SceneManager.LoadScene("OpenWorldPilars");
             SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
         }
         else if (newGameState == GameState.Level1)

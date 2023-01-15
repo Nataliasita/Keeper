@@ -35,8 +35,6 @@ public class FollowPlayer : MonoBehaviour
     private bool CameraCanMove;
     private Vector3 MovementPosition;
     public GameObject target;
-    public GameObject Mesh;
-    public Vector3 PlayerOffset;
 
     private void Awake()
     {

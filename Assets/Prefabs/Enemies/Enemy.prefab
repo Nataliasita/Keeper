@@ -995,7 +995,7 @@ MonoBehaviour:
   MaxHealth: 100
   health: 100
   IsAlive: 0
-  trhust: 150
+  trhust: 250
   rb: {fileID: 2986089137831835301}
   Player: {fileID: 0}
   RangeEnemy: 0
@@ -1007,11 +1007,14 @@ MonoBehaviour:
   damagePlayer: 10
   projectile: {fileID: 6695591510691289892, guid: bc7b512005eeb4b43ae4ef8a3981b442,
     type: 3}
+  ShootOfset: 0
   prefabReward: {fileID: 9015915351480044101, guid: 9790066b38fa32e47a94e4d04b5a1b2a,
     type: 3}
   prefabLife: {fileID: 2883028275037452728, guid: 9b7bfb186b0af6046a82570a690befa1,
     type: 3}
   rewardCuantity: 5
+  anim: {fileID: 0}
+  Outline: {fileID: 0}
 --- !u!65 &2986089137831835302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1071,8 +1074,8 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 0
   timeBetweenAttacks: 2
-  sightRange: 2.88
-  attackRange: 1
+  sightRange: 10
+  attackRange: 1.2
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!1 &2986089137869720617
