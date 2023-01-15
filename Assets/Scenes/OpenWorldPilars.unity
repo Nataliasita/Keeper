@@ -1116,6 +1116,21 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 3493
       objectReference: {fileID: 0}
+    - target: {fileID: 4793934663337380452, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793934663337380452, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793934663337380452, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4793934663337380454, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: CheckpointPos.x
@@ -1156,7 +1171,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 416b4b14829e94a49ad1b69273dc1734, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4793934663337380452, guid: 197e5b8924cf1524c8e014f568dd8980, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 197e5b8924cf1524c8e014f568dd8980, type: 3}
 --- !u!1001 &1424228695
 PrefabInstance:

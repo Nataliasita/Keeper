@@ -52,7 +52,27 @@ public class PlayerCombatMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         playerSpeed = statsManager.MaxSpeed;
     }
-    void Update()
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded)
+            {
+                anim.SetBool("Grounded", false);
+                anim.SetTrigger("DoubleJump");
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -3 * gravityValue);
+                jumpCount--;
+                anim.SetBool("Crouching", false);
+                IsCrouching = false;
+            }
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetBool("Grounded", false);
+                anim.SetTrigger("Jump");
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
+                jumpCount = 1;
+                anim.SetBool("Crouching", false);
+
+            }
+    }
+    void FixedUpdate()
     {
         //Cambio de enemigo seleccionado
         if (Input.GetKeyDown(KeyCode.E) && Sensor.enemyInRange.Count > 1)
@@ -104,8 +124,8 @@ public class PlayerCombatMovement : MonoBehaviour
         }
         if (PlayerIsSwimming) WaterMovement();
         else Movement();
-
     }
+   
     void Movement()
     {
         anim.SetBool("InWater", false);
@@ -144,24 +164,7 @@ public class PlayerCombatMovement : MonoBehaviour
             {
                 playerVelocity.y = gravityValue;
             }
-            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded)
-            {
-                anim.SetBool("Grounded", false);
-                anim.SetTrigger("DoubleJump");
-                playerVelocity.y = Mathf.Sqrt(jumpForce * -3 * gravityValue);
-                jumpCount--;
-                anim.SetBool("Crouching", false);
-                IsCrouching = false;
-            }
-            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
-            {
-                anim.SetBool("Grounded", false);
-                anim.SetTrigger("Jump");
-                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
-                jumpCount = 1;
-                anim.SetBool("Crouching", false);
-
-            }
+            
             if (controller.isGrounded && Input.GetKeyDown(KeyCode.LeftControl))
             {
                 anim.SetBool("Crouching", true);
