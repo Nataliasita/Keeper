@@ -169,11 +169,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewPalms2
       objectReference: {fileID: 0}
-    - target: {fileID: 8801637521301156750, guid: 94703993e702c3c48848fd39da4b56d8,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fb94ecb89c88a27498a72b711d587641, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94703993e702c3c48848fd39da4b56d8, type: 3}
 --- !u!4 &7166701396198758139 stripped

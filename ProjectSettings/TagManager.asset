@@ -10,6 +10,8 @@ TagManager:
   - WeakPoint
   - Ground
   - HitBox
+  - Water
+  - Reward
   layers:
   - Default
   - TransparentFX

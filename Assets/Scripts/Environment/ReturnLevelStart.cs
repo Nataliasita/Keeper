@@ -6,6 +6,7 @@ public class ReturnLevelStart: MonoBehaviour
 {
 
     public GameManager Manager;
+    public StatsManager statsManager;
 
     [SerializeField] bool keyLv1;
     [SerializeField] bool keyLv2;
@@ -14,6 +15,7 @@ public class ReturnLevelStart: MonoBehaviour
     void Start()
     {
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
     }
     private void OnTriggerEnter(Collider other)
     {

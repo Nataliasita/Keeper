@@ -83,7 +83,16 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.08408356
+        time: 0.050000004
+        value: 0.060000002
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.42575073
         value: 0.40410614
         inSlope: 0
         outSlope: 0
@@ -251,7 +260,7 @@ GameObject:
   - component: {fileID: 671251244548152516}
   m_Layer: 0
   m_Name: Reward
-  m_TagString: Untagged
+  m_TagString: Reward
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -29,7 +29,7 @@ public class PlayerCombatMovement : MonoBehaviour
     private Animator anim;
 
     [Header("player")]
-    [SerializeField] float playerSpeed;
+    public float playerSpeed;
     [SerializeField] float rotationSpeed;
     [SerializeField] Vector3 playerVelocity;
     public float gravityValue = -9.81f;
@@ -50,10 +50,30 @@ public class PlayerCombatMovement : MonoBehaviour
         Sensor = sensorDetector.GetComponent<DetectorSensor>();
         combatSystem = GetComponent<CombatSystem>();
         anim = GetComponent<Animator>();
-    }
-    void Update()
-    {
         playerSpeed = statsManager.MaxSpeed;
+    }
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded)
+            {
+                anim.SetBool("Grounded", false);
+                anim.SetTrigger("DoubleJump");
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -3 * gravityValue);
+                jumpCount--;
+                anim.SetBool("Crouching", false);
+                IsCrouching = false;
+            }
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetBool("Grounded", false);
+                anim.SetTrigger("Jump");
+                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
+                jumpCount = 1;
+                anim.SetBool("Crouching", false);
+
+            }
+    }
+    void FixedUpdate()
+    {
         //Cambio de enemigo seleccionado
         if (Input.GetKeyDown(KeyCode.E) && Sensor.enemyInRange.Count > 1)
         {
@@ -73,7 +93,11 @@ public class PlayerCombatMovement : MonoBehaviour
         if (InCombat)
         {
             anim.SetBool("InCombat", true);
-            if (EnemyIndex<=0)EnemyIndex = 0;
+            if (Sensor.enemyInRange[EnemyIndex].gameObject == null)
+            {
+                InCombat = false;
+            }
+            if (EnemyIndex <= 0) EnemyIndex = 0;
             target = Sensor.enemyInRange[EnemyIndex].gameObject;
             target.GetComponent<UIEnemyelements>().EnableOutline();
             if (target.GetComponent<EnemyStats>().health <= 0)
@@ -100,8 +124,8 @@ public class PlayerCombatMovement : MonoBehaviour
         }
         if (PlayerIsSwimming) WaterMovement();
         else Movement();
-
     }
+   
     void Movement()
     {
         anim.SetBool("InWater", false);
@@ -140,24 +164,7 @@ public class PlayerCombatMovement : MonoBehaviour
             {
                 playerVelocity.y = gravityValue;
             }
-            if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded)
-            {
-                anim.SetBool("Grounded", false);
-                anim.SetTrigger("DoubleJump");
-                playerVelocity.y = Mathf.Sqrt(jumpForce * -3 * gravityValue);
-                jumpCount--;
-                anim.SetBool("Crouching", false);
-                IsCrouching = false;
-            }
-            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
-            {
-                anim.SetBool("Grounded", false);
-                anim.SetTrigger("Jump");
-                playerVelocity.y = Mathf.Sqrt(jumpForce * -2 * gravityValue);
-                jumpCount = 1;
-                anim.SetBool("Crouching", false);
-
-            }
+            
             if (controller.isGrounded && Input.GetKeyDown(KeyCode.LeftControl))
             {
                 anim.SetBool("Crouching", true);
@@ -179,7 +186,7 @@ public class PlayerCombatMovement : MonoBehaviour
             {
                 playerSpeed = playerSpeed / 2;
             }
-            else if (!IsCrouching)
+            else if (!IsCrouching && !Input.GetKey(KeyCode.LeftShift))
             {
                 playerSpeed = memorySpeed;
             }

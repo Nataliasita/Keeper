@@ -45,6 +45,10 @@ public class CombatSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (statsManager.PowerAttack) PowerAttack = true; else if (!statsManager.PowerAttack) PowerAttack = false;
+        if (statsManager.PowerAttack2) PowerAttack2 = true; else if (!statsManager.PowerAttack2) PowerAttack2 = false;
+        if (statsManager.PowerAttack3) PowerAttack3 = true; else if (!statsManager.PowerAttack3) PowerAttack3 = false;
+        if (statsManager.PowerAttack4) PowerAttack4 = true; else if (!statsManager.PowerAttack4) PowerAttack4 = false;
         MeeleAttackCombo();
         enemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsEnemy);
         if (enemyInAttackRange && Input.GetKeyDown(KeyCode.R))

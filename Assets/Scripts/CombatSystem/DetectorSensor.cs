@@ -51,6 +51,16 @@ public class DetectorSensor : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
             enemyInRange.Remove(other.gameObject);
     }
+    private void OnTriggerStay(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Reward"))
+        {
+            other.transform.LookAt(this.gameObject.transform);
+            other.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 2, ForceMode.Impulse);
+        }
+
+    }
 
     public void RemoveEnemies(GameObject EnemiesToRemove)
     {

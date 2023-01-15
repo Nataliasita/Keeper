@@ -35,8 +35,6 @@ public class FollowPlayer : MonoBehaviour
     private bool CameraCanMove;
     private Vector3 MovementPosition;
     public GameObject target;
-    public GameObject Mesh;
-    public Vector3 PlayerOffset;
 
     private void Awake()
     {
@@ -47,11 +45,11 @@ public class FollowPlayer : MonoBehaviour
         StartCoroutine(LerpPosition(transform.position,player.transform.position + CameraOffset - transform.forward * distanceFromTarget, 0.5f, player.transform.rotation));
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        //targetEnemy = player.GetComponent<PlayerCombatMovement>().target;
         Quaternion CamDesiredRotation = Quaternion.Euler(this.transform.rotation.eulerAngles.x,
         player.transform.rotation.eulerAngles.y, this.transform.rotation.eulerAngles.z);
+        //targetEnemy = player.GetComponent<PlayerCombatMovement>().target;
         MovementPosition = player.transform.position + CameraOffset - transform.forward * distanceFromTarget;
         if (player.GetComponent<PlayerCombatMovement>().InCombat && player.GetComponent<PlayerCombatMovement>().Sensor.enemyInRange.Count <= 0)
             LerpCamera(transform.position,MovementPosition, 0.5f, target.transform.rotation);
