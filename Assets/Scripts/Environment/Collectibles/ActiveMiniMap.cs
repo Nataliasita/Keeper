@@ -20,6 +20,7 @@ public class ActiveMiniMap : MonoBehaviour
     }
     void Update()
     {
+        /*
         if (Input.GetKeyUp(KeyCode.M) && statsManager.MiniMap == true)
         {
             active = !active;
@@ -27,6 +28,7 @@ public class ActiveMiniMap : MonoBehaviour
         }
 
         Minimap.SetActive(active);
+        */
     }
     IEnumerator CameraFix(float duration)
     {
