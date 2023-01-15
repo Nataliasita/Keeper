@@ -734,7 +734,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2206140
+  m_Name: pb_Mesh-224632
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1631,6 +1631,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 760756635}
+    - target: {fileID: 1931819713404615162, guid: cce12e06343bf8344a9b55a8c089d2d5,
+        type: 3}
+      propertyPath: distanceFromTarget
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce12e06343bf8344a9b55a8c089d2d5, type: 3}
 --- !u!1 &1753504070 stripped
@@ -1742,6 +1747,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4599249803717607296, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
+        type: 3}
+      propertyPath: sightRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599249803717607296, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
+        type: 3}
+      propertyPath: attackRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599249804245382483, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
+        type: 3}
+      propertyPath: sightRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599249804245382483, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
+        type: 3}
+      propertyPath: attackRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599249804359236460, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
+        type: 3}
+      propertyPath: sightRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599249804359236460, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599249805120277133, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
+        type: 3}
+      propertyPath: sightRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599249805120277133, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
+        type: 3}
+      propertyPath: attackRange
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7607797129850424540, guid: 105df543d35b3f64c81c2a0b4f1eb9f4,
         type: 3}
       propertyPath: m_Name
