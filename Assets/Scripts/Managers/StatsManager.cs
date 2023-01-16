@@ -13,6 +13,8 @@ public class StatsManager : MonoBehaviour
     public float MaxDamage;
     public float MaxSpeed;
     public float Numberpoints;
+    public float NumberpointsHealth;
+    public float NumberpointsSpeed;
     public float especialShot1;
     public float especialShot2;
 
@@ -39,7 +41,7 @@ public class StatsManager : MonoBehaviour
         combatSystem = GameObject.Find("PlayerComponents").GetComponent<CombatSystem>();
     }
     // Start is called before the first frame update
-    public void AddHealth(float healtToAdd)
+    public void AddHealth( float healtToAdd)
     {
         MaxHealt += healtToAdd;
     }
@@ -51,13 +53,17 @@ public class StatsManager : MonoBehaviour
     {
         MaxSpeed += speedToAdd;
     }
-    public void AddPoints(float pointsToAdd)
+    public void AddPoints(int type,float pointsToAdd)
     {
-        Numberpoints += pointsToAdd;
+        if (type == 1)Numberpoints += pointsToAdd;
+        if (type == 2)NumberpointsHealth += pointsToAdd;
+        if (type == 3)NumberpointsSpeed += pointsToAdd;
     }
-    public void RemovePoints(float pointsToRemove)
+    public void RemovePoints(int type,float pointsToRemove)
     {
-        Numberpoints -= pointsToRemove;
+        if (type == 1)Numberpoints += pointsToRemove;
+        if (type == 2)NumberpointsHealth += pointsToRemove;
+        if (type == 3)NumberpointsSpeed += pointsToRemove;
     }
     public void AddEspecialShot1(bool shotToAdd)
     {

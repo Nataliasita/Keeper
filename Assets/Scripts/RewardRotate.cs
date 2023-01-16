@@ -8,6 +8,10 @@ public class RewardRotate : MonoBehaviour
     public bool life;
     private StatsManager statsManager;
     
+    public bool IsSpeedCristal;
+    public bool IsHealthCristal;
+    public bool IsPowerCristal;
+
     void Start()
     {
         statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
@@ -20,8 +24,11 @@ public class RewardRotate : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player") && !life)
         {
+            if(IsPowerCristal) statsManager.AddPoints(1,1);
+            if(IsHealthCristal) statsManager.AddPoints(2,1);
+            if(IsSpeedCristal) statsManager.AddPoints(3,1);
             Destroy(gameObject);
-            statsManager.AddPoints(1);
+            
            // UI.CoinsCount += 1;
         }
         if (other.gameObject.CompareTag("Player") && life && other.gameObject.GetComponent<PlayerStats>().Health < statsManager.MaxHealt)
