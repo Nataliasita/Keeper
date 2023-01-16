@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OpenWorldPilars.unity
     guid: 9d17b85b3d132ae4b94db2ce2d7f709e
+  - enabled: 1
+    path: Assets/Scenes/Fight Encounters/FightBoss.unity
+    guid: 85affa00804fdfb4880c82e722bb647e
   m_configObjects: {}
