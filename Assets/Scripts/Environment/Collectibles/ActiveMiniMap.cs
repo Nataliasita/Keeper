@@ -16,7 +16,6 @@ public class ActiveMiniMap : MonoBehaviour
         Minimap = GameObject.Find("PanelMinimap");
         StartCoroutine(CameraFix(duration));
         camerafollow = GetComponent<FollowPlayer>();
-        Minimap.SetActive(false);
     }
     void Update()
     {

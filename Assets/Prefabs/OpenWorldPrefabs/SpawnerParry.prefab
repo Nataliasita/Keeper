@@ -842,6 +842,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2986089137831835305, guid: 12a4229cb471a4f4687acc103df000c9,
+        type: 3}
+      propertyPath: sightRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986089137831835305, guid: 12a4229cb471a4f4687acc103df000c9,
+        type: 3}
+      propertyPath: attackRange
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9,
         type: 3}
       propertyPath: m_Name
@@ -2205,6 +2215,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2986089137831835305, guid: 12a4229cb471a4f4687acc103df000c9,
+        type: 3}
+      propertyPath: sightRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986089137831835305, guid: 12a4229cb471a4f4687acc103df000c9,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9,
         type: 3}
       propertyPath: m_Name
@@ -2448,6 +2468,16 @@ PrefabInstance:
     - target: {fileID: 2986089137831835298, guid: 12a4229cb471a4f4687acc103df000c9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986089137831835305, guid: 12a4229cb471a4f4687acc103df000c9,
+        type: 3}
+      propertyPath: sightRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986089137831835305, guid: 12a4229cb471a4f4687acc103df000c9,
+        type: 3}
+      propertyPath: attackRange
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9,
@@ -2996,6 +3026,16 @@ PrefabInstance:
     - target: {fileID: 2986089137831835298, guid: 12a4229cb471a4f4687acc103df000c9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986089137831835305, guid: 12a4229cb471a4f4687acc103df000c9,
+        type: 3}
+      propertyPath: sightRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2986089137831835305, guid: 12a4229cb471a4f4687acc103df000c9,
+        type: 3}
+      propertyPath: attackRange
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9,

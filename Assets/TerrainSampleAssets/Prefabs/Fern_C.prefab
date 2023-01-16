@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7140844442097323097}
   - component: {fileID: 5908269608929075802}
   - component: {fileID: 5027213193735674214}
+  - component: {fileID: 3208819135015074295}
+  - component: {fileID: 2290535302470917013}
   m_Layer: 0
   m_Name: Fern_C
   m_TagString: Untagged
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3208819135015074295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647502441230210415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250bc373229738c4d9455aa12e6b1a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMesh: 0
+--- !u!65 &2290535302470917013
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647502441230210415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9923401, y: 0.40544167, z: 1.0003649}
+  m_Center: {x: 0, y: 0.17510797, z: 0.000000059604645}

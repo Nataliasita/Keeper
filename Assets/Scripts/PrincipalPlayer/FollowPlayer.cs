@@ -86,7 +86,7 @@ public class FollowPlayer : MonoBehaviour
     {
         //Stablisch the new camera position
         distanceFromTarget = aimingDistance;
-        mouseSensitivity = 7f;
+        mouseSensitivity = 1.5f;
         CameraOffset = new Vector3(0.5f, 1.9f, 0.25f);
         rotationXMinMax = new Vector2(-20f, 20f);
         rotationYMinMax = new Vector2(-180f, 180f);
