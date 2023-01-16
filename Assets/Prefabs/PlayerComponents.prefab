@@ -1220,8 +1220,6 @@ MonoBehaviour:
   PowerAttack2: 1
   PowerAttack3: 1
   PowerAttack4: 1
-  MiniMap: 1
-  NigthVision: 1
   AreaDamageProjectile: 0
   freeezingProjectile: 0
   anim: {fileID: 4793934663337380453}
@@ -1270,6 +1268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7492e5914370c14991291e6aa66c1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statsManager: {fileID: 0}
+  gameManager: {fileID: 0}
   Health: 200
 --- !u!1 &2326440025611170551
 GameObject:
@@ -2190,11 +2190,11 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 416b4b14829e94a49ad1b69273dc1734, type: 2}
-  - {fileID: 2100000, guid: 37679a5a041ecb54e907f6974a74c8fe, type: 2}
+  - {fileID: 2100000, guid: 4a2a6f764a23a7a4b91929cbe12ef465, type: 2}
+  - {fileID: 2100000, guid: 2afc3b1cf19ed7b4b9bc7130aebed126, type: 2}
+  - {fileID: 2100000, guid: 96ffbdaa53c117c409f2f1fb0643bd98, type: 2}
   - {fileID: 2100000, guid: 9a1cbdde545d12148b344c36d459f3a9, type: 2}
-  - {fileID: 2100000, guid: 9a1cbdde545d12148b344c36d459f3a9, type: 2}
-  - {fileID: 2100000, guid: 37679a5a041ecb54e907f6974a74c8fe, type: 2}
+  - {fileID: 2100000, guid: 2afc3b1cf19ed7b4b9bc7130aebed126, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3848,9 +3848,9 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 416b4b14829e94a49ad1b69273dc1734, type: 2}
+  - {fileID: 2100000, guid: 4a2a6f764a23a7a4b91929cbe12ef465, type: 2}
   - {fileID: -4000416742722722352, guid: e6fa4b91232d034409bfa7abc5312b18, type: 3}
-  - {fileID: 2100000, guid: 37679a5a041ecb54e907f6974a74c8fe, type: 2}
+  - {fileID: 2100000, guid: 2afc3b1cf19ed7b4b9bc7130aebed126, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
