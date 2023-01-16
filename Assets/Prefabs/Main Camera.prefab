@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
-  m_Dithering: 1
+  m_Dithering: 0
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
@@ -165,8 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimingDistance: 1.8
-  mouseSensitivity: 3
-  distanceFromTarget: 3
+  mouseSensitivity: 4
+  distanceFromTarget: 4
   smoothTime: 1
   rotationXMinMax: {x: -10, y: 30}
   rotationYMinMax: {x: -360, y: 360}
@@ -175,8 +175,6 @@ MonoBehaviour:
   IsAiming: 0
   CameraOffsetMemory: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
-  Mesh: {fileID: 0}
-  PlayerOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &299904905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,5 +188,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Minimap: {fileID: 0}
-  duration: 0.5
+  duration: 1
   camerafollow: {fileID: 1931819713404615162}

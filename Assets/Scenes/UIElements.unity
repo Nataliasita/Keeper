@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a571f968e2968d7469a4d10d45e8f142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Minimap: {fileID: 0}
+  Minimap: {fileID: 875516615}
 --- !u!1 &350445012
 GameObject:
   m_ObjectHideFlags: 0
@@ -4688,7 +4688,7 @@ GameObject:
   - component: {fileID: 875516618}
   - component: {fileID: 875516619}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: ContainerMinimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

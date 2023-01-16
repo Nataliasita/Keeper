@@ -66,6 +66,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   life: 1
+  IsHealthCristal: 0
+  IsSpeedCristal: 0
+  IsPowerCristal: 0
+  child: {fileID: 8233861541512611412}
+  materialHealth: {fileID: 2100000, guid: 4e4b7219fbd94d04f896ad8ea315877a, type: 2}
+  materialSpeed: {fileID: 2100000, guid: 1738d183bea865448983453ed4796d17, type: 2}
+  materialPower: {fileID: 2100000, guid: 6cf2015a0db367442b8dcd24ebd7a83d, type: 2}
 --- !u!135 &4490297341016140087
 SphereCollider:
   m_ObjectHideFlags: 0
