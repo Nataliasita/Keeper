@@ -312,6 +312,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 5
   life: 0
+  IsSpeedCristal: 1
+  IsHealthCristal: 0
+  IsPowerCristal: 0
 --- !u!135 &671251244548152516
 SphereCollider:
   m_ObjectHideFlags: 0

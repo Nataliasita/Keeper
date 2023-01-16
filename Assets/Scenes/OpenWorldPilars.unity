@@ -649,7 +649,7 @@ PrefabInstance:
     - target: {fileID: 1083964981697568368, guid: c8e924ff4f6c34840b85add5c21481ad,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 2852
+      value: 2858
       objectReference: {fileID: 0}
     - target: {fileID: 1083964981697568371, guid: c8e924ff4f6c34840b85add5c21481ad,
         type: 3}
@@ -734,7 +734,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-224632
+  m_Name: pb_Mesh646286
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2159,8 +2159,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
         type: 3}
+      propertyPath: Numberpoints
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
+        type: 3}
       propertyPath: PowerAttack2
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
+        type: 3}
+      propertyPath: NumberpointsSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
+        type: 3}
+      propertyPath: NumberpointsHealth
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
         type: 3}

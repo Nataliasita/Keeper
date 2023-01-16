@@ -23,10 +23,10 @@ public class statsPanelFunctions : MonoBehaviour
     // Update is called once per frame
     public void AddHealth()
     {
-        if (CorstIncrements < statsManager.Numberpoints)
+        if (CorstIncrements < statsManager.NumberpointsHealth)
         {
             statsManager.AddHealth(healthIncrement);
-            statsManager.Numberpoints -= CorstIncrements;
+            statsManager.NumberpointsHealth -= CorstIncrements;
             CorstIncrements += CorstIncreaseValue;
             anim.SetTrigger("Victory");
         }
@@ -51,10 +51,10 @@ public class statsPanelFunctions : MonoBehaviour
     }
     public void AddSpeed()
     {
-        if (CorstIncrements < statsManager.Numberpoints)
+        if (CorstIncrements < statsManager.NumberpointsSpeed)
         {
             statsManager.AddSpeed(speedIncrement);
-            statsManager.Numberpoints -= CorstIncrements;
+            statsManager.NumberpointsSpeed -= CorstIncrements;
             CorstIncrements += CorstIncreaseValue;
             anim.SetTrigger("Victory");
         }
