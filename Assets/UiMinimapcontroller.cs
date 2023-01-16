@@ -7,10 +7,11 @@ public class UiMinimapcontroller : MonoBehaviour
     public GameObject Minimap;
     private bool active;
     // Start is called before the first frame update
-    private void Start()
+    private void Start() 
     {
-        Minimap = GameObject.Find("PanelMinimap");
+        Minimap.SetActive(false);
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.M)) DeactivateMiniMap();
