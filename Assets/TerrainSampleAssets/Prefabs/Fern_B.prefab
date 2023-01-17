@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1914528429035393306}
   - component: {fileID: 6568925281509450877}
   - component: {fileID: 4520639358053016236}
-  - component: {fileID: 6082190096629505811}
+  - component: {fileID: 1389086887075463996}
   m_Layer: 0
   m_Name: Fern_B
   m_TagString: Untagged
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMesh: 0
---- !u!65 &6082190096629505811
+--- !u!65 &1389086887075463996
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,5 +109,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.92385864, y: 0.26478153, z: 0.8730061}
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0.11005171, z: 0.00000011920929}

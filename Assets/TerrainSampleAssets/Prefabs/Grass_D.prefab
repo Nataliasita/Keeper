@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8027715255928471207}
   - component: {fileID: 2315274950560864275}
   - component: {fileID: 982191815468162365}
-  - component: {fileID: 7789325257081840306}
+  - component: {fileID: 3201489349763171708}
   m_Layer: 0
   m_Name: Grass_D
   m_TagString: Untagged
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMesh: 0
---- !u!65 &7789325257081840306
+--- !u!65 &3201489349763171708
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,5 +109,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9408264, y: 0.75759387, z: 0.9012251}
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0.36364985, z: -0.00000047683716}
