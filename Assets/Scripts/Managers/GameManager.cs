@@ -23,13 +23,12 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     // Inicializo el singleton en el primer script 
+    public static int lostScene;
     [SerializeField] GameObject menuPausa;
     public static GameManager sharedInstance;
     public bool isPlaying;
-    public int scene = 0;
     // Declaración del estado del juego
     public GameState currentGameState = GameState.PrincipalMenu;
-
     public void Awake()
     {
         // que despierte y enfatizo con el siguiente fragmento
@@ -153,7 +152,6 @@ public class GameManager : MonoBehaviour
             //TODO: colocar la logica del menu
             SceneManager.LoadScene("FightBoss");
             SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
-            //scene = SceneManager.GetActiveScene().buildIndex;
         }
         else if (newGameState == GameState.Controsl)
         {
@@ -185,11 +183,6 @@ public class GameManager : MonoBehaviour
         menuPausa.SetActive(false);
         isPlaying = true;
     }
-    public void Reiniciar()
-    {
-        //TODO: colocar la logica de la reiniciar
-        Game();
-    }
     public void Abandonar()
     {
         //TODO: colocar la logica de abandonar
@@ -199,5 +192,11 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+     public void Reiniciar()
+    {
+        SceneManager.LoadScene(GameManager.lostScene);
+        SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
+        
     }
 }
