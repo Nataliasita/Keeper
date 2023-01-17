@@ -226,6 +226,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
+        type: 3}
+      propertyPath: CheckPointPostion.y
+      value: 60.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
+        type: 3}
+      propertyPath: CheckPointPostion.z
+      value: 5.79
+      objectReference: {fileID: 0}
     - target: {fileID: 1513719017562980582, guid: 4c82d289e38095e4f91d43801bf04713,
         type: 3}
       propertyPath: m_RootOrder
@@ -1402,6 +1412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 0}
   isPlaying: 0
+  scene: 0
   currentGameState: 3
 --- !u!4 &171738491
 Transform:
@@ -16594,7 +16605,7 @@ PrefabInstance:
     - target: {fileID: 1470239434192834591, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60.175
+      value: 60.4
       objectReference: {fileID: 0}
     - target: {fileID: 1470239434192834591, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
