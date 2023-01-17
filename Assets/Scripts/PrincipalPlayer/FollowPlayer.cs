@@ -6,7 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public float aimingDistance;
     [SerializeField]
-    private float mouseSensitivity = 3.0f;
+    private float mouseSensitivity;
     private float rotationY;
     private float rotationX;
 
@@ -32,6 +32,7 @@ public class FollowPlayer : MonoBehaviour
     public Vector3 CameraOffsetMemory;
     private Vector2 rotationXMinMaxMemory;
     private Vector2 rotationYMinMaxMemory;
+    private float sensibilityMemory;
     private bool CameraCanMove;
     private Vector3 MovementPosition;
     public GameObject target;
@@ -42,6 +43,7 @@ public class FollowPlayer : MonoBehaviour
         rotationXMinMaxMemory = rotationXMinMax;
         distanceFromTargetMemory = distanceFromTarget;
         CameraOffsetMemory = CameraOffset;
+        sensibilityMemory = mouseSensitivity;
         StartCoroutine(LerpPosition(transform.position,player.transform.position + CameraOffset - transform.forward * distanceFromTarget, 0.5f, player.transform.rotation));
     }
 
@@ -86,7 +88,7 @@ public class FollowPlayer : MonoBehaviour
     {
         //Stablisch the new camera position
         distanceFromTarget = aimingDistance;
-        mouseSensitivity = 1.5f;
+        mouseSensitivity = sensibilityMemory/2;
         CameraOffset = new Vector3(0.5f, 1.9f, 0.25f);
         rotationXMinMax = new Vector2(-20f, 20f);
         rotationYMinMax = new Vector2(-180f, 180f);
@@ -102,7 +104,7 @@ public class FollowPlayer : MonoBehaviour
         rotationY += mouseX;
         rotationX += -mouseY;
         rotationX = Mathf.Clamp(rotationX, rotationXMinMax.x, rotationXMinMax.y);
-        rotationY = Mathf.Clamp(rotationY, rotationYMinMax.x, rotationYMinMax.y);
+        //rotationY = Mathf.Clamp(rotationY, rotationYMinMax.x, rotationYMinMax.y);
         Vector3 nextRotation = new Vector3(rotationX, rotationY);
         currentRotation = Vector3.SmoothDamp(currentRotation, nextRotation, ref smoothVelocity, smoothTime);
         transform.localEulerAngles = currentRotation;
@@ -113,7 +115,7 @@ public class FollowPlayer : MonoBehaviour
         CameraOffset = CameraOffsetMemory;
         rotationXMinMax = rotationXMinMaxMemory;
         rotationYMinMax = rotationYMinMaxMemory;
-        mouseSensitivity = 3f;
+        mouseSensitivity = sensibilityMemory;
     }
     public void LerpCamera(Vector3 startingPosition,Vector3 finalPosition, float duration, Quaternion finalRotation)
     {

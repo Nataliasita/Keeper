@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerStats : MonoBehaviour
 {
     public StatsManager statsManager;
@@ -20,6 +21,7 @@ public class PlayerStats : MonoBehaviour
     }
     private void Update()
     {
+         
         if (Health <= 0)
         {
             gameManager.GameOver();

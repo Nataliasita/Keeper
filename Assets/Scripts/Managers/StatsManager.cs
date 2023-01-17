@@ -7,7 +7,7 @@ public class StatsManager : MonoBehaviour
     public static StatsManager sharedInstance;
     [Header("Checkpoint")]
     public Vector3 CheckPointPostion;
-    
+
     [Header("GeneralStats")]
     public float MaxHealt;
     public float MaxDamage;
