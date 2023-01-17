@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.145
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 931368849}
-  m_IndirectSpecularColor: {r: 0.016325144, g: 0.060521796, b: 0.10484681, a: 0.145}
+  m_IndirectSpecularColor: {r: 0.016325451, g: 0.06057105, b: 0.10485989, a: 0.145}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6719,6 +6719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 0}
   isPlaying: 0
+  scene: 
   currentGameState: 0
 --- !u!4 &201372087
 Transform:
@@ -8130,6 +8131,7 @@ GameObject:
   - component: {fileID: 256922471}
   - component: {fileID: 256922473}
   - component: {fileID: 256922472}
+  - component: {fileID: 256922474}
   m_Layer: 0
   m_Name: Level2
   m_TagString: Untagged
@@ -8176,8 +8178,24 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 77.2
+  m_Radius: 39.6
   m_Center: {x: -55.8, y: -30.6, z: -143.6}
+--- !u!114 &256922474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256922470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ca50c9037552644990bfcd99192936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsManager: {fileID: 0}
+  gameManager: {fileID: 0}
+  IsPortal: 1
+  portalstartPoint: {x: 0, y: 60.175, z: 5.79}
 --- !u!1001 &258955734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11320,7 +11338,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1690262
+  m_Name: pb_Mesh-1890
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15000,17 +15018,19 @@ Transform:
   - {fileID: 1647277255}
   - {fileID: 1495608820}
   - {fileID: 794836764}
+  - {fileID: 188086162}
   - {fileID: 1378469534}
   - {fileID: 1747608419}
   - {fileID: 1133946017}
   - {fileID: 973666197}
   - {fileID: 150358508}
   - {fileID: 726669545}
+  - {fileID: 1250306551}
   - {fileID: 368939863}
   - {fileID: 827351955}
   - {fileID: 1124860201}
   - {fileID: 67584668}
-  - {fileID: 188086162}
+  - {fileID: 166275942}
   - {fileID: 130984976}
   - {fileID: 1823833901}
   - {fileID: 514994678}
@@ -15021,8 +15041,6 @@ Transform:
   - {fileID: 1240940219}
   - {fileID: 159751917}
   - {fileID: 1079247013}
-  - {fileID: 1250306551}
-  - {fileID: 166275942}
   - {fileID: 380262994}
   m_Father: {fileID: 1932563368}
   m_RootOrder: 3
@@ -39827,7 +39845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081047758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -523.8, y: 18.8, z: 790}
+  m_LocalPosition: {x: -534.6, y: 18.8, z: 809.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46818,8 +46836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMesh: 0
---- !u!65 &1265726314
-BoxCollider:
+--- !u!135 &1265726314
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -46829,8 +46847,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.059316307, y: 0.052675404, z: 0.22077604}
-  m_Center: {x: -0.000000038184236, y: 0.000000014901161, z: -0.09877009}
+  m_Radius: 0.024
+  m_Center: {x: -0.00000005308539, y: -1.4011551e-15, z: -0.26}
 --- !u!1 &1267555465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5903634615223371057, guid: 3cfdf357bfb1c054db92d77389d4ddf7,
@@ -60615,6 +60633,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 27.13
   m_Center: {x: 0, y: -5, z: 0}
+--- !u!114 &1698940625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698940620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ca50c9037552644990bfcd99192936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsManager: {fileID: 0}
+  gameManager: {fileID: 0}
+  IsPortal: 1
+  portalstartPoint: {x: 0, y: -0.361, z: -13.91}
 --- !u!1001 &1699341469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69020,21 +69054,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1436067209014658546}
-    - target: {fileID: 1931819713404615162, guid: cce12e06343bf8344a9b55a8c089d2d5,
-        type: 3}
-      propertyPath: mouseSensitivity
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1931819713404615162, guid: cce12e06343bf8344a9b55a8c089d2d5,
-        type: 3}
-      propertyPath: rotationYMinMax.x
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 1931819713404615162, guid: cce12e06343bf8344a9b55a8c089d2d5,
-        type: 3}
-      propertyPath: rotationYMinMax.y
-      value: 180
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce12e06343bf8344a9b55a8c089d2d5, type: 3}
 --- !u!1001 &2003181779

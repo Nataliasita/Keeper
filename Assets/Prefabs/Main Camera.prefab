@@ -165,9 +165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimingDistance: 1.8
-  mouseSensitivity: 4
+  mouseSensitivity: 0.7
   distanceFromTarget: 4
-  smoothTime: 1
+  smoothTime: 0.25
   rotationXMinMax: {x: -10, y: 30}
   rotationYMinMax: {x: -360, y: 360}
   CameraOffset: {x: 0.54, y: 1.27, z: 0.01}

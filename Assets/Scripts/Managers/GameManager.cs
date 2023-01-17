@@ -20,13 +20,13 @@ public enum GameState
     Credits,
     GameOver
 }
-
 public class GameManager : MonoBehaviour
 {
     // Inicializo el singleton en el primer script 
     [SerializeField] GameObject menuPausa;
     public static GameManager sharedInstance;
     public bool isPlaying;
+    public int scene = 0;
     // Declaración del estado del juego
     public GameState currentGameState = GameState.PrincipalMenu;
 
@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
     public void Game()
     {
         SetGameState(GameState.Game);
-
     }
 
     public void Level1()
@@ -154,6 +153,7 @@ public class GameManager : MonoBehaviour
             //TODO: colocar la logica del menu
             SceneManager.LoadScene("FightBoss");
             SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
+            //scene = SceneManager.GetActiveScene().buildIndex;
         }
         else if (newGameState == GameState.Controsl)
         {
