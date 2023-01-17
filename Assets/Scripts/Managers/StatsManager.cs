@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatsManager : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class StatsManager : MonoBehaviour
         combatSystem = GameObject.Find("PlayerComponents").GetComponent<CombatSystem>();
     }
     // Start is called before the first frame update
-    public void AddHealth( float healtToAdd)
+    public void AddHealth(float healtToAdd)
     {
         MaxHealt += healtToAdd;
     }
@@ -53,17 +54,17 @@ public class StatsManager : MonoBehaviour
     {
         MaxSpeed += speedToAdd;
     }
-    public void AddPoints(int type,float pointsToAdd)
+    public void AddPoints(int type, float pointsToAdd)
     {
-        if (type == 1)Numberpoints += pointsToAdd;
-        if (type == 2)NumberpointsHealth += pointsToAdd;
-        if (type == 3)NumberpointsSpeed += pointsToAdd;
+        if (type == 1) Numberpoints += pointsToAdd;
+        if (type == 2) NumberpointsHealth += pointsToAdd;
+        if (type == 3) NumberpointsSpeed += pointsToAdd;
     }
-    public void RemovePoints(int type,float pointsToRemove)
+    public void RemovePoints(int type, float pointsToRemove)
     {
-        if (type == 1)Numberpoints += pointsToRemove;
-        if (type == 2)NumberpointsHealth += pointsToRemove;
-        if (type == 3)NumberpointsSpeed += pointsToRemove;
+        if (type == 1) Numberpoints += pointsToRemove;
+        if (type == 2) NumberpointsHealth += pointsToRemove;
+        if (type == 3) NumberpointsSpeed += pointsToRemove;
     }
     public void AddEspecialShot1(bool shotToAdd)
     {

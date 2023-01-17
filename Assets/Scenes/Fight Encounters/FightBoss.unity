@@ -272,10 +272,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsManager: {fileID: 0}
-  gameManager: {fileID: 0}
   IsPortal: 0
   portalstartPoint: {x: 0, y: 0, z: 0}
-  Scenename: 0
+  Sceneindex: 0
 --- !u!65 &226769392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3505,7 +3504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 0}
   isPlaying: 0
-  scene: 13
+  scenenumber: 0
   currentGameState: 7
 --- !u!4 &1870365367
 Transform:
