@@ -9069,6 +9069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 0}
   isPlaying: 0
+  scene: 0
   currentGameState: 5
 --- !u!4 &1870365367
 Transform:

@@ -627,8 +627,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -465, y: -1220.9999}
-  m_SizeDelta: {x: 900, y: 1293}
+  m_AnchoredPosition: {x: -465, y: -1263.3877}
+  m_SizeDelta: {x: 695.5125, y: 999.2195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66193933
 MonoBehaviour:
@@ -1464,7 +1464,7 @@ SpriteRenderer:
   m_Size: {x: 1.29, y: 1.29}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &336498531
@@ -4016,6 +4016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 1358168114}
   isPlaying: 0
+  scene: 0
   currentGameState: 1
 --- !u!4 &776162130
 Transform:
@@ -9869,8 +9870,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -174, y: -1221}
-  m_SizeDelta: {x: 900, y: 1293}
+  m_AnchoredPosition: {x: -174, y: -1263.3877}
+  m_SizeDelta: {x: 695.5126, y: 999.2197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718491714
 MonoBehaviour:
@@ -11214,8 +11215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -470.02197, y: -522.7191}
-  m_SizeDelta: {x: 4936, y: 998.40344}
+  m_AnchoredPosition: {x: -627.57477, y: -522.7191}
+  m_SizeDelta: {x: 3883.1514, y: 998.4034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885770573
 MonoBehaviour:
@@ -12252,8 +12253,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 280, y: -640}
-  m_SizeDelta: {x: 69.118, y: 113.252}
+  m_AnchoredPosition: {x: 260.9654, y: -608.6818}
+  m_SizeDelta: {x: 53.3235, y: 100.3193}
   m_Pivot: {x: -0.000000029802322, y: 0.5}
 --- !u!114 &2088718608
 MonoBehaviour:
