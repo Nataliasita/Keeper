@@ -12,6 +12,7 @@ TagManager:
   - HitBox
   - Water
   - Reward
+  - RewardBox
   layers:
   - Default
   - TransparentFX

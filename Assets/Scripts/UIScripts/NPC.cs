@@ -15,6 +15,14 @@ public class NPC : MonoBehaviour
     public bool PlayerIsClose;
     public float sightRange;
     public LayerMask whatIsPlayer;
+    private void Start() 
+    {
+        Panel = GameObject.Find("NPCDialoguePanel");
+        dialoguetext = GameObject.Find("NPCDialogueText").GetComponent<TextMeshProUGUI>();
+        ContinueButton = GameObject.Find("NPCDialogueButton");
+        
+    }
+ 
     void Update()
     {
         PlayerIsClose = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -35,7 +43,7 @@ public class NPC : MonoBehaviour
         {
             ContinueButton.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && PlayerIsClose)nextLine();
+        if (Input.GetKeyDown(KeyCode.Space) && PlayerIsClose) nextLine();
     }
     IEnumerator typing()
     {
@@ -70,17 +78,22 @@ public class NPC : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
-    private void OnTriggerStay(Collider other) {
+    private void OnTriggerStay(Collider other)
+    {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.GetComponent<CombatSystem>().comboIndex = 0;
+
             other.GetComponent<PlayerCombatMovement>().CanJump = false;
+            other.GetComponent<CombatSystem>().CanAttack = false;
         }
     }
-     private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit(Collider other)
+    {
         if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<PlayerCombatMovement>().CanJump = true;
+            other.GetComponent<CombatSystem>().CanAttack = true;
+
         }
     }
 }

@@ -21,6 +21,7 @@ public class CombatSystem : MonoBehaviour
     private PlayerCombatMovement PlayerMovement;
     public GameObject Sword;
     public GameObject Anmo;
+    public bool CanAttack;
 
     [Header("Shotting")]
     public GameObject Camera;
@@ -121,7 +122,7 @@ public class CombatSystem : MonoBehaviour
             {
                 comboIndex = 0;
             }
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && CanAttack)
             {
                 Sword.SetActive(true);
                 comboIndex += 0.7f;
