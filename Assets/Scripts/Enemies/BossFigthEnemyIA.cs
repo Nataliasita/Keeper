@@ -5,10 +5,11 @@ public class BossFigthEnemyIA : MonoBehaviour
 {
     
     [Header("Enemy Elements")]
-    public EnemyStats enemyStats;
+    public BossEnemyStats enemyStats;
     public UnityEngine.AI.NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
+    public float OfffsetAttackTime;
 
     [Header("Patrolling")]
     public Vector3 walkPoint;
@@ -19,6 +20,7 @@ public class BossFigthEnemyIA : MonoBehaviour
     //public Transform FireStart;
     public float timeBetweenAttacks;
     bool alreadyAttacked;
+    public GameObject DistanceAttackPrefab;
 
     [Header("States")]
     public float sightRange, attackRange,DistanceAttackRange;
@@ -41,7 +43,7 @@ public class BossFigthEnemyIA : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) ShortDistanceAttackPlayer();
-         if (playerInAttackRange && playerInSightRange && playerInDistanceAttackRange) LongDistanceAttackPlayer();
+         if (!playerInAttackRange && !playerInSightRange && playerInDistanceAttackRange) LongDistanceAttackPlayer();
     }
 
     private void Patroling()
@@ -66,8 +68,9 @@ public class BossFigthEnemyIA : MonoBehaviour
         if (Physics.Raycast(walkPoint, -transform.up, 0f, whatIsGround)) walkPointSet = true;
     }
 
-    private void ChasePlayer()
+    public void ChasePlayer()
     {
+        enemyStats.RangeEnemy = false;
         agent.SetDestination(player.position);
     }
 
@@ -78,7 +81,8 @@ public class BossFigthEnemyIA : MonoBehaviour
     }
     private void LongDistanceAttackPlayer()
     {
-        transform.LookAt(transform.position,Vector3.up);
+        enemyStats.RangeEnemy = true;
+        enemyStats.Attack();
     }
     private void OnDrawGizmosSelected()
     {
@@ -86,5 +90,7 @@ public class BossFigthEnemyIA : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+         Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, DistanceAttackRange);
     }
 }
