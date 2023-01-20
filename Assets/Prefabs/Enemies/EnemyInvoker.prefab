@@ -743,11 +743,16 @@ MonoBehaviour:
   damagePlayer: 10
   projectile: {fileID: 6695591510691289892, guid: bc7b512005eeb4b43ae4ef8a3981b442,
     type: 3}
+  ShootOfset: 0
   prefabReward: {fileID: 9015915351480044101, guid: 9790066b38fa32e47a94e4d04b5a1b2a,
     type: 3}
   prefabLife: {fileID: 2883028275037452728, guid: 9b7bfb186b0af6046a82570a690befa1,
     type: 3}
   rewardCuantity: 0
+  anim: {fileID: 0}
+  Outline: {fileID: 0}
+  prefabSpirit: {fileID: 0}
+  prefabAnimal: {fileID: 0}
 --- !u!65 &5178694171779083769
 BoxCollider:
   m_ObjectHideFlags: 0

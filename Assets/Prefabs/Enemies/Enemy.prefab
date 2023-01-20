@@ -998,7 +998,7 @@ MonoBehaviour:
   trhust: 250
   rb: {fileID: 2986089137831835301}
   Player: {fileID: 0}
-  RangeEnemy: 0
+  RangeEnemy: 1
   weakpoints: 0
   IsHurt: 0
   timeBetweenAttacks: 2
@@ -1015,6 +1015,8 @@ MonoBehaviour:
   rewardCuantity: 5
   anim: {fileID: 0}
   Outline: {fileID: 0}
+  prefabSpirit: {fileID: 0}
+  prefabAnimal: {fileID: 0}
 --- !u!65 &2986089137831835302
 BoxCollider:
   m_ObjectHideFlags: 0

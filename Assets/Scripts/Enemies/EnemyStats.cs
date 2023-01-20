@@ -37,6 +37,10 @@ public class EnemyStats : MonoBehaviour
     public Animator Outline;
     //private DetectorSensor Sensor;
 
+    [Header("Changes Enemy")]
+    public GameObject prefabSpirit;
+    public GameObject prefabAnimal;
+
     private void Start()
     {
         MaxHealth = health;
@@ -110,7 +114,7 @@ public class EnemyStats : MonoBehaviour
             projectileRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x - ShootOfset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
             Instantiate(projectile, this.transform.position, projectileRot);
             anim.SetTrigger("Attack");
-            Outline.SetTrigger("Attack");
+            // Outline.SetTrigger("Attack");
         }
         else
         {
@@ -124,6 +128,7 @@ public class EnemyStats : MonoBehaviour
     {
         hitBox.SetActive(true);
         Invoke("DeactivateHitBox", 1.0f);
+        ChangeEnemyBasic();
         if (Player.GetComponent<CombatSystem>().PlayerisParry == true)
         {
             TakeDamage(0, 1.7f);
@@ -145,6 +150,7 @@ public class EnemyStats : MonoBehaviour
     public void DeadEnemy()
     {
         IsAlive = false;
+        ChangeEnemyThrow();
         this.gameObject.SetActive(false);
         int index;
         Player.GetComponent<CombatSystem>().comboIndex = 0;
@@ -159,5 +165,21 @@ public class EnemyStats : MonoBehaviour
             Instantiate(prefabReward, posInicial, Quaternion.identity);
             prefabReward.GetComponent<Rigidbody>().AddForce(Random.Range(-4f, 4f), Random.Range(-4f, 4f), Random.Range(-4f, 4f), ForceMode.Impulse);
         }
+    }
+
+    //Changes enemies animals
+    public void ChangeEnemyThrow()
+    {   
+        GameObject spirit = Instantiate(prefabSpirit, this.transform.position, Quaternion.identity);
+        spirit.transform.LookAt(Player.transform.position, Vector3.up);
+        Destroy (spirit , 2.5f);
+        GameObject animal = Instantiate(prefabAnimal, this.transform.position, Quaternion.identity);
+        animal.transform.LookAt(Player.transform.position, Vector3.up);
+        Destroy (animal , 18f);
+    }
+
+    public void ChangeEnemyBasic()
+    {   
+        anim.SetTrigger("Attack");
     }
 }
