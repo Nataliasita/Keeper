@@ -14,6 +14,7 @@ public class PlayerCombatMovement : MonoBehaviour
     //private Storm stormScript; 
 
     [Header("Movement")]
+    public bool CanJump = true;
     public float jumpForce;
     public float jumpCount;
     public float sprintSpeed;
@@ -25,7 +26,7 @@ public class PlayerCombatMovement : MonoBehaviour
     [SerializeField] Camera followCamera;
 
     [Header("GameObjects")]
-    [SerializeField] CharacterController controller;
+    public CharacterController controller;
     private Animator anim;
 
     [Header("player")]
@@ -53,7 +54,7 @@ public class PlayerCombatMovement : MonoBehaviour
         playerSpeed = statsManager.MaxSpeed;
     }
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !controller.isGrounded && CanJump)
             {
                 anim.SetBool("Grounded", false);
                 anim.SetTrigger("DoubleJump");
@@ -62,7 +63,7 @@ public class PlayerCombatMovement : MonoBehaviour
                 anim.SetBool("Crouching", false);
                 IsCrouching = false;
             }
-            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
+            if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space) && CanJump)
             {
                 anim.SetBool("Grounded", false);
                 anim.SetTrigger("Jump");

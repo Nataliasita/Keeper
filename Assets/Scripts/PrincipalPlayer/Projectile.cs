@@ -69,6 +69,23 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (other.CompareTag("BossEnemy") && ally)
+        {
+            if (freeezingProjectile)
+            {
+
+            }
+            if (AreaDamageProjectile)
+            {
+                rb.velocity = Vector3.zero;
+                rb.isKinematic = true;
+            }
+            if (!AreaDamageProjectile && !freeezingProjectile)
+            {
+                other.GetComponent<BossEnemyStats>().TakeDamage(damage, 1);
+                Destroy(gameObject);
+            }
+        }
         if (other.CompareTag("WeakPoint") && ally)
         {
             other.transform.parent.GetComponent<EnemyStats>().weakpoints += 1;
@@ -81,6 +98,11 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Enemy") && AreaDamageProjectile)
         {
             other.GetComponent<EnemyStats>().TakeDamage(damage / 5, 0);
+            this.gameObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime;
+        }
+         if (other.CompareTag("BossEnemy") && AreaDamageProjectile)
+        {
+            other.GetComponent<BossEnemyStats>().TakeDamage(damage / 5, 0);
             this.gameObject.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime;
         }
         if (other.CompareTag("Ground") && AreaDamageProjectile)

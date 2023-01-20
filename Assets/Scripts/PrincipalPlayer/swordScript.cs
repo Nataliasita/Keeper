@@ -32,7 +32,7 @@ public class swordScript : MonoBehaviour
     {
         SpawnHere = other.ClosestPoint(transform.position);
 
-        if (other.gameObject.CompareTag("HitBox")&& player.GetComponent<CombatSystem>().comboIndex > 0)
+        if (other.gameObject.CompareTag("HitBox") && player.GetComponent<CombatSystem>().comboIndex > 0)
         {
             Instantiate(ParticleEffect, SpawnHere, other.transform.rotation);
         }
@@ -41,6 +41,16 @@ public class swordScript : MonoBehaviour
         {
             Instantiate(ParticleEffect, SpawnHere, other.transform.rotation);
             other.gameObject.GetComponent<EnemyStats>().TakeDamage(weaponDamage, 1.2f);
+        }
+        if (other.gameObject.CompareTag("BossEnemy") && player.GetComponent<CombatSystem>().comboIndex > 0)
+        {
+            Instantiate(ParticleEffect, SpawnHere, other.transform.rotation);
+            other.gameObject.GetComponent<BossEnemyStats>().TakeDamage(weaponDamage, 1.2f);
+        }
+        if (other.gameObject.CompareTag("RewardBox") && player.GetComponent<CombatSystem>().comboIndex > 0)
+        {
+            Instantiate(ParticleEffect, SpawnHere, other.transform.rotation);
+            other.gameObject.GetComponent<RewardStats>().TakeDamage(weaponDamage);
         }
     }
 }

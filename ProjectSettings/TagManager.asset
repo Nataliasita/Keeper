@@ -12,6 +12,8 @@ TagManager:
   - HitBox
   - Water
   - Reward
+  - RewardBox
+  - BossEnemy
   layers:
   - Default
   - TransparentFX
