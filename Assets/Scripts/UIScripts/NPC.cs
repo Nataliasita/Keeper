@@ -20,13 +20,12 @@ public class NPC : MonoBehaviour
         Panel = GameObject.Find("NPCDialoguePanel");
         dialoguetext = GameObject.Find("NPCDialogueText").GetComponent<TextMeshProUGUI>();
         ContinueButton = GameObject.Find("NPCDialogueButton");
-        
+        Invoke("ZeroText",.5f);
     }
  
     void Update()
     {
         PlayerIsClose = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        if (!PlayerIsClose) ZeroText();
         if (Input.GetKeyDown(KeyCode.E) && PlayerIsClose)
         {
             if (Panel.activeInHierarchy)
@@ -93,7 +92,7 @@ public class NPC : MonoBehaviour
         {
             other.GetComponent<PlayerCombatMovement>().CanJump = true;
             other.GetComponent<CombatSystem>().CanAttack = true;
-
+            ZeroText();
         }
     }
 }
