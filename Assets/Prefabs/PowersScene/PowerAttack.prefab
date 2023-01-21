@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3562563353691410494}
   - component: {fileID: -1147298141878145123}
   - component: {fileID: -98510047386410151}
+  - component: {fileID: 1254865404}
   m_Layer: 0
   m_Name: PowerAttack
   m_TagString: Untagged
@@ -82,6 +83,21 @@ MonoBehaviour:
   PowerAttack4: 0
   MiniMap: 0
   NigthVision: 0
+--- !u!114 &1254865404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7801324851584745545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70fa8f17deec95479b63dbc8882cc9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ContextualPanel: {fileID: 0}
+  activeUIComponent: 0
+  index: 1
 --- !u!1001 &4320528244628517836
 PrefabInstance:
   m_ObjectHideFlags: 0

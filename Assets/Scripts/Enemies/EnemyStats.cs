@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    [Header("Transformation")]
+    public Vector3 OffsetAparition = new Vector3(0, 0, 0);
+
     [Header("Enemy Mode")]
     public bool CanbeHurt;
     public bool RangeShootEnemy;
@@ -47,7 +50,7 @@ public class EnemyStats : MonoBehaviour
         //Sensor = GameObject.Find("Sensor").GetComponent<DetectorSensor>();
         Player = GameObject.Find("PlayerComponents");
         rb = GetComponent<Rigidbody>();
-        if (RangeShootEnemy) anim = GetComponent<Animator>();     
+        if (RangeShootEnemy) anim = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -168,17 +171,17 @@ public class EnemyStats : MonoBehaviour
 
     //Changes enemies animals
     public void ChangeEnemyThrow()
-    {   
-        GameObject spirit = Instantiate(prefabSpirit, this.transform.position, Quaternion.identity);
+    {
+        GameObject spirit = Instantiate(prefabSpirit, this.transform.position + OffsetAparition, Quaternion.identity);
         spirit.transform.LookAt(Player.transform.position, Vector3.up);
-        Destroy (spirit , 2.5f);
-        GameObject animal = Instantiate(prefabAnimal, this.transform.position, Quaternion.identity);
+        Destroy(spirit, 2.5f);
+        GameObject animal = Instantiate(prefabAnimal, this.transform.position - OffsetAparition, Quaternion.identity);
         animal.transform.LookAt(Player.transform.position, Vector3.up);
-        Destroy (animal , 18f);
+        Destroy(animal, 18f);
     }
 
     public void ChangeEnemyBasic()
-    {   
+    {
         anim.SetTrigger("Attack");
     }
 }

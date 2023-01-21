@@ -13,18 +13,12 @@ public class progresionUIVisibility : MonoBehaviour
     {
         statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         UIelement = GameObject.Find("ButtonMap");
-        UIelement2 = GameObject.Find("Group 1");
-        UIelement3 = GameObject.Find("Group 2");
         UIelement.SetActive(false);
-        UIelement2.SetActive(false);
-        UIelement3.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (statsManager.MiniMap) UIelement.SetActive(true);
-        if (statsManager.PowerAttack3) UIelement2.SetActive(true);
-        if (statsManager.PowerAttack4) UIelement3.SetActive(true);
     }
 }
