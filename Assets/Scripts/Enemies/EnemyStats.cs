@@ -114,7 +114,6 @@ public class EnemyStats : MonoBehaviour
             projectileRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x - ShootOfset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
             Instantiate(projectile, this.transform.position, projectileRot);
             anim.SetTrigger("Attack");
-            // Outline.SetTrigger("Attack");
         }
         else
         {
