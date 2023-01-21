@@ -156,7 +156,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!1001 &5484493224005637877
 PrefabInstance:
@@ -167,10 +167,25 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5603183086768534199, guid: 3c2b5baa2adfd4646ac88bc253149961,
         type: 3}
+      propertyPath: m_Size.x
+      value: 13.511698
+      objectReference: {fileID: 0}
+    - target: {fileID: 5603183086768534199, guid: 3c2b5baa2adfd4646ac88bc253149961,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 9.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5603183086768534199, guid: 3c2b5baa2adfd4646ac88bc253149961,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1833291530, guid: c0c4d923e11864246b3596c70fa8824f,
+      objectReference: {fileID: -1766589124, guid: f6a06dca88c705f4b9071d768e9a0a17,
         type: 3}
+    - target: {fileID: 5603183086768534199, guid: 3c2b5baa2adfd4646ac88bc253149961,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5603183087165235824, guid: 3c2b5baa2adfd4646ac88bc253149961,
         type: 3}
       propertyPath: m_Radius

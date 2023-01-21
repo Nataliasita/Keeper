@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b3856ae9325b124cb165fdbc2162751
+guid: 4a9d39e0548265045a082591c6a94f16
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,379 +129,505 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hud atlas_0
+      name: Hud atlasJungleKepperAtlas_0
       rect:
         serializedVersion: 2
-        x: 195
-        y: 5094
-        width: 1307
-        height: 1485
+        x: 376
+        y: 6255
+        width: 1040
+        height: 1317
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48fc40b1e26904844a77457e3cfe38f1
-      internalID: 1777567037
+      spriteID: 10c81556c578ed34685fb8799e10bcd6
+      internalID: 100464310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_1
+      name: Hud atlasJungleKepperAtlas_1
       rect:
         serializedVersion: 2
-        x: 1710
-        y: 4218
-        width: 3364
-        height: 2257
+        x: 1938
+        y: 6715
+        width: 493
+        height: 517
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7f75021f148e09459722fb0d9f912f8
-      internalID: 816028465
+      spriteID: 01b4224547d64554090214ac32d187ea
+      internalID: 47731415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_2
+      name: Hud atlasJungleKepperAtlas_2
       rect:
         serializedVersion: 2
-        x: 5561
-        y: 5269
-        width: 1936
-        height: 1258
+        x: 2630
+        y: 7008
+        width: 1656
+        height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5b0f9c1f3d010e4691da67a3a280960
-      internalID: 1864274638
+      spriteID: 310af4ff112fe114fb02d7f00ddf0b39
+      internalID: -1444212723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_4
+      name: Hud atlasJungleKepperAtlas_3
       rect:
         serializedVersion: 2
-        x: 7770
-        y: 5716
-        width: 738
-        height: 680
+        x: 4919
+        y: 5511
+        width: 3365
+        height: 2265
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5239ddb643af70842b01c7d0a5610fae
-      internalID: 36043997
+      spriteID: b4d4e1d750c57284db563fb26a424427
+      internalID: 1476014677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_6
+      name: Hud atlasJungleKepperAtlas_4
       rect:
         serializedVersion: 2
-        x: 5726
-        y: 1983
-        width: 2582
-        height: 3238
+        x: 2630
+        y: 6642
+        width: 1656
+        height: 242
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e97588f369efe41855cd3dfb9aa503
-      internalID: 1276649517
+      spriteID: ed0b02d6d80124549ac067f8d3b4d677
+      internalID: 1682378515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_7
+      name: Hud atlasJungleKepperAtlas_6
       rect:
         serializedVersion: 2
-        x: 195
-        y: 3310
-        width: 1307
-        height: 1464
+        x: 1510
+        y: 6184
+        width: 335
+        height: 335
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 894c3d2cc56a6f44bbee302b2ca2ef5b
-      internalID: -1303168479
+      spriteID: e540bfaf7d839d04a81a85552fa32c45
+      internalID: -1606365799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_10
+      name: Hud atlasJungleKepperAtlas_7
       rect:
         serializedVersion: 2
-        x: 4462
-        y: 3711
-        width: 609
-        height: 295
+        x: 1938
+        y: 6023
+        width: 493
+        height: 517
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02b5e6f86fb75c54eb628853685b969a
-      internalID: 11268326
+      spriteID: b02415eda36af78428311ac97b9085fe
+      internalID: -524938208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_12
+      name: Hud atlasJungleKepperAtlas_8
       rect:
         serializedVersion: 2
-        x: 5140
-        y: 3711
+        x: 2630
+        y: 6277
+        width: 1656
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510271195a88d2d4080a90a3d704c374
+      internalID: 500559785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 5908
+        width: 1656
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888592fe022927443bfddf4ac6ba1b0a
+      internalID: -2000550349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 4553
+        width: 891
+        height: 1317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2ecb8f5a351524eb8c06775fbc42a0
+      internalID: -1784224947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 5335
+        width: 489
+        height: 513
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d7843d7470014489d41ad36c42d825
+      internalID: 1183150131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 5543
+        width: 1656
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f052a8c1e087cfe41a9898ad75161390
+      internalID: -1773896321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 5174
+        width: 1656
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37f659a043690b45af8db5e06489914
+      internalID: 2076200645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 5153
+        y: 2119
+        width: 2585
+        height: 3241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deca055ca2ebdab458b12c4646ee7db1
+      internalID: 952789566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 4647
+        width: 484
+        height: 513
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a05d10722fe36a459ffce1d20a0517a
+      internalID: -547908796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 4808
+        width: 1656
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81077c0f84899e7409cbfb79e291f93b
+      internalID: -2058958194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud atlasJungleKepperAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 2690
+        y: 4286
         width: 238
-        height: 295
+        height: 327
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c835ed427ea140e468f37f512c48aada
-      internalID: -377884121
+      spriteID: 4b8e62cff055e1f41b612b01b7727866
+      internalID: -44269571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_13
+      name: Hud atlasJungleKepperAtlas_19
       rect:
         serializedVersion: 2
-        x: 5461
-        y: 3711
-        width: 234
-        height: 295
+        x: 3106
+        y: 4303
+        width: 255
+        height: 327
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86a9634c253820b4c88a01c2a1f33f73
-      internalID: -1562134692
+      spriteID: cc59d0488a5d6024dba6647b2cdfe9a6
+      internalID: -430885561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_15
+      name: Hud atlasJungleKepperAtlas_20
       rect:
         serializedVersion: 2
-        x: 2257
-        y: 2752
-        width: 812
-        height: 1213
+        x: 3526
+        y: 4296
+        width: 301
+        height: 308
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2ac67b25f057d5479d2ccd416dd1825
-      internalID: -1285167759
+      spriteID: 05bd62a1b3b043d4fae3631400784bc2
+      internalID: -1429882112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_16
+      name: Hud atlasJungleKepperAtlas_21
       rect:
         serializedVersion: 2
-        x: 3421
-        y: 2743
-        width: 855
-        height: 1222
+        x: 376
+        y: 2866
+        width: 1040
+        height: 1305
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a25a84f27fe2c50468db3d1921c3dacc
-      internalID: 307187833
+      spriteID: 0c35d44141a2ab744b599daee5a3ed02
+      internalID: 1274673902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_17
+      name: Hud atlasJungleKepperAtlas_22
       rect:
         serializedVersion: 2
-        x: 4497
-        y: 3129
-        width: 230
-        height: 321
+        x: 1947
+        y: 2435
+        width: 2539
+        height: 1711
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 53, y: 54, z: 53, w: 57}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c653e73c8279d9c49811c018caa17890
-      internalID: -113812667
+      spriteID: d57c81ca56bb03445a64739fe3f7e6b0
+      internalID: -1667188021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_18
+      name: Hud atlasJungleKepperAtlas_24
       rect:
         serializedVersion: 2
-        x: 4909
-        y: 3146
-        width: 257
-        height: 326
+        x: 287
+        y: 1310
+        width: 4942
+        height: 823
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57a76b70f6588cb4587910c1519516e1
-      internalID: 2107600562
+      spriteID: 088dcebcd17d41041a1982b509f420a5
+      internalID: -925688728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_19
+      name: Hud atlasJungleKepperAtlas_25
       rect:
         serializedVersion: 2
-        x: 5331
-        y: 3142
-        width: 299
-        height: 304
+        x: 7369
+        y: 894
+        width: 1053
+        height: 1053
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6aaeac3899592b54abaa3511b9bfd0e5
-      internalID: 537626342
+      spriteID: 1900152bcf23fe048869160a3c5f156f
+      internalID: -1034241246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hud atlas_20
+      name: Hud atlasJungleKepperAtlas_26
       rect:
         serializedVersion: 2
-        x: 195
-        y: 1569
-        width: 1120
-        height: 1460
+        x: 459
+        y: 219
+        width: 6583
+        height: 900
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 657a91baf30b80445afb64fb525de104
-      internalID: -409481715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hud atlas_21
-      rect:
-        serializedVersion: 2
-        x: 4540
-        y: 2643
-        width: 374
-        height: 378
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c955f5ec38ee4cd4499f2f6488eae068
-      internalID: 1516164675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hud atlas_22
-      rect:
-        serializedVersion: 2
-        x: 5005
-        y: 2643
-        width: 378
-        height: 378
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dfa8f035360ca04ca907f7e2fd82057
-      internalID: -770031728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hud atlas_24
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 174
-        width: 4936
-        height: 998
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 273233a5c24c4cc4a9bbcf9cedcadbd2
-      internalID: 808631418
+      spriteID: e120aa0faaa6b264d8d3de0769847bda
+      internalID: 171782635
       vertices: []
       indices: 
       edges: []
@@ -509,7 +635,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5279bbb40ca7d2f4ca9585185770f495
+    spriteID: 05c0de860c4dd6e40acd5ff3800fb587
     internalID: 0
     vertices: []
     indices: 
@@ -517,31 +643,33 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hud atlas_8: -1130240267
-      Hud atlas_6: 1276649517
-      Hud atlas_7: -1303168479
-      Hud atlas_1: 816028465
-      Hud atlas_17: -113812667
-      Hud atlas_12: -377884121
-      Hud atlas_19: 537626342
-      Hud atlas_16: 307187833
-      Hud atlas_14: 1137806282
-      Hud atlas_10: 11268326
-      Hud atlas_18: 2107600562
-      Hud atlas_5: -1008653472
-      Hud atlas_11: -1853879073
-      Hud atlas_21: 1516164675
-      Hud atlas_0: 1777567037
-      Hud atlas_9: -438355525
-      Hud atlas_22: -770031728
-      Hud atlas_23: -1256264971
-      Hud atlas_15: -1285167759
-      Hud atlas_20: -409481715
-      Hud atlas_13: -1562134692
-      Hud atlas_2: 1864274638
-      Hud atlas_3: 1029565633
-      Hud atlas_4: 36043997
-      Hud atlas_24: 808631418
+      Hud atlasJungleKepperAtlas_13: 2076200645
+      Hud atlasJungleKepperAtlas_14: 952789566
+      Hud atlasJungleKepperAtlas_4: 1682378515
+      Hud atlasJungleKepperAtlas_11: 1183150131
+      Hud atlasJungleKepperAtlas_21: 1274673902
+      Hud atlasJungleKepperAtlas_5: 1267282651
+      Hud atlasJungleKepperAtlas_7: -524938208
+      Hud atlasJungleKepperAtlas_6: -1606365799
+      Hud atlasJungleKepperAtlas_15: -547908796
+      Hud atlasJungleKepperAtlas_3: 1476014677
+      Hud atlasJungleKepperAtlas_9: -2000550349
+      Hud atlasJungleKepperAtlas_8: 500559785
+      Hud atlasJungleKepperAtlas_19: -430885561
+      Hud atlasJungleKepperAtlas_16: -2058958194
+      Hud atlasJungleKepperAtlas_26: 171782635
+      Hud atlasJungleKepperAtlas_0: 100464310
+      Hud atlasJungleKepperAtlas_1: 47731415
+      Hud atlasJungleKepperAtlas_10: -1784224947
+      Hud atlasJungleKepperAtlas_2: -1444212723
+      Hud atlasJungleKepperAtlas_25: -1034241246
+      Hud atlasJungleKepperAtlas_23: -225358451
+      Hud atlasJungleKepperAtlas_12: -1773896321
+      Hud atlasJungleKepperAtlas_24: -925688728
+      Hud atlasJungleKepperAtlas_17: 1480189365
+      Hud atlasJungleKepperAtlas_22: -1667188021
+      Hud atlasJungleKepperAtlas_18: -44269571
+      Hud atlasJungleKepperAtlas_20: -1429882112
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

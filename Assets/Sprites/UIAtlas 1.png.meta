@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0c4d923e11864246b3596c70fa8824f
+guid: f6a06dca88c705f4b9071d768e9a0a17
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 0
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UIAtlas_0
+      name: UIAtlas 1_0
       rect:
         serializedVersion: 2
         x: 237
-        y: 3108
-        width: 1348
-        height: 1236
+        y: 5167
+        width: 1350
+        height: 1238
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bec962bf75fdb644b9552b732859317
-      internalID: -1367634676
+      spriteID: da84960b62c3fe643b452bc1856fb2ff
+      internalID: -907122424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_1
+      name: UIAtlas 1_1
       rect:
         serializedVersion: 2
         x: 1797
-        y: 3426
-        width: 1348
-        height: 918
+        y: 5486
+        width: 1350
+        height: 919
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e27d92e0a972ed47ad37bf482ddd143
-      internalID: 1728220043
+      spriteID: 56bf465e36919ba4ebfe26a43cf19d0a
+      internalID: 939323351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_2
+      name: UIAtlas 1_2
       rect:
         serializedVersion: 2
         x: 3357
-        y: 3052
-        width: 1348
+        y: 5113
+        width: 1351
         height: 1292
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc9f0d5f60177b340a3a42f1f311d845
-      internalID: -664938600
+      spriteID: efcdab5efb9c0e8478915bf445422a2e
+      internalID: 1689839822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_3
+      name: UIAtlas 1_3
       rect:
         serializedVersion: 2
-        x: 4917
-        y: 3431
-        width: 1347
-        height: 913
+        x: 4914
+        y: 5490
+        width: 1354
+        height: 915
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9d9ecfbe5959f94ebe191f8f1290122
-      internalID: -1405820920
+      spriteID: b4c51c742b374ff429b14b3f4e387c9d
+      internalID: -107442901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_4
+      name: UIAtlas 1_4
       rect:
         serializedVersion: 2
-        x: 6476
-        y: 3431
-        width: 1348
-        height: 913
+        x: 6473
+        y: 5490
+        width: 1355
+        height: 915
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f29c290b6469567458de98d8ae7cd054
-      internalID: -948861442
+      spriteID: 6cefa92819f6ddd4daf26882f15fe4d5
+      internalID: -2002908615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_5
+      name: UIAtlas 1_5
       rect:
         serializedVersion: 2
-        x: 8036
-        y: 3431
-        width: 1348
-        height: 913
+        x: 8033
+        y: 5490
+        width: 1355
+        height: 915
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cc1a3283dac5cd4a9fc07a2d2854294
-      internalID: -1977269812
+      spriteID: 1bbb92e7d0835d64bacef3bf74429492
+      internalID: 725801880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_6
+      name: UIAtlas 1_6
       rect:
         serializedVersion: 2
-        x: 227
-        y: 1463
-        width: 959
-        height: 1443
+        x: 222
+        y: 3519
+        width: 965
+        height: 1448
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19870768b4b2e8d4b8389a2125966be9
-      internalID: -2116721213
+      spriteID: 30718fa724214374e96a029ba0820ae1
+      internalID: 698880569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_7
+      name: UIAtlas 1_7
       rect:
         serializedVersion: 2
         x: 1373
-        y: 1463
-        width: 959
-        height: 1443
+        y: 3519
+        width: 960
+        height: 1448
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 389e12c079d43c14d86e6b7346d85894
-      internalID: -1685997123
+      spriteID: 4a630df4a32285d44b6894de4fb41a76
+      internalID: 1155184974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_8
+      name: UIAtlas 1_8
       rect:
         serializedVersion: 2
-        x: 2534
-        y: 1968
-        width: 1348
-        height: 923
+        x: 2533
+        y: 4026
+        width: 1351
+        height: 931
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48fb4e26ddd39df448165d6a83543c22
-      internalID: 382677925
+      spriteID: eb8615b1c69cfcf4e8c318940695d00a
+      internalID: -1766589124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_9
+      name: UIAtlas 1_9
       rect:
         serializedVersion: 2
-        x: 4094
-        y: 1968
-        width: 1348
-        height: 923
+        x: 4091
+        y: 3953
+        width: 2893
+        height: 1004
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c20d919ede452eb4aa2610711c642154
-      internalID: 1833291530
+      spriteID: 27ee41c176ccc28408f00001e6aee1a5
+      internalID: -314265893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_10
+      name: UIAtlas 1_10
       rect:
         serializedVersion: 2
-        x: 5654
-        y: 1897
-        width: 2887
-        height: 994
+        x: 7190
+        y: 4045
+        width: 1353
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,41 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f79be4d1703a1b34f9205f417f11a570
-      internalID: 322075336
+      spriteID: d2f4a63f36d2b6d4b85a7473cb5d766f
+      internalID: 1749368105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIAtlas_11
-      rect:
-        serializedVersion: 2
-        x: 8753
-        y: 1983
-        width: 1348
-        height: 908
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 808921acc3dc3fb408e123b3e146515a
-      internalID: -720412438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIAtlas_12
+      name: UIAtlas 1_11
       rect:
         serializedVersion: 2
         x: 237
-        y: 116
-        width: 5250
-        height: 1196
+        y: 2173
+        width: 5251
+        height: 1204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,8 +374,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd22b63159575a140882579bf95d5d13
-      internalID: -657012183
+      spriteID: c144acd9555ec584cb2380684d2f257e
+      internalID: 311188049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIAtlas 1_12
+      rect:
+        serializedVersion: 2
+        x: 6166
+        y: 3055
+        width: 750
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6828349f72eaf40b8837652c015f07
+      internalID: -1457680176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIAtlas 1_13
+      rect:
+        serializedVersion: 2
+        x: 6166
+        y: 2680
+        width: 750
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e30f24bf39dc314ab15713319c98d67
+      internalID: -428279231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIAtlas 1_14
+      rect:
+        serializedVersion: 2
+        x: 6166
+        y: 2304
+        width: 750
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54ff97d923b62f43937b5b70d0fa6e4
+      internalID: -291809481
       vertices: []
       indices: 
       edges: []
@@ -404,7 +446,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a34d6b8c10cb37747b30485ca2d304ed
+    spriteID: b05d388c40bce1a499068a5a2b6fa3b6
     internalID: 0
     vertices: []
     indices: 
@@ -412,19 +454,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UIAtlas_9: 1833291530
-      UIAtlas_12: -657012183
-      UIAtlas_6: -2116721213
-      UIAtlas_7: -1685997123
-      UIAtlas_4: -948861442
-      UIAtlas_10: 322075336
-      UIAtlas_11: -720412438
-      UIAtlas_0: -1367634676
-      UIAtlas_2: -664938600
-      UIAtlas_3: -1405820920
-      UIAtlas_5: -1977269812
-      UIAtlas_1: 1728220043
-      UIAtlas_8: 382677925
+      UIAtlas 1_0: -907122424
+      UIAtlas 1_8: -1766589124
+      UIAtlas 1_9: -314265893
+      UIAtlas 1_10: 1749368105
+      UIAtlas 1_11: 311188049
+      UIAtlas 1_1: 939323351
+      UIAtlas 1_14: -291809481
+      UIAtlas 1_2: 1689839822
+      UIAtlas 1_5: 725801880
+      UIAtlas 1_12: -1457680176
+      UIAtlas 1_13: -428279231
+      UIAtlas 1_6: 698880569
+      UIAtlas 1_7: 1155184974
+      UIAtlas 1_3: -107442901
+      UIAtlas 1_4: -2002908615
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

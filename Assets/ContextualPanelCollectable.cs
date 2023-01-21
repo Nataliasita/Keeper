@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ContextualPanelCollectable : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject ContextualPanel;
+    public bool activeUIComponent;
+    public int index;
     void Start()
     {
-        
+        ContextualPanel = GameObject.Find("ContextualPanel");
+        Invoke("ClosePanel",.5f);
     }
 
-    // Update is called once per frame
-    void Update()
+    void ClosePanel()
     {
-        
+        ContextualPanel.SetActive(false);
+    }
+    
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Time.timeScale = 0f;
+            ContextualPanel.SetActive(true);
+            ContextualUIContentd.index = index;
+        }
     }
 }
