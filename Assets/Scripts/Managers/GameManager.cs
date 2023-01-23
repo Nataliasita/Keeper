@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     }
     public void Level3()
     {
-        SetGameState(GameState.Level2);
+        SetGameState(GameState.Level3);
     }
     public void FightLevel1()
     {

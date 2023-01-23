@@ -2172,9 +2172,9 @@ MonoBehaviour:
   rewardCuantity: 4
   anim: {fileID: 7188365151039591639}
   Outline: {fileID: 3490548181634350034}
-  prefabSpirit: {fileID: 3010228927374190215, guid: ef35a7c31bb603245bda663c19e7245f,
+  prefabSpirit: {fileID: 354597025556546257, guid: 2488f06d170dcab4c8680e0f1739012e,
     type: 3}
-  prefabAnimal: {fileID: 6722208191513726363, guid: 3650fc84fe1c91e4987889e46b0c90b8,
+  prefabAnimal: {fileID: 8625089330266537429, guid: 5979ea4cf04705441962b906ee30bcf3,
     type: 3}
 --- !u!65 &7632701697824803939
 BoxCollider:
