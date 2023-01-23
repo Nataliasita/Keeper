@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 5
   itemName: Throw objects
   value: 0
-  icon: {fileID: 21300000, guid: a67b58d6cddcd4345b1e001340de5a76, type: 3}
+  icon: {fileID: 21300000, guid: 29c198793c816164e82ca3ef950e5945, type: 3}

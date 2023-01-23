@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 4
   itemName: AttackMagic
   value: 0
-  icon: {fileID: 21300000, guid: f82dfc5fc3c5a8f4080a3550427019c8, type: 3}
+  icon: {fileID: 21300000, guid: e20c762a66fada2498892cef375c7865, type: 3}

@@ -4189,7 +4189,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 90488a9e04df421419524d3b3ec46ac7, type: 2}
+  - {fileID: 2100000, guid: f141241befff4af4f8b7170358ff2ed5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4312,6 +4312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ef5928ffec49f4586ffc1ba53383b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OffsetAparition: {x: 0, y: 0, z: 0}
   CanbeHurt: 1
   RangeShootEnemy: 1
   EnemyPrefab: {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9,
@@ -4374,8 +4375,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.68
-  m_BaseOffset: 1
+  m_Height: 1.93
+  m_BaseOffset: 1.16
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &7632701697824803937

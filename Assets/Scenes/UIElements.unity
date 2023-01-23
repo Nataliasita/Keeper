@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4332,7 +4332,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.0007089084, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 5}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &772948525
 MonoBehaviour:
@@ -4347,7 +4347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 2
+  m_VerticalFit: 1
 --- !u!114 &772948526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4850,11 +4850,20 @@ MonoBehaviour:
   contendTittles:
   - Texto de ejemplo1
   - Texto de ejemplo2
+  - Texto de ejemplo2
+  - Texto de ejemplo2
+  - Texto de ejemplo2
   contendText:
   - Texto de ejemplo1
   - Texto de ejemplo2
+  - Texto de ejemplo2
+  - Texto de ejemplo2
+  - Texto de ejemplo2
   contendImages:
   - {fileID: -1367634676, guid: c0c4d923e11864246b3596c70fa8824f, type: 3}
+  - {fileID: 1728220043, guid: c0c4d923e11864246b3596c70fa8824f, type: 3}
+  - {fileID: 1728220043, guid: c0c4d923e11864246b3596c70fa8824f, type: 3}
+  - {fileID: 1728220043, guid: c0c4d923e11864246b3596c70fa8824f, type: 3}
   - {fileID: 1728220043, guid: c0c4d923e11864246b3596c70fa8824f, type: 3}
 --- !u!1 &855585553
 GameObject:
@@ -8422,7 +8431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1457905823
 MonoBehaviour:
   m_ObjectHideFlags: 0

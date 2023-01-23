@@ -4241,7 +4241,7 @@ GameObject:
   - component: {fileID: 7632701697824803937}
   - component: {fileID: 7188365151039591639}
   m_Layer: 3
-  m_Name: AlligatorDiatance
+  m_Name: AlligatorDistance
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

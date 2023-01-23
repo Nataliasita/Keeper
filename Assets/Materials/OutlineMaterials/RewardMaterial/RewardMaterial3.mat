@@ -28,7 +28,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2006
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -48,15 +48,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AmbientStrength: 16.56
-    - _FalloffAmount: 0.17
-    - _FresnelSize: 0.31
+    - _AmbientStrength: 0.25
+    - _FalloffAmount: 0.05
+    - _FresnelSize: 0.1
     - _LightingCutoff: 0
     - _QueueControl: 0
-    - _QueueOffset: 6
-    - _Smoothness: 6.5
+    - _QueueOffset: 0
+    - _Smoothness: 1000
     m_Colors:
-    - _DiffuseColor: {r: 0.19726291, g: 0.8584906, b: 0.07694017, a: 1}
-    - _FresnelColor: {r: 0, g: 0.9529412, b: 0.26737106, a: 1}
-    - _SpecularColor: {r: 0.28627452, g: 0.7176471, b: 0.4185947, a: 1}
+    - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

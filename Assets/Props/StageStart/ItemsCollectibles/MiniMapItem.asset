@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 1
   itemName: MiniMap
   value: 0
-  icon: {fileID: 21300000, guid: cdb88fdb0cf46b244a667edaff21c7df, type: 3}
+  icon: {fileID: 21300000, guid: 6a3808c5fabea4b448cece1df961e617, type: 3}
