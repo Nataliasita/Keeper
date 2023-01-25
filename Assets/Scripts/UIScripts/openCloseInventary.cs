@@ -10,10 +10,11 @@ public class openCloseInventary : MonoBehaviour
     private void Start()
     {
         inventary = GameObject.Find("Inventory");
+        // active = false;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I)) DeactivateInventary();
+        // if (Input.GetKeyDown(KeyCode.I)) DeactivateInventary();
 
     }
     public void DeactivateInventary()

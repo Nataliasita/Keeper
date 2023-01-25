@@ -41,7 +41,7 @@ public class ContextualUIContentd : MonoBehaviour
         }
         ContendImage.sprite = contendImages[index];
         titletext.text = contendTittles[index];
-        Contendtext.text = contendTittles[index];
+        Contendtext.text = contendText[index];
 
     }
     public void ClosePanel()

@@ -18,6 +18,7 @@ public enum GameState
     FightBoss,
     Controsl,
     Credits,
+    Win,
     GameOver
 }
 public class GameManager : MonoBehaviour
@@ -87,6 +88,10 @@ public class GameManager : MonoBehaviour
     public void Credits()
     {
         SetGameState(GameState.Credits);
+    }
+    public void Win()
+    {
+        SetGameState(GameState.Win);
     }
     // Función encargado de iniciar la scena de final de juego
     public void GameOver()
@@ -162,6 +167,11 @@ public class GameManager : MonoBehaviour
         {
             //TODO: colocar la logica de la scena Credits
             SceneManager.LoadScene("Credits");
+        }
+        else if (newGameState == GameState.Win)
+        {
+            //TODO: colocar la logica de la scena Credits
+            SceneManager.LoadScene("Win");
         }
         else if (newGameState == GameState.GameOver)
         {

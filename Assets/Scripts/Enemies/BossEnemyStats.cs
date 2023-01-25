@@ -12,6 +12,8 @@ public class BossEnemyStats : MonoBehaviour
     public GameObject projectile;
     public GameObject projectileVariant;
 
+    public Light powerAttackLight;
+
     [Header("Enemy Stats")]
     public float MaxHealth;
     public float health;
@@ -35,6 +37,8 @@ public class BossEnemyStats : MonoBehaviour
     public GameObject prefabReward;
     public GameObject prefabLife;
     public float rewardCuantity;
+    public Animator anim;
+    public GameManager Manager;
     //private DetectorSensor Sensor;
 
     private void Start()
@@ -42,6 +46,9 @@ public class BossEnemyStats : MonoBehaviour
         MaxHealth = health;
         Player = GameObject.Find("PlayerComponents");
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+        powerAttackLight.enabled = false;
+        Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     private void Update()
     {
@@ -62,9 +69,11 @@ public class BossEnemyStats : MonoBehaviour
         IsHurt = true;
         rb.AddRelativeForce(Vector3.back * trhust * trhustPotenciator, ForceMode.Impulse);
         Invoke("IsNotHurt", 3.0f);
+        powerAttackLight.enabled = true;
         if (CanbeHurt)
         {
             health -= damage;
+
             if (health <= 0)
             {
                 DeadEnemy();
@@ -102,11 +111,12 @@ public class BossEnemyStats : MonoBehaviour
         int index;
         index = Random.Range(1, 5);
         if (index == 3)
-        {
+        {   
             transform.LookAt(Player.transform.position, Vector3.up);
             Quaternion projectileRot = Quaternion.identity;
             projectileRot.eulerAngles = ProjectileRotation;
             Instantiate(projectile, this.transform.position + ProjectileOffset, projectileRot);
+            anim.SetTrigger("AttackRadial"); 
         }
         if (index == 2)
         {
@@ -122,17 +132,21 @@ public class BossEnemyStats : MonoBehaviour
         if (index == 4)
         {
             transform.LookAt(Player.transform.position, Vector3.up);
+            anim.SetTrigger("AttackProyectile");
             Instantiate(projectileVariant, this.transform.position + ShootOfset, this.transform.rotation);
+
         }
     }
     public void MultipleShoots()
     {
         transform.LookAt(Player.transform.position, Vector3.up);
+        anim.SetTrigger("AttackProyectile");
         Instantiate(projectileVariant, this.transform.position + ShootOfset, this.transform.rotation);
     }
     public void MeeleEnemyAttack()
     {
         hitBox.SetActive(true);
+        anim.SetTrigger("AttackHitbox");
         Invoke("DeactivateHitBox", 1.0f);
         if (Player.GetComponent<CombatSystem>().PlayerisParry == true)
         {
@@ -151,11 +165,13 @@ public class BossEnemyStats : MonoBehaviour
     public void IsNotHurt()
     {
         IsHurt = false;
+        powerAttackLight.enabled = false;
     }
     public void DeadEnemy()
     {
         IsAlive = false;
         this.gameObject.SetActive(false);
+        Manager.Win();
         int index;
         Player.GetComponent<CombatSystem>().comboIndex = 0;
         index = Random.Range(1, 5);

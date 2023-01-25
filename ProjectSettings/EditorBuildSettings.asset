@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fight Encounters/FightBoss.unity
     guid: 85affa00804fdfb4880c82e722bb647e
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/Win.unity
+    guid: 4d09d31fd0645ac459c5639ccda6ba2a
   m_configObjects: {}
