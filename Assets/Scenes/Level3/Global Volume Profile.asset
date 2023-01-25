@@ -33,7 +33,7 @@ MonoBehaviour:
     m_Value: 0
   skipIterations:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   dirtTexture:
     m_OverrideState: 1
     m_Value: {fileID: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
     m_Value: 0.45
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.567
+    m_Value: 1
   rounded:
     m_OverrideState: 1
     m_Value: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
     m_Value: 0
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.3726415, g: 0.92051566, b: 1, a: 1}
+    m_Value: {r: 0.37254906, g: 0.7627317, b: 1, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: 0

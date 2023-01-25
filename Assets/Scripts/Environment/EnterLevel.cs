@@ -17,6 +17,7 @@ public class EnterLevel : MonoBehaviour
     {
         Inventary =  GameObject.Find("InventoryManager").GetComponent<InventaryManager>();
         Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        LevelChangeValidation();
     }
 
     // Update is called once per frame
@@ -45,5 +46,18 @@ public class EnterLevel : MonoBehaviour
             Manager.Level3();
         }
 
+    }
+
+    private void LevelChangeValidation()
+    {
+       if(InfoKeys.passLevel1 == true) {
+            this.gameObject.GetComponent<SphereCollider>().enabled = false;
+       }
+       if(InfoKeys.passLevel2 == true) {
+            this.gameObject.GetComponent<SphereCollider>().enabled = false;
+       }
+        if(InfoKeys.passLevel3 == true) {
+            this.gameObject.GetComponent<SphereCollider>().enabled = false;
+       }
     }
 }

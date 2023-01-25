@@ -10,10 +10,12 @@ public class swordScript : MonoBehaviour
     private GameObject player;
     public GameObject trialEffect;
     private StatsManager statsManager;
+    public SoundManager soundManager;
     private void Start()
     {
         statsManager = GameObject.Find("StatsManager").GetComponent<StatsManager>();
         player = GameObject.Find("PlayerComponents");
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
     private void Update()
     {
@@ -35,6 +37,7 @@ public class swordScript : MonoBehaviour
         if (other.gameObject.CompareTag("HitBox") && player.GetComponent<CombatSystem>().comboIndex > 0)
         {
             Instantiate(ParticleEffect, SpawnHere, other.transform.rotation);
+            soundManager.Play(5);
         }
 
         if (other.gameObject.CompareTag("Enemy") && player.GetComponent<CombatSystem>().comboIndex > 0)

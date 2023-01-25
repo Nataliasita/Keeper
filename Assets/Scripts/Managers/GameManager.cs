@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     public bool isPlaying;
     // Declaración del estado del juego
     public GameState currentGameState = GameState.PrincipalMenu;
+
+    public SoundManager soundManager;
     public void Awake()
     {
         // que despierte y enfatizo con el siguiente fragmento
@@ -40,9 +42,12 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
+    private void Start() {
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+    }
     // Función encargado de iniciar la scena menú principal
     public void PrincipalMenu()
-    {
+    {   
         SetGameState(GameState.PrincipalMenu);
     }
     // Función encargado de iniciar la scena Game
