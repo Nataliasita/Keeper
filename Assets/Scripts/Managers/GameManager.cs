@@ -19,7 +19,8 @@ public enum GameState
     Controsl,
     Credits,
     Win,
-    GameOver
+    GameOver,
+    History
 }
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
     public static int lostScene;
     [SerializeField] GameObject menuPausa;
     public static GameManager sharedInstance;
+    public Animator anim;
+    public float TransitionTime = 0.5f;
     public bool isPlaying;
     // Declaración del estado del juego
     public GameState currentGameState = GameState.PrincipalMenu;
@@ -48,60 +51,79 @@ public class GameManager : MonoBehaviour
     // Función encargado de iniciar la scena menú principal
     public void PrincipalMenu()
     {   
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.PrincipalMenu);
     }
     // Función encargado de iniciar la scena Game
     public void Game()
-    {
+    {   
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.Game);
     }
 
     public void Level1()
-    {
+    {   
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.Level1);
     }
     public void Level2()
-    {
+    {   
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.Level2);
     }
     public void Level3()
-    {
+    {   
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.Level3);
     }
     public void FightLevel1()
-    {
+    {   
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.FightLevel1);
     }
     public void FightLevel2()
     {
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.FightLevel2);
     }
     public void FightLevel3()
     {
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.FightLevel3);
     }
     public void FightBoss()
     {
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.FightBoss);
     }
     // Función encargado de iniciar la scena créditos
     public void Controls()
     {
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.Controsl);
     }
     // Función encargado de iniciar la scena controls
     public void Credits()
     {
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.Credits);
     }
     public void Win()
-    {
+    {   
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.Win);
     }
     // Función encargado de iniciar la scena de final de juego
     public void GameOver()
-    {
+    {   
+        Invoke("LoadTrigger", TransitionTime);
         SetGameState(GameState.GameOver);
+    }
+
+    public void History()
+    {   
+        Invoke("LoadTrigger", TransitionTime);
+        SetGameState(GameState.History);
     }
 
     public void SetGameState(GameState newGameState)
@@ -183,6 +205,11 @@ public class GameManager : MonoBehaviour
             //TODO: colocar la logica de la scena Store
             SceneManager.LoadScene("GameOver");
         }
+        else if (newGameState == GameState.History)
+        {
+            //TODO: colocar la logica de la scena Store
+            SceneManager.LoadScene("History");
+        }
     }
     public void Pausa()
     {
@@ -199,13 +226,15 @@ public class GameManager : MonoBehaviour
         isPlaying = true;
     }
     public void Abandonar()
-    {
+    {   
+        Invoke("LoadTrigger", TransitionTime);
         //TODO: colocar la logica de abandonar
         Time.timeScale = 1f;
         PrincipalMenu();
     }
     public void ExitGame()
-    {
+    {  
+         Invoke("LoadTrigger", TransitionTime);
         Application.Quit();
     }
      public void Reiniciar()
@@ -213,5 +242,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(GameManager.lostScene);
         SceneManager.LoadScene("UIElements", LoadSceneMode.Additive);
         
+    }
+    void LoadTrigger()
+    {
+        anim = GameObject.Find("Crossfade").GetComponent<Animator>();
+        anim.SetTrigger("Start");
     }
 }

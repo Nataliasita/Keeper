@@ -4405,6 +4405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 630439569}
+  anim: {fileID: 0}
+  TransitionTime: 0.5
   isPlaying: 0
   currentGameState: 1
   soundManager: {fileID: 0}

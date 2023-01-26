@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Scenes/Win.unity
     guid: 4d09d31fd0645ac459c5639ccda6ba2a
+  - enabled: 1
+    path: Assets/Scenes/UI Scenes/History.unity
+    guid: c533a7d0f71240c499778cedb93f4bf0
   m_configObjects: {}
