@@ -4925,6 +4925,7 @@ MonoBehaviour:
   ParticleEffect: {fileID: 5482193036859117471, guid: 6a90e84e3b2fea342b2b3082cc558ea4,
     type: 3}
   trialEffect: {fileID: 1763523573}
+  soundManager: {fileID: 0}
 --- !u!65 &1686497136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9447,13 +9448,13 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0.24928164, g: 0.6115311, b: 0.9622641, a: 1}
+  shallowColor: {r: 0.24927697, g: 0.6115311, b: 0.9622641, a: 1}
   deepColor: {r: 0, g: 0.45162535, b: 0.7075471, a: 1}
   colorDepth: 6
-  horizonColor: {r: 0, g: 0.15908295, b: 0.5188676, a: 1}
+  horizonColor: {r: 0, g: 0.15907851, b: 0.5188676, a: 1}
   horizonDistance: 20
   shoreFade: 0
-  shoreColor: {r: 0, g: 1, b: 0.10037812, a: 0}
+  shoreColor: {r: 0, g: 1, b: 0.10037357, a: 0}
   shoreStrength: 0
   shoreBlend: 0
   shoreDepth: 0
@@ -9467,7 +9468,7 @@ MonoBehaviour:
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
   surfaceFoamColor1: {r: 0.7746084, g: 0.9716981, b: 0.84957975, a: 0.3215686}
-  surfaceFoamColor2: {r: 0, g: 0.08281504, b: 0.8490566, a: 0.7294118}
+  surfaceFoamColor2: {r: 0, g: 0.08281081, b: 0.8490566, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
   surfaceFoamDirection2: 0.47
@@ -10062,8 +10063,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216121749808064881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -167, y: -22, z: 110.7182}
-  m_LocalScale: {x: 52.64275, y: 1, z: 106.5256}
+  m_LocalPosition: {x: -331.6091, y: -22, z: 301.4038}
+  m_LocalScale: {x: 96.53627, y: 1, z: 157.37027}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

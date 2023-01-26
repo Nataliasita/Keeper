@@ -36,8 +36,8 @@ public class ReturnLevelStart: MonoBehaviour
             Debug.Log(countKeys);
             if(countKeys == 3) InfoKeys.keyactive = countKeys;
             InfoKeys.passLevel1 = true;
+            StatsManager.sharedInstance.Level1Pass = true;
             Manager.Game();
-            
         }
         if (other.gameObject.CompareTag("Player") && keyLv2 == true)
         {   
@@ -45,6 +45,7 @@ public class ReturnLevelStart: MonoBehaviour
             Debug.Log(countKeys);
             if(countKeys == 3) InfoKeys.keyactive = countKeys;
             InfoKeys.passLevel2 = true;
+            StatsManager.sharedInstance.Level2Pass = true;
             Manager.Game();
             
         }
@@ -54,8 +55,8 @@ public class ReturnLevelStart: MonoBehaviour
             Debug.Log(countKeys);
             if(countKeys == 3) InfoKeys.keyactive = countKeys;
             InfoKeys.passLevel3 = true;
+            StatsManager.sharedInstance.Level3Pass = true;
             Manager.Game();
-            
         }
 
 

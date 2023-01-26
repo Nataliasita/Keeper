@@ -31,6 +31,7 @@ public class CombatSystem : MonoBehaviour
     public GameObject Freezeprefab;
     public GameObject Canon;
     public Vector3 offset;
+    public bool canShoot;
     public bool PlayerisParry;
     private StatsManager statsManager;
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class CombatSystem : MonoBehaviour
         PlayerMovement = GetComponent<PlayerCombatMovement>();
         anim = GetComponent<Animator>();
         Sword.SetActive(false);
+        canShoot=true;
     }
 
     // Update is called once per frame
@@ -140,16 +142,20 @@ public class CombatSystem : MonoBehaviour
     }
     private void DistanceAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !PlayerMovement.InCombat)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !PlayerMovement.InCombat && canShoot)
         {
             Anmo.SetActive(true);
             Sword.SetActive(false);
             anim.SetTrigger("Shoot");
             Invoke("Shoot", 0.6f);
+            
         }
     }
     private void Shoot()
     {
+        SoundManager.Instance.Play(5);
+        
+
         if (AreaDamageProjectile)
         {
             if (statsManager.especialShot1 > 0)
@@ -172,6 +178,13 @@ public class CombatSystem : MonoBehaviour
         {
             Instantiate(prefab, Canon.transform.position + offset, Canon.transform.rotation);
         }
+            canShoot = false;
+            Invoke("ShootingRefresh", 1f);
+    }
+
+    public void ShootingRefresh()
+    {
+        canShoot = true;
     }
     public void blockingParry()
     {

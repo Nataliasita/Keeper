@@ -40,8 +40,8 @@ public class PlayerStats : MonoBehaviour
     {
         Health += life;
     }
-    public void SetCheckpoint(Vector3 NewPosition)
-    {
-        statsManager.CheckPointPostion = NewPosition;
-    }
+    // public void SetCheckpoint(Vector3 NewPosition)
+    // {
+    //     statsManager.CheckPointPostion = NewPosition;
+    // }
 }

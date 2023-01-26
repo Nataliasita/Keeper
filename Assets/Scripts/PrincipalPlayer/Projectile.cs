@@ -13,12 +13,14 @@ public class Projectile : MonoBehaviour
     public float gravity;
     private Rigidbody rb;
     public bool ally;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         coutdown = Lifetime;
         rb.velocity = speed * transform.forward;
+
     }
 
     void Update()

@@ -18445,6 +18445,11 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 61303237}
+    - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
+        type: 3}
+      propertyPath: CanAttack
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1436067209951423445, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: m_Mesh
@@ -18954,7 +18959,7 @@ PrefabInstance:
     - target: {fileID: 2688840135234337959, guid: 92f72aaa739380745ae6a14ffc9ce8ed,
         type: 3}
       propertyPath: m_Volume
-      value: 0.4
+      value: 0.274
       objectReference: {fileID: 0}
     - target: {fileID: 2688840135234337959, guid: 92f72aaa739380745ae6a14ffc9ce8ed,
         type: 3}

@@ -7,7 +7,8 @@ public class StatsManager : MonoBehaviour
 {
     public static StatsManager sharedInstance;
     [Header("Checkpoint")]
-    public Vector3 CheckPointPostion;
+    public  Vector3 CheckPointPostion;
+
 
     [Header("GeneralStats")]
     public float MaxHealt;
@@ -27,6 +28,13 @@ public class StatsManager : MonoBehaviour
     public bool MiniMap;
     public bool NigthVision;
     private CombatSystem combatSystem;
+
+    [Header("LevelProgression")]
+
+    public bool Level1Pass;
+    public bool Level2Pass;
+    public bool Level3Pass;
+
     public void Awake()
     {
         // que despierte y enfatizo con el siguiente fragmento

@@ -6,7 +6,6 @@ public class SpawnManager : MonoBehaviour
 {
 
     public GameObject[] Spawners;
-    //public GameObject levelPortal;
     public float Deathcount;
     [SerializeField] int Index;
     [SerializeField] float DeathLimits;
@@ -14,7 +13,6 @@ public class SpawnManager : MonoBehaviour
     private float ActivationMemory;
     public bool spawnersActive;
     public bool TaskComplete;
-
 
     void Start()
     {
@@ -33,15 +31,14 @@ public class SpawnManager : MonoBehaviour
             spawnersActive = false;
             DesactivateSpawner();
             TaskComplete = true;
-            //levelPortal.SetActive(true);
         }
         if (TaskComplete)
         {
             for (int i = 0; i < Spawners.Length; i++)
             {
                  Spawners[i].SetActive(false);
+                 
             }
-            Debug.Log("TaskComplete");
         }
     }
     void DesactivateSpawner()

@@ -1454,6 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OffsetAparition: {x: 0, y: 0, z: 0}
+  shootOffset: {x: 0, y: 0, z: 0}
   CanbeHurt: 1
   RangeShootEnemy: 0
   EnemyPrefab: {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9,
@@ -1562,8 +1563,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7437556, y: 1.4193363, z: 1}
-  m_Center: {x: -0.091150045, y: 1.5859804, z: 1.1123605e-10}
+  m_Size: {x: 2.7437556, y: 4.9099936, z: 1}
+  m_Center: {x: -0.091150045, y: 3.3313205, z: 1.1123605e-10}
 --- !u!1 &7887432315049327658
 GameObject:
   m_ObjectHideFlags: 0

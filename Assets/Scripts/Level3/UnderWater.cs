@@ -21,6 +21,7 @@ public class UnderWater : MonoBehaviour
             RenderSettings.fog = true;
             RenderSettings.fogDensity = 0.003f;
             volumeTwo.SetActive(true);
+            SoundManager.Instance.Play(4);
         }
         else
         {

@@ -4407,6 +4407,7 @@ MonoBehaviour:
   menuPausa: {fileID: 630439569}
   isPlaying: 0
   currentGameState: 1
+  soundManager: {fileID: 0}
 --- !u!4 &776162130
 Transform:
   m_ObjectHideFlags: 0
@@ -8782,6 +8783,7 @@ MonoBehaviour:
   ParticleEffect: {fileID: 5482193036859117471, guid: 6a90e84e3b2fea342b2b3082cc558ea4,
     type: 3}
   trialEffect: {fileID: 608164198}
+  soundManager: {fileID: 0}
 --- !u!65 &1474227675
 BoxCollider:
   m_ObjectHideFlags: 0

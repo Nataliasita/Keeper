@@ -4421,22 +4421,22 @@ PrefabInstance:
     - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: PowerAttack
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: PowerAttack2
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: PowerAttack3
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1436067209757914146, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
       propertyPath: PowerAttack4
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1470239434192834591, guid: 197e5b8924cf1524c8e014f568dd8980,
         type: 3}
@@ -6804,22 +6804,22 @@ PrefabInstance:
     - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
         type: 3}
       propertyPath: PowerAttack
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
         type: 3}
       propertyPath: PowerAttack2
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
         type: 3}
       propertyPath: PowerAttack3
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
         type: 3}
       propertyPath: PowerAttack4
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1513719017562980577, guid: 4c82d289e38095e4f91d43801bf04713,
         type: 3}

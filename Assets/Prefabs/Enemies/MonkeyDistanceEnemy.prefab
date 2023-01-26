@@ -4313,6 +4313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OffsetAparition: {x: 0, y: 0, z: 0}
+  shootOffset: {x: 0, y: 0, z: 0}
   CanbeHurt: 1
   RangeShootEnemy: 1
   EnemyPrefab: {fileID: 2986089137831835358, guid: 12a4229cb471a4f4687acc103df000c9,
@@ -4375,8 +4376,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.93
-  m_BaseOffset: 1.16
+  m_Height: 2.08
+  m_BaseOffset: 1.31
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &7632701697824803937

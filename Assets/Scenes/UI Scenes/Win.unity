@@ -2217,8 +2217,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95
-  m_fontSizeBase: 95
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10081,18 +10081,18 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0, g: 0.39967155, b: 0.735849, a: 0.5372549}
-  deepColor: {r: 0.01176471, g: 0.28619766, b: 0.50980073, a: 1}
+  shallowColor: {r: 0, g: 0.3996714, b: 0.735849, a: 0.5372549}
+  deepColor: {r: 0.01176471, g: 0.28619754, b: 0.50980073, a: 1}
   colorDepth: 1.84
-  horizonColor: {r: 0, g: 0.1743407, b: 0.6132076, a: 1}
+  horizonColor: {r: 0, g: 0.17434058, b: 0.6132076, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30188397, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30188382, a: 0}
   shoreStrength: 0
   shoreBlend: 1
   shoreDepth: 0.3
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20384875, g: 0.30972704, b: 0.517647, a: 0}
+  underwaterColor: {r: 0.20384863, g: 0.30972692, b: 0.517647, a: 0}
   underwaterColorStrength: 0
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -10695,8 +10695,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216121749808064881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -167, y: -22, z: 110.7182}
-  m_LocalScale: {x: 52.64275, y: 1, z: 106.5256}
+  m_LocalPosition: {x: -384.9539, y: -22, z: 195.1753}
+  m_LocalScale: {x: 110.76561, y: 1, z: 129.0451}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

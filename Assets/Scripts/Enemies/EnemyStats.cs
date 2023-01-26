@@ -7,6 +7,8 @@ public class EnemyStats : MonoBehaviour
     [Header("Transformation")]
     public Vector3 OffsetAparition = new Vector3(0, 0, 0);
 
+    public Vector3 shootOffset;
+
     [Header("Enemy Mode")]
     public bool CanbeHurt;
     public bool RangeShootEnemy;
@@ -115,7 +117,7 @@ public class EnemyStats : MonoBehaviour
             transform.LookAt(Player.transform.position, Vector3.up);
             Quaternion projectileRot = Quaternion.identity;
             projectileRot.eulerAngles = new Vector3(transform.rotation.eulerAngles.x - ShootOfset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-            Instantiate(projectile, this.transform.position, projectileRot);
+            Instantiate(projectile, this.transform.position + shootOffset, projectileRot);
             anim.SetTrigger("Attack");
         }
         else
