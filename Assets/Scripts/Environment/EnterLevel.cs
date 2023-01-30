@@ -62,7 +62,7 @@ public class EnterLevel : MonoBehaviour
                 this.gameObject.SetActive(true);    
             }
         }
-        Debug.Log(statsManager.Level2Pass);
+        // Debug.Log(statsManager.Level2Pass);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,35 +71,19 @@ public class EnterLevel : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && lv1 == true)
         {   
             Manager.Level1();
-            // StatsManager.sharedInstance.Level1Pass = true;
         }
 
         if (other.gameObject.CompareTag("Player") && lv2 == true)
         {
             
             Manager.Level2();
-            // StatsManager.sharedInstance.Level2Pass = true;
-           
         }
         
         if (other.gameObject.CompareTag("Player") && lv3 == true)
         {   
             Manager.Level3();
-            // StatsManager.sharedInstance.Level3Pass = true;
         }
 
     }
 
-    // private void LevelChangeValidation()
-    // {
-    //    if(InfoKeys.passLevel1 == true) {
-    //         this.gameObject.GetComponent<SphereCollider>().enabled = false;
-    //    }
-    //    if(InfoKeys.passLevel2 == true) {
-    //         this.gameObject.GetComponent<SphereCollider>().enabled = false;
-    //    }
-    //     if(InfoKeys.passLevel3 == true && lv2) {
-    //         this.gameObject.GetComponent<SphereCollider>().enabled = false;
-    //    }
-    // }
 }

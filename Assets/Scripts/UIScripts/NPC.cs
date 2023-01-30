@@ -15,12 +15,17 @@ public class NPC : MonoBehaviour
     public bool PlayerIsClose;
     public float sightRange;
     public LayerMask whatIsPlayer;
+    public Animator anim;
+
+    public Light lightTalk;
     private void Start() 
     {
         Panel = GameObject.Find("NPCDialoguePanel");
         dialoguetext = GameObject.Find("NPCDialogueText").GetComponent<TextMeshProUGUI>();
         ContinueButton = GameObject.Find("NPCDialogueButton");
         Invoke("ZeroText",.5f);
+        anim = GetComponent<Animator>();
+        lightTalk.enabled = false;
     }
  
     void Update()
@@ -81,7 +86,8 @@ public class NPC : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-
+            anim.SetBool("Talk", true);
+            lightTalk.enabled = true;
             other.GetComponent<PlayerCombatMovement>().CanJump = false;
             other.GetComponent<CombatSystem>().CanAttack = false;
         }
@@ -90,6 +96,8 @@ public class NPC : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            anim.SetBool("Talk", false);
+            lightTalk.enabled = false;
             other.GetComponent<PlayerCombatMovement>().CanJump = true;
             other.GetComponent<CombatSystem>().CanAttack = true;
             ZeroText();

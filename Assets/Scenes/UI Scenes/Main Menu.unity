@@ -1849,7 +1849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1714668025, guid: 90df34573bad9904c8f3e462e64eb5df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ae74bb397d4bb4408413dc2548116b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9574,13 +9574,13 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
-  shallowColor: {r: 0.24926725, g: 0.6115311, b: 0.9622641, a: 1}
+  shallowColor: {r: 0.24926561, g: 0.6115311, b: 0.9622641, a: 1}
   deepColor: {r: 0, g: 0.45162535, b: 0.7075471, a: 1}
   colorDepth: 6
-  horizonColor: {r: 0, g: 0.1590693, b: 0.5188676, a: 1}
+  horizonColor: {r: 0, g: 0.15906775, b: 0.5188676, a: 1}
   horizonDistance: 20
   shoreFade: 0
-  shoreColor: {r: 0, g: 1, b: 0.10036411, a: 0}
+  shoreColor: {r: 0, g: 1, b: 0.10036252, a: 0}
   shoreStrength: 0
   shoreBlend: 0
   shoreDepth: 0
@@ -9594,7 +9594,7 @@ MonoBehaviour:
   surfaceFoamDistortion: 0
   surfaceFoamBlend: 1
   surfaceFoamColor1: {r: 0.7746084, g: 0.9716981, b: 0.84957975, a: 0.3215686}
-  surfaceFoamColor2: {r: 0, g: 0.082802065, b: 0.8490566, a: 0.7294118}
+  surfaceFoamColor2: {r: 0, g: 0.082800604, b: 0.8490566, a: 0.7294118}
   surfaceFoamMovement: {x: 0.7, y: 0, z: 0.47, w: 0.01}
   surfaceFoamDirection1: 0.7
   surfaceFoamDirection2: 0.47
