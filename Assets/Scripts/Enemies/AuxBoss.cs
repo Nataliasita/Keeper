@@ -11,13 +11,13 @@ public class AuxBoss : MonoBehaviour
 
 
     private void Start() {
-        Invoke("NewBossEnter", 60f);
+        Invoke("NewBossEnter", 40f);
         
     }
     public void NewBossEnter()
     {
         bossSecundary.SetActive(true);
-        Invoke("ActiveLevel", 120f);
+        Invoke("ActiveLevel", 100f);
     }
 
     public void ActiveLevel()
